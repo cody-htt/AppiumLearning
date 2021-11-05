@@ -7,4 +7,5 @@ public interface MobileCapabilityTypeEx extends MobileCapabilityType {
     String APP_ACTIVITY = "appActivity";
     String AVD_LAUNCH_TIMEOUT = "avdLaunchTimeout";
     String NEW_COMMAND_TIMEOUT = "newCommandTimeout";
+    String AVD = "avd";
 }
