@@ -5,8 +5,6 @@ import Utilities.DriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class TestDriverFactory {
 
 
@@ -29,7 +27,6 @@ public class TestDriverFactory {
             if (loginPage.verifyLoginSuccess()) result_01 = "TC_001_Login_App is PASSED";
             else result_01 = "TC_001_Login_App is FAILED";
         }
-
 
         if (loginPage.isSignUpForm()) {
             loginPage.fillUsrNameAndPwd();
