@@ -8,7 +8,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AbstractPageObject {
+public abstract class AbstractPageObject {
 
     private final AndroidDriver<MobileElement> androidDriver;
 
