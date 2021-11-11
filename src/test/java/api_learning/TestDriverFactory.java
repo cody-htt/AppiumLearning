@@ -1,7 +1,7 @@
 package api_learning;
 
-import LoginPage.AppDemoLoginPage;
-import Utilities.DriverFactory;
+import Pages.AppDemoLoginPage;
+import MobileDriver.DriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
