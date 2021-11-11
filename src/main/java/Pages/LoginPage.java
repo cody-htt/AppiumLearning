@@ -1,15 +1,15 @@
 package Pages;
 
-import AbstractPage.AbstractPageObject;
+import AbstractPage.AbstractPage;
 import Data.LoginData;
 import Locators.PageLoginLocator;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class LoginPage extends AbstractPageObject {
+public class LoginPage extends AbstractPage {
 
     public LoginPage(AndroidDriver<MobileElement> androidDriver) {
-        super(androidDriver);
+        this.androidDriver = androidDriver;
     }
 
     public void navigateToLoginPage() {

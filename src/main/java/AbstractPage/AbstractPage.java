@@ -8,13 +8,9 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class AbstractPageObject {
+public abstract class AbstractPage {
 
-    private final AndroidDriver<MobileElement> androidDriver;
-
-    protected AbstractPageObject(AndroidDriver<MobileElement> androidDriver) {
-        this.androidDriver = androidDriver;
-    }
+    protected AndroidDriver<MobileElement> androidDriver;
 
     protected void clickOnElement(By locator) {
         MobileElement element = androidDriver.findElement(locator);
@@ -37,7 +33,7 @@ public abstract class AbstractPageObject {
     }
 
     protected boolean isElementPresent(By locator) {
-        WebDriverWait wait = new WebDriverWait(androidDriver , 15);
+        WebDriverWait wait = new WebDriverWait(androidDriver , 5);
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(locator));
             MobileElement element = androidDriver.findElement(locator);
