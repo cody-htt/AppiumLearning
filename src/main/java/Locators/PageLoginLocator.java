@@ -4,7 +4,7 @@ import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
 public class PageLoginLocator {
-    public final static By XPATH_PAGE_LOGIN_BTN = MobileBy.xpath("//android.widget.Button[@content-desc='Login']");
+    public final static By XPATH_LABEL_LOGIN = MobileBy.xpath("//android.widget.Button[@content-desc='Login']");
     public final static By XPATH_LOGIN_FORM = MobileBy.xpath("//android.view.ViewGroup" +
             "[@content-desc='button-login-container']/android.view.ViewGroup/android.widget.TextView");
     public final static By XPATH_SIGNUP_FORM = MobileBy.xpath("//android.view.ViewGroup" +

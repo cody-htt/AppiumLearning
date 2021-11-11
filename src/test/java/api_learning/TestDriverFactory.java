@@ -1,6 +1,6 @@
 package api_learning;
 
-import Pages.AppDemoLoginPage;
+import Pages.LoginPage;
 import MobileDriver.DriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -12,7 +12,7 @@ public class TestDriverFactory {
 
         DriverFactory.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactory.getAndroidDriver();
-        AppDemoLoginPage loginPage = new AppDemoLoginPage(androidDriver);
+        LoginPage loginPage = new LoginPage(androidDriver);
 
         String result_01 = null;
         String result_02 = null;

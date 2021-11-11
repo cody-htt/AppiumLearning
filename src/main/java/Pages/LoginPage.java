@@ -1,19 +1,19 @@
 package Pages;
 
 import AbstractPage.AbstractPageObject;
-import Data.Constant;
+import Data.LoginData;
 import Locators.PageLoginLocator;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class AppDemoLoginPage extends AbstractPageObject {
+public class LoginPage extends AbstractPageObject {
 
-    public AppDemoLoginPage(AndroidDriver<MobileElement> androidDriver) {
+    public LoginPage(AndroidDriver<MobileElement> androidDriver) {
         super(androidDriver);
     }
 
     public void navigateToLoginPage() {
-        clickOnElement(PageLoginLocator.XPATH_PAGE_LOGIN_BTN);
+        clickOnElement(PageLoginLocator.XPATH_LABEL_LOGIN);
     }
 
     public boolean isLoginForm() {
@@ -24,8 +24,8 @@ public class AppDemoLoginPage extends AbstractPageObject {
     public void fillUsrNameAndPwd() {
         clearTextBox(PageLoginLocator.XPATH_INPUT_USERNAME);
         clearTextBox(PageLoginLocator.XPATH_INPUT_PASSWORD);
-        fillTextBox(PageLoginLocator.XPATH_INPUT_USERNAME , Constant.EMAIL);
-        fillTextBox(PageLoginLocator.XPATH_INPUT_PASSWORD , Constant.PASSWORD);
+        fillTextBox(PageLoginLocator.XPATH_INPUT_USERNAME , LoginData.EMAIL);
+        fillTextBox(PageLoginLocator.XPATH_INPUT_PASSWORD , LoginData.PASSWORD);
     }
 
     public void clickLoginBtn() {
@@ -48,12 +48,12 @@ public class AppDemoLoginPage extends AbstractPageObject {
     }
 
     public void fillCorrectRepeatPassword() {
-        fillTextBox(PageLoginLocator.XPATH_INPUT_CONFIRM_PASSWORD , Constant.PASSWORD);
+        fillTextBox(PageLoginLocator.XPATH_INPUT_CONFIRM_PASSWORD , LoginData.PASSWORD);
     }
 
     public void fillWrongRepeatPassword() {
         clearTextBox(PageLoginLocator.XPATH_INPUT_CONFIRM_PASSWORD);
-        fillTextBox(PageLoginLocator.XPATH_INPUT_CONFIRM_PASSWORD , Constant.WRONG_PASSWORD);
+        fillTextBox(PageLoginLocator.XPATH_INPUT_CONFIRM_PASSWORD , LoginData.WRONG_PASSWORD);
     }
 
     public void clickSignUpBtn() {
