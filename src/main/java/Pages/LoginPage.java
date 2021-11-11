@@ -35,8 +35,12 @@ public class LoginPage extends AbstractPage {
     public boolean verifyLoginSuccess() {
         boolean isSuccess = false;
         if (isElementPresent(PageLoginLocator.ID_ALERT_BOX_TEMPLATE)) {
-            isSuccess = getElementText(PageLoginLocator.ID_ALERT_TITLE).equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_LOGIN) &&
-                    getElementText(PageLoginLocator.ID_ALERT_MSG).equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_LOGIN_MSG);
+            isSuccess =
+                    getElementText(PageLoginLocator.ID_ALERT_TITLE)
+                            .equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_LOGIN) &&
+                            getElementText(PageLoginLocator.ID_ALERT_MSG)
+                                    .equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_LOGIN_MSG);
+
             clickOnElement(PageLoginLocator.ID_ALERT_BTN_OK);
         }
         return isSuccess;
@@ -63,8 +67,12 @@ public class LoginPage extends AbstractPage {
     public boolean verifySignUpSuccess() {
         boolean isSuccess = false;
         if (isElementPresent(PageLoginLocator.ID_ALERT_BOX_TEMPLATE)) {
-            isSuccess = getElementText(PageLoginLocator.ID_ALERT_TITLE).equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_SIGNUP) &&
-                    getElementText(PageLoginLocator.ID_ALERT_MSG).equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_SIGNUP_MSG);
+            isSuccess =
+                    getElementText(PageLoginLocator.ID_ALERT_TITLE)
+                            .equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_SIGNUP) &&
+                            getElementText(PageLoginLocator.ID_ALERT_MSG)
+                                    .equalsIgnoreCase(PageLoginLocator.EXPECTED_SUCCESS_SIGNUP_MSG);
+
             clickOnElement(PageLoginLocator.ID_ALERT_BTN_OK);
         }
         return isSuccess;
@@ -74,6 +82,7 @@ public class LoginPage extends AbstractPage {
         if (isElementPresent(PageLoginLocator.ID_ALERT_BOX_TEMPLATE)) {
             return false;
         }
-        return getElementText(PageLoginLocator.XPATH_CONFIRM_PW_ERROR).equalsIgnoreCase(PageLoginLocator.EXPECTED_CONFIRM_PASSWORD_ER_MSG);
+        return getElementText(PageLoginLocator.XPATH_CONFIRM_PW_ERROR)
+                .equalsIgnoreCase(PageLoginLocator.EXPECTED_CONFIRM_PASSWORD_ER_MSG);
     }
 }

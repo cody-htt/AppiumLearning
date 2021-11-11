@@ -3,10 +3,8 @@ package AbstractPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 public abstract class AbstractPage {
 
@@ -33,14 +31,8 @@ public abstract class AbstractPage {
     }
 
     protected boolean isElementPresent(By locator) {
-        WebDriverWait wait = new WebDriverWait(androidDriver , 5);
-        try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-            MobileElement element = androidDriver.findElement(locator);
-            return true;
-        } catch (NoSuchElementException | TimeoutException ex) {
-            return false;
-        }
+        List<MobileElement> elements = androidDriver.findElements(locator);
+        return elements != null;
     }
 
 }

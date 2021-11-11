@@ -7,7 +7,6 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class TestDriverFactory {
 
-
     public static void main(String[] args) {
 
         DriverFactory.startAppiumServer();
@@ -44,7 +43,7 @@ public class TestDriverFactory {
         }
 
         DriverFactory.stopAppiumServer();
-        DriverFactory.closeAndroidDevice();
+        DriverFactory.killAndroidDriver();
         System.out.println(result_01 + "\n" + result_02 + "\n" + result_03);
     }
 }

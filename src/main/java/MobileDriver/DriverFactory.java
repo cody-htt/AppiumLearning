@@ -18,7 +18,6 @@ public class DriverFactory {
     private static final String CURRENT_OS = System.getProperty("os.name").toLowerCase();
 
     private static AppiumDriverLocalService appiumServer;
-    private static AndroidDriver<MobileElement> androidDriver;
 
     public static void startAppiumServer() {
         AppiumServiceBuilder appiumServiceBuilder = new AppiumServiceBuilder();
@@ -52,14 +51,14 @@ public class DriverFactory {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY , "com.wdiodemoapp.MainActivity");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT , 120_000);
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT , 120);
-        androidDriver = new AndroidDriver<>(appiumServer.getUrl() , desiredCapabilities);
+        AndroidDriver<MobileElement> androidDriver = new AndroidDriver<>(appiumServer.getUrl() , desiredCapabilities);
         androidDriver.manage().timeouts().implicitlyWait(15L, TimeUnit.SECONDS);
 
         System.out.println("Session ID: " + androidDriver.getSessionId());
         return androidDriver;
     }
 
-    public static void closeAndroidDevice() {
+    public static void killAndroidDriver() {
         Runtime runtime = Runtime.getRuntime();
         try {
             runtime.exec(CLOSE_AVD_CMD);
