@@ -24,8 +24,8 @@ public class LoginPage extends AbstractPage {
     public void fillUsrNameAndPwd() {
         clearTextBox(PageLoginElem.XPATH_INPUT_USERNAME);
         clearTextBox(PageLoginElem.XPATH_INPUT_PASSWORD);
-        fillTextBox(PageLoginElem.XPATH_INPUT_USERNAME , LoginData.EMAIL);
-        fillTextBox(PageLoginElem.XPATH_INPUT_PASSWORD , LoginData.PASSWORD);
+        fillTextBox(PageLoginElem.XPATH_INPUT_USERNAME, LoginData.EMAIL);
+        fillTextBox(PageLoginElem.XPATH_INPUT_PASSWORD, LoginData.PASSWORD);
     }
 
     public void clickLoginBtn() {
@@ -52,12 +52,12 @@ public class LoginPage extends AbstractPage {
     }
 
     public void fillCorrectRepeatPassword() {
-        fillTextBox(PageLoginElem.XPATH_INPUT_CONFIRM_PASSWORD , LoginData.PASSWORD);
+        fillTextBox(PageLoginElem.XPATH_INPUT_CONFIRM_PASSWORD, LoginData.PASSWORD);
     }
 
     public void fillWrongRepeatPassword() {
         clearTextBox(PageLoginElem.XPATH_INPUT_CONFIRM_PASSWORD);
-        fillTextBox(PageLoginElem.XPATH_INPUT_CONFIRM_PASSWORD , LoginData.WRONG_PASSWORD);
+        fillTextBox(PageLoginElem.XPATH_INPUT_CONFIRM_PASSWORD, LoginData.WRONG_PASSWORD);
     }
 
     public void clickSignUpBtn() {
@@ -79,10 +79,8 @@ public class LoginPage extends AbstractPage {
     }
 
     public boolean verifySignUpFail() {
-        if (isElementPresent(PageLoginElem.ID_ALERT_BOX_TEMPLATE)) {
-            return false;
-        }
-        return getElementText(PageLoginElem.XPATH_CONFIRM_PW_ERROR)
-                .equalsIgnoreCase(PageLoginElem.EXPECTED_CONFIRM_PASSWORD_ER_MSG);
+        return !isElementPresent(PageLoginElem.ID_ALERT_BOX_TEMPLATE) &&
+                getElementText(PageLoginElem.XPATH_CONFIRM_PW_ERROR)
+                        .equalsIgnoreCase(PageLoginElem.EXPECTED_CONFIRM_PASSWORD_ER_MSG);
     }
 }
