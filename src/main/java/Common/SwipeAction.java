@@ -38,7 +38,7 @@ public class SwipeAction {
 
     /*
     Usage:
-    SwipeAction swipe = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage < 0.5;a
+    SwipeAction swipe = new SwipeAction(androidDriver, offsetPercentage) if only want to swipe from an element to another
      */
     public SwipeAction(AndroidDriver<MobileElement> androidDriver) {
         this.androidDriver = androidDriver;
