@@ -2,7 +2,6 @@ package api_learning;
 
 import MobileDriver.RealDeviceDriverFactory;
 import Pages.PageObject.LoginPage;
-import MobileDriver.VirtualDeviceDriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
