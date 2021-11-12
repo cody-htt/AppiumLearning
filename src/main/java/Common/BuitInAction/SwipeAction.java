@@ -16,6 +16,8 @@ public class SwipeAction {
 
     private final double SCREEN_SIZE_PERCENTAGE = 1.0D;
     private final int MID_POINT_FACTOR = 2;
+    private final int SHORT_WAIT_TIME = 800;
+    private final int LONG_WAIT_TIME = 1500;
 
     private AndroidDriver<MobileElement> androidDriver;
     private Dimension mobileScreenSize;
@@ -37,7 +39,7 @@ public class SwipeAction {
     public void swipeToElement(By fromLocator, By toLocator) {
         ElementOption fromElement = new ElementOption().withElement(androidDriver.findElement(fromLocator));
         ElementOption toElement = new ElementOption().withElement(androidDriver.findElement(toLocator));
-        performSwipe(fromElement, toElement);
+        performSwipe(fromElement, toElement, LONG_WAIT_TIME);
     }
 
     /* The following methods perform swipe up action */
@@ -47,7 +49,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeUpStartPoint();
         PointOption endPoint = getSwipeUpEndPoint();
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
@@ -57,7 +59,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeUpStartPoint();
         PointOption endPoint = getSwipeUpEndPoint();
         while (elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
@@ -81,7 +83,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeDownStartPoint();
         PointOption endPoint = getSwipeDownEndPoint();
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
@@ -91,7 +93,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeDownStartPoint();
         PointOption endPoint = getSwipeDownEndPoint();
         while (elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
@@ -115,7 +117,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeToLeftStartPoint();
         PointOption endPoint = getSwipeToLeftEndPoint();
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
@@ -125,7 +127,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeToLeftStartPoint();
         PointOption endPoint = getSwipeToLeftEndPoint();
         while (elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
@@ -149,7 +151,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeToRightStartPoint();
         PointOption endPoint = getSwipeToRightEndPoint();
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
@@ -159,7 +161,7 @@ public class SwipeAction {
         PointOption startPoint = getSwipeToRightStartPoint();
         PointOption endPoint = getSwipeToRightEndPoint();
         while (elements.isEmpty()) {
-            performSwipe(startPoint, endPoint);
+            performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
@@ -177,9 +179,9 @@ public class SwipeAction {
     }
 
     /* This method will simply perform a swipe action */
-    private void performSwipe(PointOption startPoint, PointOption endPoint) {
+    private void performSwipe(PointOption startPoint, PointOption endPoint, int waitTime) {
         touchAction.press(startPoint)
-                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(1500)))
+                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(waitTime)))
                 .moveTo(endPoint)
                 .release().perform();
     }
