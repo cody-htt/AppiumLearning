@@ -58,10 +58,7 @@ public class SwipeAction {
         PointOption startPoint = getStartPoint();
         PointOption endPoint = getEndPoint();
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
-            touchAction.press(startPoint)
-                    .waitAction(new WaitOptions().withDuration(Duration.ofMillis(1500)))
-                    .moveTo(endPoint)
-                    .release().perform();
+            performSwipe(startPoint, endPoint);
             swipeTime++;
         }
     }
@@ -71,10 +68,7 @@ public class SwipeAction {
         PointOption startPoint = getStartPoint();
         PointOption endPoint = getEndPoint();
         while (elements.isEmpty()) {
-            touchAction.press(startPoint)
-                    .waitAction(new WaitOptions().withDuration(Duration.ofMillis(1500)))
-                    .moveTo(endPoint)
-                    .release().perform();
+            performSwipe(startPoint, endPoint);
         }
     }
 
