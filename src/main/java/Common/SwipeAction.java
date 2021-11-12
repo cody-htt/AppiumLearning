@@ -22,7 +22,15 @@ public class SwipeAction {
     private int yStartPoint;
     private int yEndPoint;
 
-    private SwipeAction(AndroidDriver<MobileElement> androidDriver, double offsetPercentage, boolean isVerticallySwipe) {
+    /*
+    Usage:
+    SwipeAction verticallySwipeUp = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage < 0.5;
+    SwipeAction verticallySwipeDown = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage > 0.5;
+    SwipeAction horizontallySwipeLeft = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage > 0.5;
+    SwipeAction horizontallySwipeRight = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage > 0.5;
+     */
+
+    public SwipeAction(AndroidDriver<MobileElement> androidDriver, double offsetPercentage, boolean isVerticallySwipe) {
         this(androidDriver);
         if (isVerticallySwipe) setVerticalSwipePoint(offsetPercentage);
         else setHorizontalSwipePoint(offsetPercentage);
