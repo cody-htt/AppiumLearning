@@ -36,13 +36,17 @@ public class SwipeAction {
         else setHorizontalSwipePoint(offsetPercentage);
     }
 
-    private SwipeAction(AndroidDriver<MobileElement> androidDriver) {
+    /*
+    Usage:
+    SwipeAction swipe = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage < 0.5;a
+     */
+    public SwipeAction(AndroidDriver<MobileElement> androidDriver) {
         this.androidDriver = androidDriver;
         this.mobileScreenSize = androidDriver.manage().window().getSize();
         this.touchAction = new TouchAction(androidDriver);
     }
 
-    public void SwipeToElement(By fromLocator, By toLocator) {
+    public void swipeToElement(By fromLocator, By toLocator) {
         ElementOption fromElement = new ElementOption().withElement(androidDriver.findElement(fromLocator));
         ElementOption toElement = new ElementOption().withElement(androidDriver.findElement(toLocator));
         performSwipe(fromElement, toElement);
