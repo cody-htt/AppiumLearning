@@ -14,6 +14,9 @@ import java.util.List;
 
 public class SwipeAction {
 
+    private final double SCREEN_SIZE_PERCENTAGE = 1.0D;
+    private final int MID_POINT_FACTOR = 2;
+
     private AndroidDriver<MobileElement> androidDriver;
     private Dimension mobileScreenSize;
     private TouchAction touchAction;
@@ -60,14 +63,14 @@ public class SwipeAction {
 
     /* The following methods will return the vertical points for swipe up action */
     private PointOption getSwipeUpStartPoint() {
-        int xStartPoint = mobileScreenSize.width / 2;
+        int xStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         int yStartPoint = ( int ) (mobileScreenSize.height * percentage);
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
     private PointOption getSwipeUpEndPoint() {
-        int xEndPoint = mobileScreenSize.width / 2;
-        int yEndPoint = ( int ) (mobileScreenSize.height * (1 - percentage));
+        int xEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
+        int yEndPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
@@ -94,13 +97,13 @@ public class SwipeAction {
 
     /* The following methods will return the vertical points for swipe up action */
     private PointOption getSwipeDownStartPoint() {
-        int xStartPoint = mobileScreenSize.width / 2;
-        int yStartPoint = ( int ) (mobileScreenSize.height * (1 - percentage));
+        int xStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
+        int yStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
     private PointOption getSwipeDownEndPoint() {
-        int xEndPoint = mobileScreenSize.width / 2;
+        int xEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         int yEndPoint = ( int ) (mobileScreenSize.height * percentage);
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
@@ -129,13 +132,13 @@ public class SwipeAction {
     /* The following methods will return the vertical points for swipe up action */
     private PointOption getSwipeToLeftStartPoint() {
         int xStartPoint = ( int ) (mobileScreenSize.height * percentage);
-        int yStartPoint = mobileScreenSize.width / 2;
+        int yStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
     private PointOption getSwipeToLeftEndPoint() {
-        int xEndPoint = ( int ) (mobileScreenSize.height * (1 - percentage));
-        int yEndPoint = mobileScreenSize.width / 2;
+        int xEndPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
+        int yEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
@@ -162,18 +165,18 @@ public class SwipeAction {
 
     /* The following methods will return the vertical points for swipe to right action */
     private PointOption getSwipeToRightStartPoint() {
-        int xStartPoint = ( int ) (mobileScreenSize.height * (1 - percentage));
-        int yStartPoint = mobileScreenSize.width / 2;
+        int xStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
+        int yStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
     private PointOption getSwipeToRightEndPoint() {
         int xEndPoint = ( int ) (mobileScreenSize.height * percentage);
-        int yEndPoint = mobileScreenSize.width / 2;
+        int yEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
-    /**/
+    /* This method will simply perform a swipe action */
     private void performSwipe(PointOption startPoint, PointOption endPoint) {
         touchAction.press(startPoint)
                 .waitAction(new WaitOptions().withDuration(Duration.ofMillis(1500)))
