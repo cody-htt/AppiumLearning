@@ -2,7 +2,7 @@ package Pages.PageObject;
 
 import Pages.Abstract.AbstractPage;
 import Data.LoginData;
-import Locators.PageLoginElem;
+import Pages.Locators.PageLoginElem;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
