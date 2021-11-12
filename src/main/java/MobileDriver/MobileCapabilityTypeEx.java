@@ -1,4 +1,4 @@
-package MobileCapsEx;
+package MobileDriver;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 

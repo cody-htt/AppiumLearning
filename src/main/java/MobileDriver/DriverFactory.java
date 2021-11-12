@@ -1,6 +1,5 @@
 package MobileDriver;
 
-import MobileCapsEx.MobileCapabilityTypeEx;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -40,7 +39,6 @@ public class DriverFactory {
     }
 
     public static AndroidDriver<MobileElement> getAndroidDriver() {
-
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME , "Android");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME , "UiAutomator2");
@@ -52,7 +50,7 @@ public class DriverFactory {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT , 120_000);
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT , 120);
         AndroidDriver<MobileElement> androidDriver = new AndroidDriver<>(appiumServer.getUrl() , desiredCapabilities);
-        androidDriver.manage().timeouts().implicitlyWait(15L, TimeUnit.SECONDS);
+        androidDriver.manage().timeouts().implicitlyWait(20L , TimeUnit.SECONDS);
 
         System.out.println("Session ID: " + androidDriver.getSessionId());
         return androidDriver;

@@ -3,7 +3,7 @@ package Locators;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
-public class PageLoginLocator {
+public class PageLoginElem {
     public final static By XPATH_LABEL_LOGIN = MobileBy.xpath("//android.widget.Button[@content-desc='Login']");
     public final static By XPATH_LOGIN_FORM = MobileBy.xpath("//android.view.ViewGroup" +
             "[@content-desc='button-login-container']/android.view.ViewGroup/android.widget.TextView");
@@ -14,7 +14,8 @@ public class PageLoginLocator {
     public final static By XPATH_INPUT_CONFIRM_PASSWORD = MobileBy.xpath("//android.widget.EditText[@content-desc='input-repeat-password']");
     public final static By XPATH_BTN_LOGIN = MobileBy.xpath("//android.view.ViewGroup[@content-desc='button-LOGIN']");
     public final static By XPATH_BTN_SIGN_UP = MobileBy.xpath("//android.view.ViewGroup[@content-desc='button-SIGN UP']");
-    public final static By XPATH_CONFIRM_PW_ERROR = MobileBy.xpath("//android.widget.ScrollView[@content-desc='Login-screen']/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView[3]");
+    public final static By XPATH_CONFIRM_PW_ERROR = MobileBy.xpath("//android.widget.ScrollView" +
+            "[@content-desc='Login-screen']/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.TextView[3]");
     public final static By ID_ALERT_BOX_TEMPLATE = MobileBy.id("android:id/title_template");
     public final static By ID_ALERT_TITLE = MobileBy.id("android:id/alertTitle");
     public final static By ID_ALERT_MSG = MobileBy.id("android:id/message");
