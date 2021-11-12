@@ -26,8 +26,8 @@ public class SwipeAction {
     Usage:
     SwipeAction verticallySwipeUp = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage < 0.5;
     SwipeAction verticallySwipeDown = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage > 0.5;
-    SwipeAction horizontallySwipeLeft = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage > 0.5;
-    SwipeAction horizontallySwipeRight = new SwipeAction(androidDriver, offsetPercentage, true) if offsetPercentage > 0.5;
+    SwipeAction horizontallySwipeLeft = new SwipeAction(androidDriver, offsetPercentage, false) if offsetPercentage > 0.5;
+    SwipeAction horizontallySwipeRight = new SwipeAction(androidDriver, offsetPercentage, false) if offsetPercentage > 0.5;
      */
 
     public SwipeAction(AndroidDriver<MobileElement> androidDriver, double offsetPercentage, boolean isVerticallySwipe) {
