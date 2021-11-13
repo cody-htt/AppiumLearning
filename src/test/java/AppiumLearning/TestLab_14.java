@@ -5,7 +5,7 @@ import Pages.PageObject.LoginPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class TestLoginPage {
+public class TestLab_14 {
 
     public static void main(String[] args) {
 

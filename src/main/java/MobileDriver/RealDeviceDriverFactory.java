@@ -40,16 +40,16 @@ public class RealDeviceDriverFactory {
 
     public static AndroidDriver<MobileElement> getAndroidDriver() {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME , "Android");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME , "UiAutomator2");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME , "S6 Edge");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID , "05157df58940201b");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE , "com.wdiodemoapp");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY , "com.wdiodemoapp.MainActivity");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT , 120_000);
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT , 120);
-        AndroidDriver<MobileElement> androidDriver = new AndroidDriver<>(appiumServer.getUrl() , desiredCapabilities);
-        androidDriver.manage().timeouts().implicitlyWait(5L , TimeUnit.SECONDS);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "Android");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "S6 Edge");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "05157df58940201b");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
+        AndroidDriver<MobileElement> androidDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
+        androidDriver.manage().timeouts().implicitlyWait(5L, TimeUnit.SECONDS);
 
         System.out.println("Session ID: " + androidDriver.getSessionId());
         return androidDriver;
