@@ -35,4 +35,9 @@ public abstract class AbstractPage {
         return elements != null;
     }
 
+    protected boolean isElementNotPresent(By locator) {
+        List<MobileElement> elements = androidDriver.findElements(locator);
+        return elements == null;
+    }
+
 }

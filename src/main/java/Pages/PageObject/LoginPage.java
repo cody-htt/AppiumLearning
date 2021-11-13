@@ -79,7 +79,7 @@ public class LoginPage extends AbstractPage {
     }
 
     public boolean verifySignUpFail() {
-        return !isElementPresent(PageLoginElem.ID_ALERT_BOX_TEMPLATE) &&
+        return (!isElementNotPresent(PageLoginElem.ID_ALERT_BOX_TEMPLATE)) &&
                 getElementText(PageLoginElem.XPATH_CONFIRM_PW_ERROR)
                         .equalsIgnoreCase(PageLoginElem.EXPECTED_CONFIRM_PASSWORD_ER_MSG);
     }
