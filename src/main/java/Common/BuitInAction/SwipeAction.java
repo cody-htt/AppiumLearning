@@ -22,12 +22,6 @@ public class SwipeAction {
     private AndroidDriver<MobileElement> androidDriver;
     private Dimension mobileScreenSize;
     private TouchAction touchAction;
-    private double percentage;
-
-    public SwipeAction(AndroidDriver<MobileElement> androidDriver, double percentage, boolean isVerticallySwipe) {
-        this(androidDriver);
-        this.percentage = percentage;
-    }
 
     public SwipeAction(AndroidDriver<MobileElement> androidDriver) {
         this.androidDriver = androidDriver;
@@ -43,136 +37,136 @@ public class SwipeAction {
     }
 
     /* The following methods perform swipe up action */
-    public void swipeUpUntilElementFound(By locator, int maxSwipeTimes) {
+    public void swipeUpUntilElementFound(By locator, double percentage, int maxSwipeTimes) {
         List<MobileElement> elements = androidDriver.findElements(locator);
         int swipeTime = 0;
-        PointOption startPoint = getSwipeUpStartPoint();
-        PointOption endPoint = getSwipeUpEndPoint();
+        PointOption startPoint = getSwipeUpStartPoint(percentage);
+        PointOption endPoint = getSwipeUpEndPoint(percentage);
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
             performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
 
-    public void swipeUpUntilElementFound(By locator) {
+    public void swipeUpUntilElementFound(By locator, double percentage) {
         List<MobileElement> elements = androidDriver.findElements(locator);
-        PointOption startPoint = getSwipeUpStartPoint();
-        PointOption endPoint = getSwipeUpEndPoint();
+        PointOption startPoint = getSwipeUpStartPoint(percentage);
+        PointOption endPoint = getSwipeUpEndPoint(percentage);
         while (elements.isEmpty()) {
             performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
     /* The following methods will return the vertical points for swipe up action */
-    private PointOption getSwipeUpStartPoint() {
+    private PointOption getSwipeUpStartPoint(double percentage) {
         int xStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         int yStartPoint = ( int ) (mobileScreenSize.height * percentage);
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
-    private PointOption getSwipeUpEndPoint() {
+    private PointOption getSwipeUpEndPoint(double percentage) {
         int xEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         int yEndPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
     /* The following methods perform swipe down action */
-    public void swipeDownUntilElementFound(By locator, int maxSwipeTimes) {
+    public void swipeDownUntilElementFound(By locator, double percentage, int maxSwipeTimes) {
         List<MobileElement> elements = androidDriver.findElements(locator);
         int swipeTime = 0;
-        PointOption startPoint = getSwipeDownStartPoint();
-        PointOption endPoint = getSwipeDownEndPoint();
+        PointOption startPoint = getSwipeDownStartPoint(percentage);
+        PointOption endPoint = getSwipeDownEndPoint(percentage);
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
             performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
 
-    public void swipeDownUntilElementFound(By locator) {
+    public void swipeDownUntilElementFound(By locator, double percentage) {
         List<MobileElement> elements = androidDriver.findElements(locator);
-        PointOption startPoint = getSwipeDownStartPoint();
-        PointOption endPoint = getSwipeDownEndPoint();
+        PointOption startPoint = getSwipeDownStartPoint(percentage);
+        PointOption endPoint = getSwipeDownEndPoint(percentage);
         while (elements.isEmpty()) {
             performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
     /* The following methods will return the vertical points for swipe up action */
-    private PointOption getSwipeDownStartPoint() {
+    private PointOption getSwipeDownStartPoint(double percentage) {
         int xStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         int yStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
-    private PointOption getSwipeDownEndPoint() {
+    private PointOption getSwipeDownEndPoint(double percentage) {
         int xEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         int yEndPoint = ( int ) (mobileScreenSize.height * percentage);
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
     /* The following methods perform swipe to left action */
-    public void swipeLeftUntilElementFound(By locator, int maxSwipeTimes) {
+    public void swipeLeftUntilElementFound(By locator, double percentage, int maxSwipeTimes) {
         List<MobileElement> elements = androidDriver.findElements(locator);
         int swipeTime = 0;
-        PointOption startPoint = getSwipeToLeftStartPoint();
-        PointOption endPoint = getSwipeToLeftEndPoint();
+        PointOption startPoint = getSwipeToLeftStartPoint(percentage);
+        PointOption endPoint = getSwipeToLeftEndPoint(percentage);
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
             performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
 
-    public void swipeLeftUntilElementFound(By locator) {
+    public void swipeLeftUntilElementFound(By locator, double percentage) {
         List<MobileElement> elements = androidDriver.findElements(locator);
-        PointOption startPoint = getSwipeToLeftStartPoint();
-        PointOption endPoint = getSwipeToLeftEndPoint();
+        PointOption startPoint = getSwipeToLeftStartPoint(percentage);
+        PointOption endPoint = getSwipeToLeftEndPoint(percentage);
         while (elements.isEmpty()) {
             performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
     /* The following methods will return the vertical points for swipe up action */
-    private PointOption getSwipeToLeftStartPoint() {
+    private PointOption getSwipeToLeftStartPoint(double percentage) {
         int xStartPoint = ( int ) (mobileScreenSize.height * percentage);
         int yStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
-    private PointOption getSwipeToLeftEndPoint() {
+    private PointOption getSwipeToLeftEndPoint(double percentage) {
         int xEndPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
         int yEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
     /* The following methods perform swipe to right action */
-    public void swipeRightUntilElementFound(By locator, int maxSwipeTimes) {
+    public void swipeRightUntilElementFound(By locator, double percentage, int maxSwipeTimes) {
         List<MobileElement> elements = androidDriver.findElements(locator);
         int swipeTime = 0;
-        PointOption startPoint = getSwipeToRightStartPoint();
-        PointOption endPoint = getSwipeToRightEndPoint();
+        PointOption startPoint = getSwipeToRightStartPoint(percentage);
+        PointOption endPoint = getSwipeToRightEndPoint(percentage);
         while ((swipeTime < maxSwipeTimes) && elements.isEmpty()) {
             performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
             swipeTime++;
         }
     }
 
-    public void swipeRightUntilElementFound(By locator) {
+    public void swipeRightUntilElementFound(By locator, double percentage) {
         List<MobileElement> elements = androidDriver.findElements(locator);
-        PointOption startPoint = getSwipeToRightStartPoint();
-        PointOption endPoint = getSwipeToRightEndPoint();
+        PointOption startPoint = getSwipeToRightStartPoint(percentage);
+        PointOption endPoint = getSwipeToRightEndPoint(percentage);
         while (elements.isEmpty()) {
             performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
         }
     }
 
     /* The following methods will return the vertical points for swipe to right action */
-    private PointOption getSwipeToRightStartPoint() {
+    private PointOption getSwipeToRightStartPoint(double percentage) {
         int xStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
         int yStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
-    private PointOption getSwipeToRightEndPoint() {
+    private PointOption getSwipeToRightEndPoint(double percentage) {
         int xEndPoint = ( int ) (mobileScreenSize.height * percentage);
         int yEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
