@@ -125,6 +125,28 @@ public class SwipeAction {
         swipeUntilElementFound(locator, startPoint, endPoint);
     }
 
+    /* The following methods will return the vertical points for swipe to right action */
+    private PointOption getSwipeToRightStartPoint(double percentage) {
+        int xStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
+        int yStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
+        return new PointOption().withCoordinates(xStartPoint, yStartPoint);
+    }
+
+    private PointOption getSwipeToRightEndPoint(double percentage) {
+        int xEndPoint = ( int ) (mobileScreenSize.height * percentage);
+        int yEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
+        return new PointOption().withCoordinates(xEndPoint, yEndPoint);
+    }
+
+    /* This method will simply perform a swipe action */
+    private void performSwipe(PointOption startPoint, PointOption endPoint, int waitTime) {
+        touchAction.press(startPoint)
+                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(waitTime)))
+                .moveTo(endPoint)
+                .release().perform();
+    }
+
+    /* Common method */
     private void swipeUntilElementFound(By locator, PointOption startPoint, PointOption endPoint) {
         int shortWaitTime = 800;
         boolean continueToSwipe = true;
@@ -148,26 +170,5 @@ public class SwipeAction {
     private boolean isElementFound(By locator) {
         List<MobileElement> elements = androidDriver.findElements(locator);
         return elements.isEmpty();
-    }
-
-    /* The following methods will return the vertical points for swipe to right action */
-    private PointOption getSwipeToRightStartPoint(double percentage) {
-        int xStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
-        int yStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
-        return new PointOption().withCoordinates(xStartPoint, yStartPoint);
-    }
-
-    private PointOption getSwipeToRightEndPoint(double percentage) {
-        int xEndPoint = ( int ) (mobileScreenSize.height * percentage);
-        int yEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
-        return new PointOption().withCoordinates(xEndPoint, yEndPoint);
-    }
-
-    /* This method will simply perform a swipe action */
-    private void performSwipe(PointOption startPoint, PointOption endPoint, int waitTime) {
-        touchAction.press(startPoint)
-                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(waitTime)))
-                .moveTo(endPoint)
-                .release().perform();
     }
 }
