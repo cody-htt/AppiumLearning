@@ -31,7 +31,7 @@ public class SwipeAction {
     public void swipeToElement(By fromLocator, By toLocator) {
         ElementOption fromElement = new ElementOption().withElement(androidDriver.findElement(fromLocator));
         ElementOption toElement = new ElementOption().withElement(androidDriver.findElement(toLocator));
-        int waitTime = 1500;
+        int waitTime = 1000;
         performSwipe(fromElement, toElement, waitTime);
     }
 
@@ -157,7 +157,7 @@ public class SwipeAction {
     }
 
     private void swipeUntilElementFound(By locator, int maxSwipeTimes, PointOption startPoint, PointOption endPoint) {
-        int longWaitTime = 1500;
+        int longWaitTime = 1200;
         int swipeTime = 0;
         boolean continueToSwipe = true;
         while ((swipeTime < maxSwipeTimes) && continueToSwipe) {

@@ -1,11 +1,11 @@
-package api_learning;
+package AppiumLearning;
 
 import MobileDriver.RealDeviceDriverFactory;
 import Pages.PageObject.LoginPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class TestDriverFactory {
+public class TestLoginPage {
 
     public static void main(String[] args) {
 
