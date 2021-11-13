@@ -16,8 +16,6 @@ public class SwipeAction {
 
     private final double SCREEN_SIZE_PERCENTAGE = 1.0D;
     private final int MID_POINT_FACTOR = 2;
-    private final int SHORT_WAIT_TIME = 800;
-    private final int LONG_WAIT_TIME = 1500;
 
     private AndroidDriver<MobileElement> androidDriver;
     private Dimension mobileScreenSize;
@@ -33,7 +31,8 @@ public class SwipeAction {
     public void swipeToElement(By fromLocator, By toLocator) {
         ElementOption fromElement = new ElementOption().withElement(androidDriver.findElement(fromLocator));
         ElementOption toElement = new ElementOption().withElement(androidDriver.findElement(toLocator));
-        performSwipe(fromElement, toElement, LONG_WAIT_TIME);
+        int waitTime = 1500;
+        performSwipe(fromElement, toElement, waitTime);
     }
 
     /* The following methods perform swipe up action */
@@ -127,19 +126,21 @@ public class SwipeAction {
     }
 
     private void swipeUntilElementFound(By locator, PointOption startPoint, PointOption endPoint) {
+        int shortWaitTime = 800;
         boolean continueToSwipe = true;
         while (continueToSwipe) {
             continueToSwipe = isElementFound(locator);
-            performSwipe(startPoint, endPoint, SHORT_WAIT_TIME);
+            performSwipe(startPoint, endPoint, shortWaitTime);
         }
     }
 
     private void swipeUntilElementFound(By locator, int maxSwipeTimes, PointOption startPoint, PointOption endPoint) {
+        int longWaitTime = 1500;
         int swipeTime = 0;
         boolean continueToSwipe = true;
         while ((swipeTime < maxSwipeTimes) && continueToSwipe) {
             continueToSwipe = isElementFound(locator);
-            performSwipe(startPoint, endPoint, LONG_WAIT_TIME);
+            performSwipe(startPoint, endPoint, longWaitTime);
             swipeTime++;
         }
     }
