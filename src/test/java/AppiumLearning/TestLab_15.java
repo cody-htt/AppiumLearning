@@ -1,7 +1,7 @@
 package AppiumLearning;
 
 import Common.BuitInAction.SwipeAction;
-import MobileDriver.RealDeviceDriverFactory;
+import Environment.Driver.RealDeviceDriverFactory;
 import Pages.Locators.FormPageElem;
 import Pages.Locators.SwipePageElem;
 import io.appium.java_client.MobileElement;
