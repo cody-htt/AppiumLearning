@@ -1,4 +1,4 @@
-package Environment.Driver;
+package MobileDriver;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -21,6 +21,8 @@ public class VirtualDeviceDriverFactory {
     public static void startAppiumServer() {
         AppiumServiceBuilder appiumServiceBuilder = new AppiumServiceBuilder();
         appiumServiceBuilder.withIPAddress("127.0.0.1").usingAnyFreePort();
+        /* Use Lambda Expression for automatically discovering compatible Chrome driver */
+        appiumServiceBuilder.withArgument(() -> "--allow-insecure", "chromedriver_autodownload");
         appiumServer = AppiumDriverLocalService.buildService(appiumServiceBuilder);
         appiumServer.start();
     }

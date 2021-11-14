@@ -1,4 +1,4 @@
-package Environment.Driver;
+package MobileDriver;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 

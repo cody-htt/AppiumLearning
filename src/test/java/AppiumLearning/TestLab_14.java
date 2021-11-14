@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import Environment.Driver.RealDeviceDriverFactory;
+import MobileDriver.RealDeviceDriverFactory;
 import Pages.PageObject.LoginPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;

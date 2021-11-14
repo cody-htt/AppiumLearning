@@ -1,5 +1,6 @@
-package Environment.Driver;
+package MobileDriver;
 
+import Environment.AndroidServerFlagEx;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -21,6 +22,8 @@ public class RealDeviceDriverFactory {
     public static void startAppiumServer() {
         AppiumServiceBuilder appiumServiceBuilder = new AppiumServiceBuilder();
         appiumServiceBuilder.withIPAddress("127.0.0.1").usingAnyFreePort();
+        /* Use AndroidServerFlagEx, extended from AndroidSeverFlag, for automatically discovering compatible Chrome driver */
+        appiumServiceBuilder.withArgument(AndroidServerFlagEx.ALLOW_INSECURE, "chromedriver_autodownload");
         appiumServer = AppiumDriverLocalService.buildService(appiumServiceBuilder);
         appiumServer.start();
     }
