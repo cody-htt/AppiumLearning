@@ -1,4 +1,4 @@
-package Data;
+package data;
 
 public class LoginData {
     public final static String EMAIL = "Tunghuynh@gmail.com";

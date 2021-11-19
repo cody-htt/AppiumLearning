@@ -1,4 +1,4 @@
-package Driver;
+package driver;
 
 import flags.AndroidServerFlagEx;
 import caps.MobileCapabilityTypeEx;

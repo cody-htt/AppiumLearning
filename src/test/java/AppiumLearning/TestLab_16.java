@@ -1,9 +1,9 @@
 package AppiumLearning;
 
 import utils.environment.Context;
-import Driver.RealDeviceDriverFactory;
-import models.Locators.WebviewElem;
-import models.PageObject.WebviewPage;
+import driver.RealDeviceDriverFactory;
+import models.locators.WebviewElem;
+import models.pages.WebviewPage;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
