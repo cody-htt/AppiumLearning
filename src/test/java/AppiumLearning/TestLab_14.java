@@ -42,6 +42,7 @@ public class TestLab_14 {
             else result_03 = "TC_003_Fail_SignUp_App is FAILED";
         }
 
+        androidDriver.closeApp();
         DriverFactoryRD.stopAppiumServer();
         System.out.println(result_01 + "\n" + result_02 + "\n" + result_03);
     }

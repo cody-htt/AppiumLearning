@@ -7,7 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class FormPage extends BasePageModel {
 
     public FormPage(AndroidDriver<MobileElement> androidDriver) {
-        this.androidDriver = androidDriver;
+        this.appiumDriver = androidDriver;
     }
 
 }

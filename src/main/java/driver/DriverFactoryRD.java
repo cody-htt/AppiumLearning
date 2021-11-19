@@ -1,7 +1,7 @@
 package driver;
 
-import flags.AndroidServerFlagEx;
 import caps.MobileCapabilityTypeEx;
+import flags.AndroidServerFlagEx;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -19,6 +19,7 @@ public class DriverFactoryRD {
     private static final String CURRENT_OS = System.getProperty("os.name").toLowerCase();
 
     private static AppiumDriverLocalService appiumServer;
+    private static AndroidDriver<MobileElement> appiumDriver;
 
     public static void startAppiumServer() {
         AppiumServiceBuilder appiumServiceBuilder = new AppiumServiceBuilder();
@@ -47,7 +48,7 @@ public class DriverFactoryRD {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "S6 Edge");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "192.168.0.31:5555");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "05157df58940201b");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);

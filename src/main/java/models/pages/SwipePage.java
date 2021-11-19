@@ -7,6 +7,6 @@ import io.appium.java_client.android.AndroidDriver;
 public class SwipePage extends BasePageModel {
 
     public SwipePage(AndroidDriver<MobileElement> androidDriver) {
-        this.androidDriver = androidDriver;
+        this.appiumDriver = androidDriver;
     }
 }

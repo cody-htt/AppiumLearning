@@ -7,7 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class WebviewPage extends BasePageModel {
 
     public WebviewPage(AndroidDriver<MobileElement> androidDriver) {
-        this.androidDriver = androidDriver;
+        this.appiumDriver = androidDriver;
     }
 
     public static class MenuItem {
