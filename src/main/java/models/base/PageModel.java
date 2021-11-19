@@ -1,7 +1,7 @@
 package models.base;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
@@ -13,10 +13,11 @@ import java.util.List;
 
 public class PageModel {
 
-    protected AndroidDriver<MobileElement> appiumDriver;
+    protected AppiumDriver<MobileElement> appiumDriver;
 
-    public PageModel() {
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
+    protected PageModel(AppiumDriver<MobileElement> appiumDriver) {
+        this.appiumDriver = appiumDriver;
+        PageFactory.initElements(new AppiumFieldDecorator(this.appiumDriver), this);
     }
 
     protected void waitForVisibility(MobileElement element) {
@@ -30,9 +31,19 @@ public class PageModel {
         return element.getAttribute(attribute);
     }
 
+    protected String getElementAttribute(By locator, String attribute) {
+        MobileElement element = appiumDriver.findElement(locator);
+        return getElementAttribute(element, attribute);
+    }
+
     protected void clickElement(MobileElement element) {
         waitForVisibility(element);
         element.click();
+    }
+
+    protected void clickElement(By locator) {
+        MobileElement element = appiumDriver.findElement(locator);
+        clickElement(element);
     }
 
     protected void sendKeysToElement(MobileElement element, String text) {
@@ -40,9 +51,19 @@ public class PageModel {
         element.sendKeys(text);
     }
 
+    protected void sendKeysToElement(By locator, String input) {
+        MobileElement element = appiumDriver.findElement(locator);
+        sendKeysToElement(element, input);
+    }
+
     protected void clearElementInputField(MobileElement element) {
         waitForVisibility(element);
         element.clear();
+    }
+
+    protected void clearElementInputField(By locator) {
+        MobileElement element = appiumDriver.findElement(locator);
+        clearElementInputField(element);
     }
 
     protected String getElementText(MobileElement element) {
@@ -50,39 +71,20 @@ public class PageModel {
         return element.getText();
     }
 
+    protected String getElementText(By locator) {
+        MobileElement element = appiumDriver.findElement(locator);
+        return getElementText(element);
+    }
+
     /* Interaction with element using By type */
-    protected void clickElementBy(By locator) {
-        MobileElement element = appiumDriver.findElement(locator);
-        waitForVisibility(element);
-        element.click();
+
+    private List<MobileElement> fetchElements(By locator) {
+        return appiumDriver.findElements(locator);
     }
 
-    protected void sendKeysToElementBy(By locator , String input) {
-        MobileElement element = appiumDriver.findElement(locator);
-        waitForVisibility(element);
-        element.sendKeys(input);
-    }
-
-    protected void clearElementInputFieldBy(By locator) {
-        MobileElement element = appiumDriver.findElement(locator);
-        waitForVisibility(element);
-        element.clear();
-    }
-
-    protected String getElementTextBy(By locator) {
-        MobileElement element = appiumDriver.findElement(locator);
-        waitForVisibility(element);
-        return element.getText();
-    }
-
-    protected boolean isElementPresentBy(By locator) {
+    protected boolean isElementPresent(By locator) {
         List<MobileElement> elements = appiumDriver.findElements(locator);
-        return elements != null;
-    }
-
-    protected boolean isElementNotPresentBy(By locator) {
-        List<MobileElement> elements = appiumDriver.findElements(locator);
-        return elements == null;
+        return elements.size() > 0;
     }
 
 }

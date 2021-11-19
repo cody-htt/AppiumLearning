@@ -3,13 +3,9 @@ package models.components.login_page_component;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Constant;
+import models.base.PageModel;
 
-public class LoginFormComponent {
+public class LoginFormComponent extends PageModel {
 
     @AndroidFindBy(accessibility = "input-email")
     private MobileElement emailInputField;
@@ -18,24 +14,21 @@ public class LoginFormComponent {
     @AndroidFindBy(accessibility = "button-LOGIN")
     private MobileElement loginBtn;
 
-    private final WebDriverWait wait;
-    private final AppiumDriver<MobileElement> appiumDriver;
-
     public LoginFormComponent(AppiumDriver<MobileElement> appiumDriver) {
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
-        wait = new WebDriverWait(appiumDriver, Constant.SHORT_WAIT_TIME);
-        this.appiumDriver = appiumDriver;
+        super(appiumDriver);
     }
 
     public LoginFormComponent inputEmailField(String email) {
         waitForVisibility(emailInputField);
+        clearElementInputField(emailInputField);
         emailInputField.sendKeys(email);
         return this;
     }
 
     public LoginFormComponent inputPasswordField(String password) {
         waitForVisibility(passwordField);
-        emailInputField.sendKeys(password);
+        clearElementInputField(passwordField);
+        passwordField.sendKeys(password);
         return this;
     }
 
@@ -45,8 +38,9 @@ public class LoginFormComponent {
         return new DialogComponent(appiumDriver);
     }
 
-    private void waitForVisibility(MobileElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+    public MobileElement loginBtnElem() {
+        waitForVisibility(loginBtn);
+        return loginBtn;
     }
 
 }
