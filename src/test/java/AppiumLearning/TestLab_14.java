@@ -33,8 +33,8 @@ public class TestLab_14 {
                     .inputPasswordField("12345678")
                     .clickOnLoginBtn();
 
-            if (dialogComponent.dialogTemplateElem().isDisplayed()) {
-                dialogComponent.dialogBtnElem().click();
+            if (dialogComponent.isDialogTemplateDisplay()) {
+                dialogComponent.clickDialogBtn();
                 result_01 = "TC_001_Login_App is PASSED";
             } else { result_01 = "TC_001_Login_App is FAILED"; }
         }
@@ -46,8 +46,8 @@ public class TestLab_14 {
                     .inputRepeatPwField("12345678")
                     .clickOnSignUpBtn();
 
-            if (dialogComponent.dialogTemplateElem().isDisplayed()) {
-                dialogComponent.dialogBtnElem().click();
+            if (dialogComponent.isDialogTemplateDisplay()) {
+                dialogComponent.clickDialogBtn();
                 result_02 = "TC_002_SignUp_App is PASSED";
             }
             else result_02 = "TC_002_SignUp_App is FAILED";

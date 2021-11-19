@@ -3,13 +3,9 @@ package models.components.login_page_component;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Constant;
+import models.base.PageModel;
 
-public class DialogComponent {
+public class DialogComponent extends PageModel {
 
     @AndroidFindBy(id = "android:id/title_template")
     private MobileElement dialogTemplate;
@@ -20,16 +16,13 @@ public class DialogComponent {
     @AndroidFindBy(id = "android:id/button1")
     private MobileElement dialogBtn;
 
-    private final WebDriverWait wait;
-
     public DialogComponent(AppiumDriver<MobileElement> appiumDriver) {
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
-        wait = new WebDriverWait(appiumDriver, Constant.SHORT_WAIT_TIME);
+        super(appiumDriver);
     }
 
-    public MobileElement dialogTemplateElem() {
+    public boolean isDialogTemplateDisplay() {
         waitForVisibility(dialogTemplate);
-        return dialogTemplate;
+        return dialogTemplate.isDisplayed();
     }
 
     public MobileElement dialogTitleElem() {
@@ -42,12 +35,8 @@ public class DialogComponent {
         return dialogMessage;
     }
 
-    public MobileElement dialogBtnElem() {
-        waitForVisibility(dialogBtn);
-        return dialogBtn;
+    public void clickDialogBtn() {
+        clickElement(dialogBtn);
     }
 
-    private void waitForVisibility(MobileElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
 }
