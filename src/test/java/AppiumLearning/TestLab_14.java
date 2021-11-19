@@ -1,9 +1,9 @@
 package AppiumLearning;
 
 import driver.DriverFactoryRD;
-import models.pages.LoginPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import models.pages.LoginPage;
 
 public class TestLab_14 {
 
