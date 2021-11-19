@@ -1,12 +1,12 @@
 package AppiumLearning;
 
-import utils.SwipeUtils;
 import driver.DriverFactoryRD;
-import models.pages.FormPageElem;
-import models.pages.SwipePageElem;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import models.pages.FormPageElem;
+import models.pages.SwipePageElem;
 import org.openqa.selenium.By;
+import utils.SwipeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
