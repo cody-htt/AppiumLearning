@@ -1,13 +1,11 @@
 package models.pages;
 
-import models.base.BasePageModel;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+import models.base.PageModel;
 
-public class FormPage extends BasePageModel {
+public class FormPage extends PageModel {
 
-    public FormPage(AndroidDriver<MobileElement> androidDriver) {
-        this.appiumDriver = androidDriver;
-    }
+    public FormPage(AppiumDriver<MobileElement> appiumDriver) { super(appiumDriver); }
 
 }

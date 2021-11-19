@@ -1,44 +1,67 @@
 package AppiumLearning;
 
 import driver.DriverFactoryRD;
-import models.pages.LoginPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import models.components.BottomNavBarComponent;
+import models.components.login_page_component.DialogComponent;
+import models.components.login_page_component.LoginFormComponent;
+import models.components.login_page_component.SignUpFormComponent;
+import models.pages.LoginPage;
 
 public class TestLab_14 {
+
+    private static String result_01 = null;
+    private static String result_02 = null;
+    private static String result_03 = null;
 
     public static void main(String[] args) {
 
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
         LoginPage loginPage = new LoginPage(androidDriver);
+        BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
+        LoginFormComponent loginFormComp = loginPage.loginFormComponent();
+        SignUpFormComponent signUpFormComp = loginPage.signUpFormComponent();
+        DialogComponent dialogComponent;
 
-        String result_01 = null;
-        String result_02 = null;
-        String result_03 = null;
+        bottomNavBarComp.clickOnLoginLabel();
 
-        loginPage.navigateToLoginPage();
+        if (loginPage.isLoginFormSelect()) {
+            dialogComponent = loginFormComp
+                    .inputEmailField("tung@email.com")
+                    .inputPasswordField("12345678")
+                    .clickOnLoginBtn();
 
-        if (loginPage.isLoginForm()) {
-            loginPage.fillUsrNameAndPwd();
-            loginPage.clickLoginBtn();
-
-            if (loginPage.verifyLoginSuccess()) result_01 = "TC_001_Login_App is PASSED";
-            else result_01 = "TC_001_Login_App is FAILED";
+            if (dialogComponent.dialogTemplateElem().isDisplayed()) {
+                dialogComponent.dialogBtnElem().click();
+                result_01 = "TC_001_Login_App is PASSED";
+            } else { result_01 = "TC_001_Login_App is FAILED"; }
         }
 
-        if (loginPage.isSignUpForm()) {
-            loginPage.fillUsrNameAndPwd();
-            loginPage.fillCorrectRepeatPassword();
-            loginPage.clickSignUpBtn();
+        if (loginPage.isSignUpFormSelect()) {
+            dialogComponent = signUpFormComp
+                    .inputEmailField("tung@email.com")
+                    .inputPasswordField("12345678")
+                    .inputRepeatPwField("12345678")
+                    .clickOnSignUpBtn();
 
-            if (loginPage.verifySignUpSuccess()) result_02 = "TC_002_SignUp_App is PASSED";
+            if (dialogComponent.dialogTemplateElem().isDisplayed()) {
+                dialogComponent.dialogBtnElem().click();
+                result_02 = "TC_002_SignUp_App is PASSED";
+            }
             else result_02 = "TC_002_SignUp_App is FAILED";
 
-            loginPage.fillWrongRepeatPassword();
-            loginPage.clickSignUpBtn();
+            signUpFormComp
+                    .inputEmailField("tung@email.com")
+                    .inputPasswordField("12345678")
+                    .inputRepeatPwField("1234")
+                    .clickOnSignUpBtn();
 
-            if (loginPage.verifySignUpFail()) result_03 = "TC_003_Fail_SignUp_App is PASSED";
+            String errPasswordConfirm = signUpFormComp.errRepeatPwMessageElem().getText();
+            if (errPasswordConfirm.equalsIgnoreCase("Please enter the same password")) {
+                result_03 = "TC_003_Fail_SignUp_App is PASSED";
+            }
             else result_03 = "TC_003_Fail_SignUp_App is FAILED";
         }
 

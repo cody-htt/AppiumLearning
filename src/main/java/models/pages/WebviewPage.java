@@ -1,14 +1,12 @@
 package models.pages;
 
-import models.base.BasePageModel;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+import models.base.PageModel;
 
-public class WebviewPage extends BasePageModel {
+public class WebviewPage extends PageModel {
 
-    public WebviewPage(AndroidDriver<MobileElement> androidDriver) {
-        this.appiumDriver = androidDriver;
-    }
+    public WebviewPage(AppiumDriver<MobileElement> appiumDriver) { super(appiumDriver); }
 
     public static class MenuItem {
         private final String label;
@@ -21,7 +19,7 @@ public class WebviewPage extends BasePageModel {
 
         @Override
         public String toString() {
-            return "[Label: " + label + " | " + "Href: " + href +  "]";
+            return "[Label: " + label + " | " + "Href: " + href + "]";
         }
     }
 }

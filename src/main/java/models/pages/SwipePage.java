@@ -1,12 +1,10 @@
 package models.pages;
 
-import models.base.BasePageModel;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+import models.base.PageModel;
 
-public class SwipePage extends BasePageModel {
+public class SwipePage extends PageModel {
 
-    public SwipePage(AndroidDriver<MobileElement> androidDriver) {
-        this.appiumDriver = androidDriver;
-    }
+    public SwipePage(AppiumDriver<MobileElement> appiumDriver) { super(appiumDriver); }
 }

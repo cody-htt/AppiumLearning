@@ -1,14 +1,13 @@
 package AppiumLearning;
 
-import environments.Context;
 import driver.DriverFactoryRD;
-import models.pages.WebviewElem;
-import models.pages.WebviewPage;
+import environments.Context;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import models.pages.WebviewElem;
+import models.pages.WebviewPage;
 import org.apache.commons.lang3.StringUtils;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -19,8 +18,6 @@ public class TestLab_16 {
     public static void main(String[] args) {
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
-
-        WebDriverWait wait = new WebDriverWait(androidDriver, 10);
 
         MobileElement Webview = androidDriver.findElement(WebviewElem.WEBVIEW_LABEL_BTN);
         Webview.click();
