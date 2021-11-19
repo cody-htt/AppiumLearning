@@ -1,4 +1,4 @@
-package models.locators;
+package models.pages;
 
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;

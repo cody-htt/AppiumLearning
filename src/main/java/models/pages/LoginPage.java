@@ -1,10 +1,9 @@
 package models.pages;
 
-import models.components.AbstractPage;
 import data.LoginData;
-import models.locators.PageLoginElem;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import models.components.AbstractPage;
 
 public class LoginPage extends AbstractPage {
 

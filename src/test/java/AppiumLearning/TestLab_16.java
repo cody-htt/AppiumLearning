@@ -2,7 +2,7 @@ package AppiumLearning;
 
 import utils.environment.Context;
 import driver.RealDeviceDriverFactory;
-import models.locators.WebviewElem;
+import models.pages.WebviewElem;
 import models.pages.WebviewPage;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
