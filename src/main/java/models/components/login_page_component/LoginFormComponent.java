@@ -19,22 +19,19 @@ public class LoginFormComponent extends PageModel {
     }
 
     public LoginFormComponent inputEmailField(String email) {
-        waitForVisibility(emailInputField);
         clearElementInputField(emailInputField);
-        emailInputField.sendKeys(email);
+        sendKeysToElement(emailInputField, email);
         return this;
     }
 
     public LoginFormComponent inputPasswordField(String password) {
-        waitForVisibility(passwordField);
         clearElementInputField(passwordField);
-        passwordField.sendKeys(password);
+        sendKeysToElement(passwordField, password);
         return this;
     }
 
     public DialogComponent clickOnLoginBtn() {
-        waitForVisibility(loginBtn);
-        loginBtn.click();
+        clickElement(loginBtn);
         return new DialogComponent(appiumDriver);
     }
 
@@ -42,5 +39,4 @@ public class LoginFormComponent extends PageModel {
         waitForVisibility(loginBtn);
         return loginBtn;
     }
-
 }

@@ -23,29 +23,25 @@ public class SignUpFormComponent extends PageModel {
     }
 
     public SignUpFormComponent inputEmailField(String email) {
-        waitForVisibility(emailInputField);
         clearElementInputField(emailInputField);
-        emailInputField.sendKeys(email);
+        sendKeysToElement(emailInputField, email);
         return this;
     }
 
     public SignUpFormComponent inputPasswordField(String password) {
-        waitForVisibility(passwordField);
         clearElementInputField(passwordField);
-        passwordField.sendKeys(password);
+        sendKeysToElement(passwordField, password);
         return this;
     }
 
     public SignUpFormComponent inputRepeatPwField(String password) {
-        waitForVisibility(repeatPasswordField);
         clearElementInputField(repeatPasswordField);
-        repeatPasswordField.sendKeys(password);
+        sendKeysToElement(repeatPasswordField, password);
         return this;
     }
 
     public DialogComponent clickOnSignUpBtn() {
-        waitForVisibility(signUpBtn);
-        signUpBtn.click();
+        clickElement(signUpBtn);
         return new DialogComponent(appiumDriver);
     }
 
