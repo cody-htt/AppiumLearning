@@ -1,5 +1,6 @@
-package MobileDriver;
+package Driver;
 
+import caps.MobileCapabilityTypeEx;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;

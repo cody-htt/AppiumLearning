@@ -1,4 +1,4 @@
-package Environment;
+package utils.environment;
 
 public enum Context {
     NATIVE("NATIVE_APP"),

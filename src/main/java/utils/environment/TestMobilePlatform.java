@@ -1,4 +1,4 @@
-package Environment;
+package utils.environment;
 
 public enum TestMobilePlatform {
     ANDROID("Android platform"),

@@ -1,9 +1,9 @@
 package AppiumLearning;
 
-import Common.BuitInAction.SwipeAction;
-import MobileDriver.RealDeviceDriverFactory;
-import Pages.Locators.FormPageElem;
-import Pages.Locators.SwipePageElem;
+import utils.touchUtils.SwipeAction;
+import Driver.RealDeviceDriverFactory;
+import models.Locators.FormPageElem;
+import models.Locators.SwipePageElem;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package Environment;
+package flags;
 
 import io.appium.java_client.service.local.flags.ServerArgument;
 

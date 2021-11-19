@@ -1,6 +1,6 @@
-package Pages.PageObject;
+package models.PageObject;
 
-import Pages.Abstract.AbstractPage;
+import models.Abstract.AbstractPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 

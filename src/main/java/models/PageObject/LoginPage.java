@@ -1,8 +1,8 @@
-package Pages.PageObject;
+package models.PageObject;
 
-import Pages.Abstract.AbstractPage;
+import models.Abstract.AbstractPage;
 import Data.LoginData;
-import Pages.Locators.PageLoginElem;
+import models.Locators.PageLoginElem;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
