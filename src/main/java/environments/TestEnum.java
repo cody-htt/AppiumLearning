@@ -1,4 +1,4 @@
-package utils.environment;
+package environments;
 
 public class TestEnum {
 
