@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import utils.environment.Context;
+import environments.Context;
 import driver.DriverFactoryRD;
 import models.pages.WebviewElem;
 import models.pages.WebviewPage;

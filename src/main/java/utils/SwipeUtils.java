@@ -1,4 +1,4 @@
-package utils.touchUtils;
+package utils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -12,7 +12,7 @@ import org.openqa.selenium.Dimension;
 import java.time.Duration;
 import java.util.List;
 
-public class SwipeAction {
+public class SwipeUtils {
 
     private final double SCREEN_SIZE_PERCENTAGE = 1.0D;
     private final int MID_POINT_FACTOR = 2;
@@ -21,7 +21,7 @@ public class SwipeAction {
     private Dimension mobileScreenSize;
     private TouchAction touchAction;
 
-    public SwipeAction(AppiumDriver<MobileElement> mobileDriver) {
+    public SwipeUtils(AppiumDriver<MobileElement> mobileDriver) {
         this.mobileDriver = mobileDriver;
         this.mobileScreenSize = mobileDriver.manage().window().getSize();
         this.touchAction = new TouchAction(mobileDriver);

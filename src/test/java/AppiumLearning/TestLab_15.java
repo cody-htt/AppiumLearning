@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import utils.touchUtils.SwipeAction;
+import utils.SwipeUtils;
 import driver.DriverFactoryRD;
 import models.pages.FormPageElem;
 import models.pages.SwipePageElem;
@@ -19,12 +19,12 @@ public class TestLab_15 {
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
 
         /* Test Swipe Action on Form Page */
-        SwipeAction swipeAction = new SwipeAction(androidDriver);
+        SwipeUtils swipeUtils = new SwipeUtils(androidDriver);
 
         androidDriver.findElement(FormPageElem.ACC_ID_LABEL_FORM_BTN).click();
-        swipeAction.swipeToElement(FormPageElem.ACC_ID_SWITCH_TEXT, FormPageElem.ACC_ID_INPUT_FIELD_RESULT);
-        swipeAction.swipeUpUntilElementFound(FormPageElem.XPATH_FORM_LABEL, 0.2, 3);
-        swipeAction.swipeDownUntilElementFound(FormPageElem.ACC_ID_ACTIVE_BTN, 0.2);
+        swipeUtils.swipeToElement(FormPageElem.ACC_ID_SWITCH_TEXT, FormPageElem.ACC_ID_INPUT_FIELD_RESULT);
+        swipeUtils.swipeUpUntilElementFound(FormPageElem.XPATH_FORM_LABEL, 0.2, 3);
+        swipeUtils.swipeDownUntilElementFound(FormPageElem.ACC_ID_ACTIVE_BTN, 0.2);
 
         /* Test Swipe Action on Swipe Page */
         androidDriver.findElement(SwipePageElem.ACC_ID_LABEL_SWIPE_BTN).click();
@@ -40,7 +40,7 @@ public class TestLab_15 {
 
         cardLocatorList.forEach(locator -> {
             cardTextList.add(androidDriver.findElement(locator).getText());
-            swipeAction.swipeToLeft(0.7);
+            swipeUtils.swipeToLeft(0.7);
         });
 
         AtomicInteger index = new AtomicInteger(0);
@@ -51,7 +51,7 @@ public class TestLab_15 {
             index.incrementAndGet();
         });
 
-        swipeAction.swipeUpUntilElementFound(SwipePageElem.ACC_ID_LOGO, 0.7);
+        swipeUtils.swipeUpUntilElementFound(SwipePageElem.ACC_ID_LOGO, 0.7);
         MobileElement textUnderLogo = androidDriver.findElement(SwipePageElem.XPATH_TEXT_LOGO);
         if (textUnderLogo.isDisplayed()) {
             result.add("Text [" + textUnderLogo.getText() + "] is found");
