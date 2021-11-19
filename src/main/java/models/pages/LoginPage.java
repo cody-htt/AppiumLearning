@@ -3,14 +3,25 @@ package models.pages;
 import data.LoginData;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import models.base.BasePageModel;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import models.base.PageModel;
+import models.components.login_page_component.LoginFormComponent;
+import models.components.login_page_component.SignUpFormComponent;
 
-public class LoginPage extends BasePageModel {
+public class LoginPage extends PageModel {
 
-    public LoginPage(AndroidDriver<MobileElement> androidDriver) {
-        this.appiumDriver = androidDriver;
-    }
+    @AndroidFindBy(accessibility = "button-login-container")
+    private MobileElement loginForm;
+    @AndroidFindBy(accessibility = "button-sign-up-container")
+    private MobileElement signUpForm;
 
+    private LoginFormComponent loginFormComponent;
+    private SignUpFormComponent signUpFormComponent;
+
+    public LoginPage(AndroidDriver<MobileElement> androidDriver) { this.appiumDriver = androidDriver; }
+
+
+    /* ------------------------- Old code ------------------------- */
     public void navigateToLoginPage() {
         clickElementBy(PageLoginElem.XPATH_LABEL_LOGIN);
     }

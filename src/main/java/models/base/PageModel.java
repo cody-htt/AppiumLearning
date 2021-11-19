@@ -2,21 +2,29 @@ package models.base;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Constant;
 
 import java.util.List;
 
-public abstract class BasePageModel {
+public class PageModel {
 
     protected AndroidDriver<MobileElement> appiumDriver;
 
+    public PageModel() {
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
+    }
+
     protected void waitForVisibility(MobileElement element) {
-        WebDriverWait wait = new WebDriverWait(appiumDriver, 10);
+        WebDriverWait wait = new WebDriverWait(appiumDriver, Constant.SHORT_WAIT_TIME);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    /* Interaction with element using MobileElement type */
     protected String getElementAttribute(MobileElement element, String attribute) {
         waitForVisibility(element);
         return element.getAttribute(attribute);
@@ -42,6 +50,7 @@ public abstract class BasePageModel {
         return element.getText();
     }
 
+    /* Interaction with element using By type */
     protected void clickElementBy(By locator) {
         MobileElement element = appiumDriver.findElement(locator);
         waitForVisibility(element);

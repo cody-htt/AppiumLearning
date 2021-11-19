@@ -2,9 +2,9 @@ package models.pages;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import models.base.BasePageModel;
+import models.base.PageModel;
 
-public class WebviewPage extends BasePageModel {
+public class WebviewPage extends PageModel {
 
     public WebviewPage(AndroidDriver<MobileElement> androidDriver) {
         this.appiumDriver = androidDriver;
