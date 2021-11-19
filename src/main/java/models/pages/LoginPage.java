@@ -3,9 +3,9 @@ package models.pages;
 import data.LoginData;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import models.components.AbstractPage;
+import models.base.BasePageModel;
 
-public class LoginPage extends AbstractPage {
+public class LoginPage extends BasePageModel {
 
     public LoginPage(AndroidDriver<MobileElement> androidDriver) {
         this.androidDriver = androidDriver;

@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import driver.RealDeviceDriverFactory;
+import driver.DriverFactoryRD;
 import models.pages.LoginPage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -9,8 +9,8 @@ public class TestLab_14 {
 
     public static void main(String[] args) {
 
-        RealDeviceDriverFactory.startAppiumServer();
-        AndroidDriver<MobileElement> androidDriver = RealDeviceDriverFactory.getAndroidDriver();
+        DriverFactoryRD.startAppiumServer();
+        AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
         LoginPage loginPage = new LoginPage(androidDriver);
 
         String result_01 = null;
@@ -42,7 +42,7 @@ public class TestLab_14 {
             else result_03 = "TC_003_Fail_SignUp_App is FAILED";
         }
 
-        RealDeviceDriverFactory.stopAppiumServer();
+        DriverFactoryRD.stopAppiumServer();
         System.out.println(result_01 + "\n" + result_02 + "\n" + result_03);
     }
 }

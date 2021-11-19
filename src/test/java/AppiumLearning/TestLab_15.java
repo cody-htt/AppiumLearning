@@ -1,7 +1,7 @@
 package AppiumLearning;
 
 import utils.touchUtils.SwipeAction;
-import driver.RealDeviceDriverFactory;
+import driver.DriverFactoryRD;
 import models.pages.FormPageElem;
 import models.pages.SwipePageElem;
 import io.appium.java_client.MobileElement;
@@ -15,8 +15,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestLab_15 {
 
     public static void main(String[] args) {
-        RealDeviceDriverFactory.startAppiumServer();
-        AndroidDriver<MobileElement> androidDriver = RealDeviceDriverFactory.getAndroidDriver();
+        DriverFactoryRD.startAppiumServer();
+        AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
 
         /* Test Swipe Action on Form Page */
         SwipeAction swipeAction = new SwipeAction(androidDriver);
@@ -59,7 +59,7 @@ public class TestLab_15 {
             result.add("Text is not found");
         }
 
-        RealDeviceDriverFactory.stopAppiumServer();
+        DriverFactoryRD.stopAppiumServer();
 
         result.forEach(System.out :: println);
     }

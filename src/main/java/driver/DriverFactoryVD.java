@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class VirtualDeviceDriverFactory {
+public class DriverFactoryVD {
 
     private static final String KILL_NODE_WINDOW_CMD = "taskkill /F /IM node.exe";
     private static final String KILL_NODE_LINUX_CMD = "killall node";

@@ -1,4 +1,4 @@
-package models.components;
+package models.base;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 import java.util.List;
 
-public abstract class AbstractPage {
+public abstract class BasePageModel {
 
     protected AndroidDriver<MobileElement> androidDriver;
 
