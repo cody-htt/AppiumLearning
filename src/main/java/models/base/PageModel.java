@@ -5,7 +5,6 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,16 +25,6 @@ public class PageModel {
     protected void waitForVisibility(MobileElement element) {
         WebDriverWait wait = new WebDriverWait(appiumDriver, Constant.SHORT_WAIT_TIME);
         wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    protected void waitForVisibility(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(appiumDriver, Constant.SHORT_WAIT_TIME);
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    protected void waitForVisibility(By locator) {
-        WebElement element = appiumDriver.findElement(locator);
-        waitForVisibility(element);
     }
 
     protected void waitForVisibility(MobileBy locator) {
