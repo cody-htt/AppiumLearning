@@ -1,21 +1,26 @@
 package models.pages;
 
+import environments.Context;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import models.base.PageModel;
+import models.components.BottomNavBarComponent;
 import models.components.webview_page_component.LeftNavBarComponent;
+import org.openqa.selenium.support.FindBy;
 
 public class WebviewPage extends PageModel {
 
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc='WebdriverIO']/preceding-sibling::android.widget.Button")
+    @FindBy(css = ".navbar__toggle > svg")
     private MobileElement leftNavBarToggleBtn;
-    @AndroidFindBy(xpath = "/android.view.View/android.view.View[3]/android.view.View")
+    @FindBy(css = ".hero__title  > svg")
     private MobileElement robotLogoElem;
-    @AndroidFindBy(xpath = "/android.view.View/android.view.View[3]/android.widget.TextView")
+    @FindBy(css = ".hero__subtitle")
     private MobileElement logoTextFieldElem;
 
-    public WebviewPage(AppiumDriver<MobileElement> appiumDriver) { super(appiumDriver); }
+    public WebviewPage(AppiumDriver<MobileElement> appiumDriver) {
+        super(appiumDriver);
+        appiumDriver.context(Context.WEBVIEW.getContext());
+    }
 
     public MobileElement robotLogoElem() {
         waitForVisibility(robotLogoElem);
@@ -32,6 +37,10 @@ public class WebviewPage extends PageModel {
         return new LeftNavBarComponent(appiumDriver);
     }
 
+    public BottomNavBarComponent bottomNavBarComponent() {
+        return new BottomNavBarComponent(appiumDriver);
+    }
+
     public static class MenuItem {
         private final String label;
         private final String href;
@@ -43,7 +52,7 @@ public class WebviewPage extends PageModel {
 
         @Override
         public String toString() {
-            return "[Label: " + label + " | " + "Href: " + href + "]";
+            return "[Label: " + label + " | " + "href: " + href + "]";
         }
     }
 }

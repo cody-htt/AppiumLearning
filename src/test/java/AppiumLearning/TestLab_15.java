@@ -78,5 +78,8 @@ public class TestLab_15 {
         resultList.forEach(System.out :: println);
         System.out.println();
         cardListItem.forEach(System.out :: println);
+
+        androidDriver.closeApp();
+        DriverFactoryRD.stopAppiumServer();
     }
 }
