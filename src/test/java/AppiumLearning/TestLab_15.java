@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidDriver;
 import models.components.forms_page_component.ActiveBtnDialogComponent;
 import models.components.forms_page_component.DropdownDialogComponent;
 import models.pages.FormPage;
+import models.pages.SwipePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestLab_15 {
     private final static List<String> resultList = new ArrayList<>();
     private final static List<String> dropDownListItem = new ArrayList<>();
+    private final static List<SwipePage.Card> cardListItem = new ArrayList<>();
 
     public static void main(String[] args) {
         DriverFactoryRD.startAppiumServer();
@@ -26,15 +28,10 @@ public class TestLab_15 {
 
         formPage.bottomNavBarComponent().clickOnFormsLabel();
 
-        if (formPage.inputField("Tung").verifyTextResult("Tung")) {
-            resultList.add("Test input text field - Pass");
-        }
-        else { resultList.add("Test input text field - Fail"); }
+        resultList.add("You have typed: " + formPage.inputField("Tung is handsome").inputTextResult().getText());
 
-        formPage.clickOnSwitchBtn();
-        resultList.add(formPage.switchText().getText());
-        formPage.clickOnSwitchBtn();
-        resultList.add(formPage.switchText().getText());
+        resultList.add(formPage.clickOnSwitchBtn().switchText().getText());
+        resultList.add(formPage.clickOnSwitchBtn().switchText().getText());
 
         dropdownDialogComp = formPage.clickOnDropDownIcon();
         dropdownDialogComp.dialogListItems().forEach(item -> {
@@ -51,14 +48,35 @@ public class TestLab_15 {
             indexOfItem.incrementAndGet();
         });
         /* Click on the last item in dropdown list to return FormsPage */
-        dropdownDialogComp.getItemFromList(3).click();
+        int lastItemIndex = 3;
+        dropdownDialogComp.getItemFromList(lastItemIndex).click();
 
         activeBtnDialogComp = formPage.clickOnActiveBtn();
-        resultList.add(activeBtnDialogComp.alertTitle().getText() + " | " + activeBtnDialogComp.alertMessage().getText());
+        resultList.add("Active dialog:" +
+                       "\n\tTitle: " + activeBtnDialogComp.alertTitle().getText() +
+                       "\n\tText: " + activeBtnDialogComp.alertMessage().getText());
         activeBtnDialogComp.okBtn().click();
 
         /* Test Swipe Action on Swipe Page */
+        SwipePage swipePage = new SwipePage(androidDriver);
+        swipePage.bottomNavBarComponent().clickOnSwipeLabel();
+
+        swipePage.CARD_TEXT.forEach(cardText -> {
+            if (swipePage.CARD_TEXT.indexOf(cardText) == 0) {
+                cardListItem.add(new SwipePage.Card(swipePage.firstCardTitleElem().getText(),
+                        swipePage.firstCardTextElem().getText()));
+            } else {
+                cardListItem.add(new SwipePage.Card(swipePage.centerCardTitleElem().getText(),
+                        swipePage.centerCardTextElem().getText()));
+            }
+            swipePage.swipeToNextCard();
+        });
+
+        swipePage.swipeToWebDriverIOLogo();
+        resultList.add("Logo Text: \n\t" + swipePage.webDriverIOLogoText().getText());
 
         resultList.forEach(System.out :: println);
+        System.out.println();
+        cardListItem.forEach(System.out :: println);
     }
 }

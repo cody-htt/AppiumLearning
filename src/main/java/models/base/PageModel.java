@@ -25,6 +25,11 @@ public class PageModel {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    protected void waitForVisibility(By locator) {
+        MobileElement element = appiumDriver.findElement(locator);
+        waitForVisibility(element);
+    }
+
     /* Interaction with element using MobileElement type */
     protected String getElementAttribute(MobileElement element, String attribute) {
         waitForVisibility(element);

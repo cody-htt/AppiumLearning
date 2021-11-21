@@ -45,23 +45,24 @@ public class FormPage extends PageModel {
         return dropDownInputField;
     }
 
+    public MobileElement switchText() {
+        waitForVisibility(switchText);
+        return switchText;
+    }
+
+    public MobileElement inputTextResult() {
+        waitForVisibility(inputTextResult);
+        return inputTextResult;
+    }
+
     public FormPage inputField(String text) {
         sendKeysToElement(inputField, text);
         return this;
     }
 
-    public boolean verifyTextResult(String text) {
-        return getElementText(inputTextResult).equalsIgnoreCase(text);
-    }
-
     public FormPage clickOnSwitchBtn() {
         clickElement(switchBtn);
         return this;
-    }
-
-    public MobileElement switchText() {
-        waitForVisibility(switchText);
-        return switchText;
     }
 
     public DropdownDialogComponent clickOnDropDownIcon() {
