@@ -28,7 +28,8 @@ public class TestLab_15 {
 
         if (formPage.inputField("Tung").verifyTextResult("Tung")) {
             resultList.add("Test input text field - Pass");
-        } else { resultList.add("Test input text field - Fail"); }
+        }
+        else { resultList.add("Test input text field - Fail"); }
 
         formPage.clickOnSwitchBtn();
         resultList.add(formPage.switchText().getText());
@@ -40,7 +41,7 @@ public class TestLab_15 {
             dropDownListItem.add(item.getText());
         });
 
-        AtomicInteger indexOfItem = new AtomicInteger(1);
+        AtomicInteger indexOfItem = new AtomicInteger(0);
         dropDownListItem.forEach(item -> {
             dropdownDialogComp.getItemFromList(indexOfItem.get()).click();
             if (formPage.dropDownField().getText().equalsIgnoreCase(item)) {
@@ -49,11 +50,15 @@ public class TestLab_15 {
             formPage.clickOnDropDownIcon();
             indexOfItem.incrementAndGet();
         });
+        /* Click on the last item in dropdown list to return FormsPage */
+        dropdownDialogComp.getItemFromList(3).click();
 
         activeBtnDialogComp = formPage.clickOnActiveBtn();
+        resultList.add(activeBtnDialogComp.alertTitle().getText() + " | " + activeBtnDialogComp.alertMessage().getText());
         activeBtnDialogComp.okBtn().click();
 
         /* Test Swipe Action on Swipe Page */
 
+        resultList.forEach(System.out :: println);
     }
 }

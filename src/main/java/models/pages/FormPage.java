@@ -70,7 +70,7 @@ public class FormPage extends PageModel {
     }
 
     public ActiveBtnDialogComponent clickOnActiveBtn() {
-        swipeUtils.swipeDownUntilElementFound(activeBtnAccId, 0.2);
+        swipeUtils.swipeUpUntilElementFound(activeBtnAccId, 0.7);
         clickElement(activeBtn);
         return new ActiveBtnDialogComponent(appiumDriver);
     }
