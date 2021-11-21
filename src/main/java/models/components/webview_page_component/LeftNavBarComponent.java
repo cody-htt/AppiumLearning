@@ -6,7 +6,6 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import models.base.PageModel;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -14,11 +13,11 @@ import java.util.List;
 public class LeftNavBarComponent extends PageModel {
 
     @FindBy(css = ".navbarSidebarToggle_wkoY")
-    private  WebElement viewModeToggleBtn;
+    private MobileElement viewModeToggleBtn;
     @FindBy(css = ".menu__list")
-    private WebElement navBarMenuListElem;
+    private MobileElement navBarMenuListElem;
     @FindBy(css = ".menu__list-item > a")
-    private WebElement menuItem;
+    private MobileElement menuItem;
 
     private final static By menuItemLoc = MobileBy.cssSelector(".menu__list-item > a");
 
@@ -27,12 +26,12 @@ public class LeftNavBarComponent extends PageModel {
         appiumDriver.context(Context.WEBVIEW.getContext());
     }
 
-    public WebElement viewModeToggleBtn() {
+    public MobileElement viewModeToggleBtn() {
         waitForVisibility(viewModeToggleBtn);
         return viewModeToggleBtn;
     }
 
-    public WebElement navBarMenuListElem() {
+    public MobileElement navBarMenuListElem() {
         waitForVisibility(navBarMenuListElem);
         return navBarMenuListElem;
     }
