@@ -3,64 +3,57 @@ package AppiumLearning;
 import driver.DriverFactoryRD;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import models.pages.FormPageElem;
-import models.pages.SwipePageElem;
-import org.openqa.selenium.By;
-import utils.SwipeUtils;
+import models.components.forms_page_component.ActiveBtnDialogComponent;
+import models.components.forms_page_component.DropdownDialogComponent;
+import models.pages.FormPage;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestLab_15 {
+    private final static List<String> resultList = new ArrayList<>();
+    private final static List<String> dropDownListItem = new ArrayList<>();
 
     public static void main(String[] args) {
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
 
         /* Test Swipe Action on Form Page */
-        SwipeUtils swipeUtils = new SwipeUtils(androidDriver);
+        FormPage formPage = new FormPage(androidDriver);
+        DropdownDialogComponent dropdownDialogComp;
+        ActiveBtnDialogComponent activeBtnDialogComp;
 
-        androidDriver.findElement(FormPageElem.ACC_ID_LABEL_FORM_BTN).click();
-        swipeUtils.swipeToElement(FormPageElem.ACC_ID_SWITCH_TEXT, FormPageElem.ACC_ID_INPUT_FIELD_RESULT);
-        swipeUtils.swipeUpUntilElementFound(FormPageElem.XPATH_FORM_LABEL, 0.2, 3);
-        swipeUtils.swipeDownUntilElementFound(FormPageElem.ACC_ID_ACTIVE_BTN, 0.2);
+        formPage.bottomNavBarComponent().clickOnFormsLabel();
+
+        if (formPage.inputField("Tung").verifyTextResult("Tung")) {
+            resultList.add("Test input text field - Pass");
+        } else { resultList.add("Test input text field - Fail"); }
+
+        formPage.clickOnSwitchBtn();
+        resultList.add(formPage.switchText().getText());
+        formPage.clickOnSwitchBtn();
+        resultList.add(formPage.switchText().getText());
+
+        dropdownDialogComp = formPage.clickOnDropDownIcon();
+        dropdownDialogComp.dialogListItems().forEach(item -> {
+            dropDownListItem.add(item.getText());
+        });
+
+        AtomicInteger indexOfItem = new AtomicInteger(1);
+        dropDownListItem.forEach(item -> {
+            dropdownDialogComp.getItemFromList(indexOfItem.get()).click();
+            if (formPage.dropDownField().getText().equalsIgnoreCase(item)) {
+                resultList.add(item + " is displayed");
+            }
+            formPage.clickOnDropDownIcon();
+            indexOfItem.incrementAndGet();
+        });
+
+        activeBtnDialogComp = formPage.clickOnActiveBtn();
+        activeBtnDialogComp.okBtn().click();
 
         /* Test Swipe Action on Swipe Page */
-        androidDriver.findElement(SwipePageElem.ACC_ID_LABEL_SWIPE_BTN).click();
-        List<String> result = new ArrayList<>();
-        List<String> cardTextList = new ArrayList<>();
-        List<By> cardLocatorList = new ArrayList<>();
-        cardLocatorList.add(SwipePageElem.XPATH_CARD_1);
-        cardLocatorList.add(SwipePageElem.XPATH_CARD_2);
-        cardLocatorList.add(SwipePageElem.XPATH_CARD_3);
-        cardLocatorList.add(SwipePageElem.XPATH_CARD_4);
-        cardLocatorList.add(SwipePageElem.XPATH_CARD_5);
-        cardLocatorList.add(SwipePageElem.XPATH_CARD_6);
 
-        cardLocatorList.forEach(locator -> {
-            cardTextList.add(androidDriver.findElement(locator).getText());
-            swipeUtils.swipeToLeft(0.7);
-        });
-
-        AtomicInteger index = new AtomicInteger(0);
-        cardTextList.forEach(text -> {
-            if (text.equalsIgnoreCase(SwipePageElem.CARD_TEXT.get(index.get()))) {
-                result.add("Card " + text + " is equal to expected");
-            } else { result.add("Card " + text + " is not equal to expected"); }
-            index.incrementAndGet();
-        });
-
-        swipeUtils.swipeUpUntilElementFound(SwipePageElem.ACC_ID_LOGO, 0.7);
-        MobileElement textUnderLogo = androidDriver.findElement(SwipePageElem.XPATH_TEXT_LOGO);
-        if (textUnderLogo.isDisplayed()) {
-            result.add("Text [" + textUnderLogo.getText() + "] is found");
-        } else {
-            result.add("Text is not found");
-        }
-
-        DriverFactoryRD.stopAppiumServer();
-
-        result.forEach(System.out :: println);
     }
 }
