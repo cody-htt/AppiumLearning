@@ -14,24 +14,24 @@ import utils.SwipeUtils;
 public class FormPage extends PageModel {
 
     @AndroidFindBy(accessibility = "text-input")
-    private MobileElement inputField;
+    private MobileElement inputFieldElem;
     @AndroidFindBy(accessibility = "input-text-result")
-    private MobileElement inputTextResult;
+    private MobileElement inputTextResultElem;
     @AndroidFindBy(accessibility = "switch")
-    private MobileElement switchBtn;
+    private MobileElement switchBtnElem;
     @AndroidFindBy(accessibility = "switch-text")
-    private MobileElement switchText;
+    private MobileElement switchTextElem;
     @AndroidFindBy(accessibility = "Dropdown")
-    private MobileElement dropDownFieldContainer;
+    private MobileElement dropDownFieldContainerElem;
     @AndroidFindBy(xpath = "//*[@resource-id='icon_container']")
-    private MobileElement dropDownIcon;
+    private MobileElement dropDownIconElem;
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='Dropdown']//android.widget.EditText")
-    private MobileElement dropDownInputField;
+    private MobileElement dropDownInputFieldElem;
     @AndroidFindBy(accessibility = "button-Active")
-    private MobileElement activeBtn;
+    private MobileElement activeBtnElem;
 
     /* By Locator */
-    private final static By activeBtnAccId = MobileBy.AccessibilityId("button-Active");
+    private final static By activeBtnLoc = MobileBy.AccessibilityId("button-Active");
 
     private final SwipeUtils swipeUtils;
 
@@ -40,39 +40,39 @@ public class FormPage extends PageModel {
         swipeUtils = new SwipeUtils(this.appiumDriver);
     }
 
-    public MobileElement dropDownField() {
-        waitForVisibility(dropDownInputField);
-        return dropDownInputField;
+    public MobileElement inputTextResultElem() {
+        waitForVisibility(inputTextResultElem);
+        return inputTextResultElem;
     }
 
-    public MobileElement switchText() {
-        waitForVisibility(switchText);
-        return switchText;
+    public MobileElement switchTextElem() {
+        waitForVisibility(switchTextElem);
+        return switchTextElem;
     }
 
-    public MobileElement inputTextResult() {
-        waitForVisibility(inputTextResult);
-        return inputTextResult;
+    public MobileElement dropDownInputFieldElem() {
+        waitForVisibility(dropDownInputFieldElem);
+        return dropDownInputFieldElem;
     }
 
     public FormPage inputField(String text) {
-        sendKeysToElement(inputField, text);
+        sendKeysToElement(inputFieldElem, text);
         return this;
     }
 
     public FormPage clickOnSwitchBtn() {
-        clickElement(switchBtn);
+        clickElement(switchBtnElem);
         return this;
     }
 
     public DropdownDialogComponent clickOnDropDownIcon() {
-        clickElement(dropDownIcon);
+        clickElement(dropDownIconElem);
         return new DropdownDialogComponent(appiumDriver);
     }
 
     public ActiveBtnDialogComponent clickOnActiveBtn() {
-        swipeUtils.swipeUpUntilElementFound(activeBtnAccId, 0.7);
-        clickElement(activeBtn);
+        swipeUtils.swipeUpUntilElementFound(activeBtnLoc, 0.8);
+        clickElement(activeBtnElem);
         return new ActiveBtnDialogComponent(appiumDriver);
     }
 

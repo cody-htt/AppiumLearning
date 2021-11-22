@@ -28,7 +28,7 @@ public class SwipePage extends PageModel {
     @AndroidFindBy(accessibility = "WebdriverIO logo")
     private MobileElement webDriverIOLogo;
     @AndroidFindBy(xpath = "//*[@content-desc='WebdriverIO logo']/following-sibling::android.widget.TextView")
-    private MobileElement webDriverIOLogoText;
+    private MobileElement webDriverIOLogoTextElem;
 
     private final By webDriverIOLogoLoc = MobileBy.AccessibilityId("WebdriverIO logo");
 
@@ -60,18 +60,18 @@ public class SwipePage extends PageModel {
         return centerCardTextElem;
     }
 
-    public MobileElement webDriverIOLogoText() {
-        waitForVisibility(webDriverIOLogoText);
-        return webDriverIOLogoText;
+    public MobileElement webDriverIOLogoTextElem() {
+        waitForVisibility(webDriverIOLogoTextElem);
+        return webDriverIOLogoTextElem;
     }
 
     /* Provide main interaction on specific Mobile Element */
     public void swipeToNextCard() {
-        swipeUtils.swipeToLeft(0.87);
+        swipeUtils.swipeToLeft(0.86);
     }
 
     public void swipeToWebDriverIOLogo() {
-        swipeUtils.swipeUpUntilElementFound(webDriverIOLogoLoc, 0.75);
+        swipeUtils.swipeUpUntilElementFound(webDriverIOLogoLoc, 0.72);
     }
 
     public BottomNavBarComponent bottomNavBarComponent() {

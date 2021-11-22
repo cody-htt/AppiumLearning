@@ -26,9 +26,9 @@ public class ScreenShotUtils {
 
     public void takeElemScreenShot(MobileElement element, String fileName) {
         String csScreenLocation = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + fileName + ".png";
-        File elemScreenShoot = element.getScreenshotAs(OutputType.FILE);
+        File elemScreenShot = element.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(elemScreenShoot, new File(csScreenLocation));
+            FileUtils.copyFile(elemScreenShot, new File(csScreenLocation));
         } catch (IOException ex) { ex.printStackTrace(); }
     }
 

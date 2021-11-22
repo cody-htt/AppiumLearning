@@ -8,35 +8,35 @@ import models.base.PageModel;
 public class DialogComponent extends PageModel {
 
     @AndroidFindBy(id = "android:id/title_template")
-    private MobileElement dialogTemplate;
+    private MobileElement dialogTemplateElem;
     @AndroidFindBy(id = "android:id/alertTitle")
-    private MobileElement dialogTitle;
+    private MobileElement dialogTitleElem;
     @AndroidFindBy(id = "android:id/message")
-    private MobileElement dialogMessage;
+    private MobileElement dialogMessageElem;
     @AndroidFindBy(id = "android:id/button1")
-    private MobileElement dialogBtn;
+    private MobileElement dialogBtnElem;
 
     public DialogComponent(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
     }
 
-    public boolean isDialogTemplateDisplay() {
-        waitForVisibility(dialogTemplate);
-        return dialogTemplate.isDisplayed();
-    }
-
     public MobileElement dialogTitleElem() {
-        waitForVisibility(dialogTitle);
-        return dialogTitle;
+        waitForVisibility(dialogTitleElem);
+        return dialogTitleElem;
     }
 
     public MobileElement dialogMessageElem() {
-        waitForVisibility(dialogMessage);
-        return dialogMessage;
+        waitForVisibility(dialogMessageElem);
+        return dialogMessageElem;
+    }
+
+    public boolean isDialogTemplateDisplay() {
+        waitForVisibility(dialogTemplateElem);
+        return dialogTemplateElem.isDisplayed();
     }
 
     public void clickDialogBtn() {
-        clickElement(dialogBtn);
+        clickElement(dialogBtnElem);
     }
 
 }

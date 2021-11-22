@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Constant;
 
-import java.time.Duration;
 import java.util.List;
 
 public class PageModel {
@@ -18,7 +17,7 @@ public class PageModel {
 
     protected PageModel(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
-        PageFactory.initElements(new AppiumFieldDecorator(this.appiumDriver, Duration.ofSeconds(5L)), this);
+        PageFactory.initElements(new AppiumFieldDecorator(this.appiumDriver), this);
     }
 
     protected void waitForVisibility(MobileElement element) {
@@ -31,63 +30,66 @@ public class PageModel {
         waitForVisibility(element);
     }
 
-    /* Interaction with element using MobileElement type */
+    /* Get element's attribute */
     protected String getElementAttribute(MobileElement element, String attribute) {
         waitForVisibility(element);
         return element.getAttribute(attribute);
     }
 
+    /* Get element's attribute by locator */
     protected String getElementAttribute(By locator, String attribute) {
         MobileElement element = appiumDriver.findElement(locator);
         return getElementAttribute(element, attribute);
     }
-
+    /* Perform click action on an element */
     protected void clickElement(MobileElement element) {
         waitForVisibility(element);
         element.click();
     }
 
+    /* Perform click action on an element by its locator */
     protected void clickElement(By locator) {
         MobileElement element = appiumDriver.findElement(locator);
         clickElement(element);
     }
 
+    /* Send keys to an input-field element */
     protected void sendKeysToElement(MobileElement element, String text) {
         waitForVisibility(element);
         element.sendKeys(text);
     }
 
+    /* Send keys to an input-field element by its locator */
     protected void sendKeysToElement(By locator, String input) {
         MobileElement element = appiumDriver.findElement(locator);
         sendKeysToElement(element, input);
     }
 
+    /* Clear text in an input-field element */
     protected void clearElementInputField(MobileElement element) {
         waitForVisibility(element);
         element.clear();
     }
 
+    /* Clear text in an input-field element by its locator */
     protected void clearElementInputField(By locator) {
         MobileElement element = appiumDriver.findElement(locator);
         clearElementInputField(element);
     }
 
+    /* Directly get inner-text from an element */
     protected String getElementText(MobileElement element) {
         waitForVisibility(element);
         return element.getText();
     }
 
+    /* Directly get inner-text from an element by its locator */
     protected String getElementText(By locator) {
         MobileElement element = appiumDriver.findElement(locator);
         return getElementText(element);
     }
 
-    /* Interaction with element using By type */
-
-    private List<MobileElement> fetchElements(By locator) {
-        return appiumDriver.findElements(locator);
-    }
-
+    /* Check if an element is existed by its locator */
     protected boolean isElementPresent(By locator) {
         List<MobileElement> elements = appiumDriver.findElements(locator);
         return elements.size() > 0;

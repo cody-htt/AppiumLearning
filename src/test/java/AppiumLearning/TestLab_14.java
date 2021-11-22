@@ -20,17 +20,21 @@ public class TestLab_14 {
 
     public static void main(String[] args) {
 
+        /* Start appium server automatically */
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        /* Initialize JSONReader object */
         JSONReader jsonReader = new JSONReader();
+        /* Initialize loginData basing loginUser.json file */
         JSONObject loginData = jsonReader.readJSONFile("data/loginUser.json");
+
         LoginPage loginPage = new LoginPage(androidDriver);
         BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
         LoginFormComponent loginFormComp = loginPage.loginFormComponent();
         SignUpFormComponent signUpFormComp = loginPage.signUpFormComponent();
         DialogComponent dialogComponent;
 
-        bottomNavBarComp.clickOnLoginLabel();
+        bottomNavBarComp.clickOnLoginLabel(); // Navigate to Login Page
 
         if (loginPage.isLoginFormSelect()) {
             dialogComponent = loginFormComp
@@ -45,29 +49,25 @@ public class TestLab_14 {
         }
 
         if (loginPage.isSignUpFormSelect()) {
-            dialogComponent = signUpFormComp
-                    .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
-                    .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
-                    .inputRepeatPwField(loginData.getJSONObject("validUser").getString("password"))
-                    .clickOnSignUpBtn();
+            dialogComponent = signUpFormComp.inputEmailField(loginData.getJSONObject("validUser").getString("username"))
+                                            .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
+                                            .inputRepeatPasswordField(loginData.getJSONObject("validUser").getString("password"))
+                                            .clickOnSignUpBtn();
 
             if (dialogComponent.isDialogTemplateDisplay()) {
                 dialogComponent.clickDialogBtn();
                 result_02 = "TC_002_SignUp_App is PASSED";
-            }
-            else result_02 = "TC_002_SignUp_App is FAILED";
+            } else { result_02 = "TC_002_SignUp_App is FAILED"; }
 
-            signUpFormComp
-                    .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
-                    .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
-                    .inputRepeatPwField(loginData.getJSONObject("invalidPassword").getString("password"))
-                    .clickOnSignUpBtn();
+            signUpFormComp.inputEmailField(loginData.getJSONObject("validUser").getString("username"))
+                          .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
+                          .inputRepeatPasswordField(loginData.getJSONObject("invalidPassword").getString("password"))
+                          .clickOnSignUpBtn();
 
             String errPasswordConfirm = signUpFormComp.errRepeatPwMessageElem().getText();
             if (errPasswordConfirm.equalsIgnoreCase("Please enter the same password")) {
                 result_03 = "TC_003_Fail_SignUp_App is PASSED";
-            }
-            else result_03 = "TC_003_Fail_SignUp_App is FAILED";
+            } else { result_03 = "TC_003_Fail_SignUp_App is FAILED"; }
         }
 
         androidDriver.closeApp();

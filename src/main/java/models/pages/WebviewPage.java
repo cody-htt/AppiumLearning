@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 public class WebviewPage extends PageModel {
 
     @FindBy(css = ".navbar__toggle > svg")
-    private MobileElement leftNavBarToggleBtn;
+    private MobileElement leftNavBarToggleBtnElem;
     @FindBy(css = ".hero__title  > svg")
     private MobileElement robotLogoElem;
     @FindBy(css = ".hero__subtitle")
@@ -33,7 +33,7 @@ public class WebviewPage extends PageModel {
     }
 
     public LeftNavBarComponent clickOnLeftNavBarToggleBtn() {
-        clickElement(leftNavBarToggleBtn);
+        clickElement(leftNavBarToggleBtnElem);
         return new LeftNavBarComponent(appiumDriver);
     }
 
