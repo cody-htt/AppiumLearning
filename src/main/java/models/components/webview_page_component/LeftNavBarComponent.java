@@ -13,11 +13,11 @@ import java.util.List;
 public class LeftNavBarComponent extends PageModel {
 
     @FindBy(css = ".navbarSidebarToggle_wkoY")
-    private MobileElement viewModeToggleBtn;
+    private MobileElement viewModeToggleBtnElem;
     @FindBy(css = ".menu__list")
     private MobileElement navBarMenuListElem;
     @FindBy(css = ".menu__list-item > a")
-    private MobileElement menuItem;
+    private MobileElement menuItemElem;
 
     private final static By menuItemLoc = MobileBy.cssSelector(".menu__list-item > a");
 
@@ -26,9 +26,9 @@ public class LeftNavBarComponent extends PageModel {
         appiumDriver.context(Context.WEBVIEW.getContext());
     }
 
-    public MobileElement viewModeToggleBtn() {
-        waitForVisibility(viewModeToggleBtn);
-        return viewModeToggleBtn;
+    public MobileElement viewModeToggleBtnElem() {
+        waitForVisibility(viewModeToggleBtnElem);
+        return viewModeToggleBtnElem;
     }
 
     public MobileElement navBarMenuListElem() {
@@ -37,7 +37,7 @@ public class LeftNavBarComponent extends PageModel {
     }
 
     public List<MobileElement> menuItemList() {
-        waitForVisibility(menuItem);
+        waitForVisibility(menuItemElem);
         return appiumDriver.findElements(menuItemLoc);
     }
 

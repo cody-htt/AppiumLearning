@@ -33,7 +33,7 @@ public class TestLab_16 {
         }
 
         leftNavBarComp = webviewPage.clickOnLeftNavBarToggleBtn();
-        leftNavBarComp.viewModeToggleBtn().click();
+        leftNavBarComp.viewModeToggleBtnElem().click();
 
         leftNavBarComp.menuItemList().forEach(item -> {
             if (StringUtils.isEmpty(item.getText())) {
@@ -48,13 +48,13 @@ public class TestLab_16 {
         bottomNavBarComp.clickOnHomeLabel();
 
         /* Let the app run in background */
-        androidDriver.runAppInBackground(Duration.ofSeconds(3L));
-
-        resultList.forEach(System.out :: println);
-        itemList.forEach(System.out :: println);
+        androidDriver.runAppInBackground(Duration.ofSeconds(3));
 
         androidDriver.closeApp();
         DriverFactoryRD.stopAppiumServer();
+
+        resultList.forEach(System.out :: println);
+        itemList.forEach(System.out :: println);
     }
      /*
      Set<String> contextHandles = androidDriver.getContextHandles();

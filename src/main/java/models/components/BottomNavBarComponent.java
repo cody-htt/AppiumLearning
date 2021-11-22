@@ -3,106 +3,89 @@ package models.components;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.Constant;
+import models.base.PageModel;
 
-public class BottomNavBarComponent {
+public class BottomNavBarComponent extends PageModel {
 
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Home']/parent::android.view.ViewGroup")
-    private MobileElement bottomNavBar;
+    private MobileElement bottomNavBarElem;
     @AndroidFindBy(accessibility = "Home")
-    private MobileElement homeLabel;
+    private MobileElement homeLabelElem;
     @AndroidFindBy(accessibility = "Webview")
-    private MobileElement webviewLabel;
+    private MobileElement webviewLabelElem;
     @AndroidFindBy(accessibility = "Login")
-    private MobileElement loginLabel;
+    private MobileElement loginLabelElem;
     @AndroidFindBy(accessibility = "Forms")
-    private MobileElement formsLabel;
+    private MobileElement formsLabelElem;
     @AndroidFindBy(accessibility = "Swipe")
-    private MobileElement swipeLabel;
+    private MobileElement swipeLabelElem;
     @AndroidFindBy(accessibility = "Drag")
-    private MobileElement dragLabel;
-
-    private final WebDriverWait wait;
+    private MobileElement dragLabelElem;
 
     public BottomNavBarComponent(AppiumDriver<MobileElement> appiumDriver) {
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
-        wait = new WebDriverWait(appiumDriver, Constant.SHORT_WAIT_TIME);
+        super(appiumDriver);
     }
 
     /* Context: return element mobile only */
-    public MobileElement bottomNavBar() {
-        waitForVisibility(bottomNavBar);
-        return bottomNavBar;
+    public MobileElement bottomNavBarElem() {
+        waitForVisibility(bottomNavBarElem);
+        return bottomNavBarElem;
     }
 
     public MobileElement homeLabelELem() {
-        waitForVisibility(homeLabel);
-        return homeLabel;
+        waitForVisibility(homeLabelElem);
+        return homeLabelElem;
     }
 
     public MobileElement webviewLabelElem() {
-        waitForVisibility(webviewLabel);
-        return webviewLabel;
+        waitForVisibility(webviewLabelElem);
+        return webviewLabelElem;
     }
 
     public MobileElement loginLabelElem() {
-        waitForVisibility(loginLabel);
-        return loginLabel;
+        waitForVisibility(loginLabelElem);
+        return loginLabelElem;
     }
 
     public MobileElement formsLabelElem() {
-        waitForVisibility(formsLabel);
-        return formsLabel;
+        waitForVisibility(formsLabelElem);
+        return formsLabelElem;
     }
 
     public MobileElement swipeLabelElem() {
-        waitForVisibility(swipeLabel);
-        return swipeLabel;
+        waitForVisibility(swipeLabelElem);
+        return swipeLabelElem;
     }
 
     public MobileElement dragLabelElem() {
-        waitForVisibility(dragLabel);
-        return dragLabel;
+        waitForVisibility(dragLabelElem);
+        return dragLabelElem;
     }
 
     /* Context: provide main interaction method with Mobile Element of this page */
 
     public void clickOnHomeLabel() {
-        waitForVisibility(homeLabel);
-        homeLabel.click();
+        clickElement(homeLabelElem);
     }
 
     public void clickOnWebviewLabel() {
-        waitForVisibility(webviewLabel);
-        webviewLabel.click();
+        clickElement(webviewLabelElem);
     }
 
     public void clickOnLoginLabel() {
-        waitForVisibility(loginLabel);
-        loginLabel.click();
+        clickElement(loginLabelElem);
     }
 
     public void clickOnFormsLabel() {
-        waitForVisibility(formsLabel);
-        formsLabel.click();
+        clickElement(formsLabelElem);
     }
 
     public void clickOnSwipeLabel() {
-        waitForVisibility(swipeLabel);
-        swipeLabel.click();
+        clickElement(swipeLabelElem);
     }
 
     public void clickOnDragLabel() {
-        waitForVisibility(dragLabel);
-        dragLabel.click();
-    }
-
-    private void waitForVisibility(MobileElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+        clickElement(dragLabelElem);
     }
 
 }

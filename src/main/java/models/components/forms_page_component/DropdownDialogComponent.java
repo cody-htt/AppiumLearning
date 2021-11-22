@@ -12,7 +12,6 @@ public class DropdownDialogComponent extends PageModel {
     private MobileElement dropDownListViewDialog;
     @AndroidFindBy(xpath = "//*[@resource-id='com.wdiodemoapp:id/select_dialog_listview']/android.widget.CheckedTextView")
     private List<MobileElement> dialogListItems;
-    /* Dynamic Elements */
 
     public DropdownDialogComponent(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);

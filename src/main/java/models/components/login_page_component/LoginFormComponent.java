@@ -8,35 +8,36 @@ import models.base.PageModel;
 public class LoginFormComponent extends PageModel {
 
     @AndroidFindBy(accessibility = "input-email")
-    private MobileElement emailInputField;
+    private MobileElement emailInputFieldElem;
     @AndroidFindBy(accessibility = "input-password")
-    private MobileElement passwordField;
+    private MobileElement passwordFieldElem;
     @AndroidFindBy(accessibility = "button-LOGIN")
-    private MobileElement loginBtn;
+    private MobileElement loginBtnElem;
 
     public LoginFormComponent(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
     }
 
+    public MobileElement loginBtnElem() {
+        waitForVisibility(loginBtnElem);
+        return loginBtnElem;
+    }
+
     public LoginFormComponent inputEmailField(String email) {
-        clearElementInputField(emailInputField);
-        sendKeysToElement(emailInputField, email);
+        clearElementInputField(emailInputFieldElem);
+        sendKeysToElement(emailInputFieldElem, email);
         return this;
     }
 
     public LoginFormComponent inputPasswordField(String password) {
-        clearElementInputField(passwordField);
-        sendKeysToElement(passwordField, password);
+        clearElementInputField(passwordFieldElem);
+        sendKeysToElement(passwordFieldElem, password);
         return this;
     }
 
     public DialogComponent clickOnLoginBtn() {
-        clickElement(loginBtn);
+        clickElement(loginBtnElem);
         return new DialogComponent(appiumDriver);
     }
 
-    public MobileElement loginBtnElem() {
-        waitForVisibility(loginBtn);
-        return loginBtn;
-    }
 }

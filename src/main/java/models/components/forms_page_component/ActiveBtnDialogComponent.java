@@ -8,49 +8,49 @@ import models.base.PageModel;
 public class ActiveBtnDialogComponent extends PageModel {
 
     @AndroidFindBy(xpath = "//*[@resource-id='android:id/parentPanel']")
-    private MobileElement activeParentPanel;
+    private MobileElement activeParentPanelElem;
     @AndroidFindBy(id = "android:id/alertTitle")
-    private MobileElement alertTitle;
+    private MobileElement alertTitleElem;
     @AndroidFindBy(id = "android:id/message")
-    private MobileElement alertMessage;
+    private MobileElement alertMessageElem;
     @AndroidFindBy(id = "android:id/button3")
-    private MobileElement askMeLaterBtn;
+    private MobileElement askMeLaterBtnElem;
     @AndroidFindBy(id = "android:id/button2")
-    private MobileElement cancelBtn;
+    private MobileElement cancelBtnElem;
     @AndroidFindBy(id = "android:id/button1")
-    private MobileElement okBtn;
+    private MobileElement okBtnElem;
 
     public ActiveBtnDialogComponent(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
     }
 
-    public MobileElement activeParentPanel() {
-        waitForVisibility(activeParentPanel);
-        return activeParentPanel;
+    public MobileElement activeParentPanelElem() {
+        waitForVisibility(activeParentPanelElem);
+        return activeParentPanelElem;
     }
 
-    public MobileElement alertTitle() {
-        waitForVisibility(alertTitle);
-        return alertTitle;
+    public MobileElement alertTitleElem() {
+        waitForVisibility(alertTitleElem);
+        return alertTitleElem;
     }
 
-    public MobileElement alertMessage() {
-        waitForVisibility(alertMessage);
-        return alertMessage;
+    public MobileElement alertMessageElem() {
+        waitForVisibility(alertMessageElem);
+        return alertMessageElem;
     }
 
-    public MobileElement askMeLaterBtn() {
-        waitForVisibility(askMeLaterBtn);
-        return askMeLaterBtn;
+    public MobileElement askMeLaterBtnElem() {
+        waitForVisibility(askMeLaterBtnElem);
+        return askMeLaterBtnElem;
     }
 
-    public MobileElement cancelBtn() {
-        waitForVisibility(cancelBtn);
-        return cancelBtn;
+    public MobileElement cancelBtnElem() {
+        waitForVisibility(cancelBtnElem);
+        return cancelBtnElem;
     }
 
-    public MobileElement okBtn() {
-        waitForVisibility(okBtn);
-        return okBtn;
+    public MobileElement okBtnElem() {
+        waitForVisibility(okBtnElem);
+        return okBtnElem;
     }
 }
