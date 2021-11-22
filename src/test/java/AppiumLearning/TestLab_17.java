@@ -7,7 +7,9 @@ import io.appium.java_client.android.AndroidDriver;
 import models.components.TopNotificationComponent;
 import models.components.login_page_component.DialogComponent;
 import models.pages.LoginPage;
+import org.json.JSONObject;
 import org.openqa.selenium.NoSuchElementException;
+import utils.JSONReader;
 import utils.ScreenShotUtils;
 import utils.SwipeUtils;
 
@@ -23,6 +25,10 @@ public class TestLab_17 {
     public static void main(String[] args) {
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        /* Initialize JSONReader object */
+        JSONReader jsonReader = new JSONReader();
+        /* Initialize loginData basing loginUser.json file */
+        JSONObject loginData = jsonReader.readJSONFile("data/loginUser.json");
         SwipeUtils swipeUtils = new SwipeUtils(androidDriver);
         ScreenShotUtils screenShotUtils = new ScreenShotUtils(androidDriver);
         /* Set implicitly wait time to 0s */
@@ -66,8 +72,8 @@ public class TestLab_17 {
 
         /* Enter some information in the Login Form */
         DialogComponent dialogComponent = loginPage.loginFormComponent()
-                                                   .inputEmailField("tung@email.com")
-                                                   .inputPasswordField("12345678")
+                                                   .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
+                                                   .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
                                                    .clickOnLoginBtn();
 
         /* Let com.wdiodemoapp run in background */
@@ -111,9 +117,7 @@ public class TestLab_17 {
         androidDriver.closeApp();
         DriverFactoryRD.stopAppiumServer();
 
-        notificationsMap.keySet().forEach(key -> {
-            System.out.println(notificationsMap.get(key));
-        });
+        notificationsMap.keySet().forEach(key -> System.out.println(notificationsMap.get(key)));
         System.out.println(messageTurnOffWifi);
     }
 }
