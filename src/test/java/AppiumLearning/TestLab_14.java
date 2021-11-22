@@ -8,17 +8,22 @@ import models.components.login_page_component.DialogComponent;
 import models.components.login_page_component.LoginFormComponent;
 import models.components.login_page_component.SignUpFormComponent;
 import models.pages.LoginPage;
+import org.json.JSONObject;
+import utils.JSONReader;
 
 public class TestLab_14 {
 
     private static String result_01 = null;
     private static String result_02 = null;
     private static String result_03 = null;
+    private final static String systemPath = System.getProperty("user.dir");
 
     public static void main(String[] args) {
 
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        JSONReader jsonReader = new JSONReader();
+        JSONObject loginData = jsonReader.readJSONFile("data/loginUser.json");
         LoginPage loginPage = new LoginPage(androidDriver);
         BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
         LoginFormComponent loginFormComp = loginPage.loginFormComponent();
@@ -29,8 +34,8 @@ public class TestLab_14 {
 
         if (loginPage.isLoginFormSelect()) {
             dialogComponent = loginFormComp
-                    .inputEmailField("tung@email.com")
-                    .inputPasswordField("12345678")
+                    .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
+                    .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
                     .clickOnLoginBtn();
 
             if (dialogComponent.isDialogTemplateDisplay()) {
@@ -41,9 +46,9 @@ public class TestLab_14 {
 
         if (loginPage.isSignUpFormSelect()) {
             dialogComponent = signUpFormComp
-                    .inputEmailField("tung@email.com")
-                    .inputPasswordField("12345678")
-                    .inputRepeatPwField("12345678")
+                    .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
+                    .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
+                    .inputRepeatPwField(loginData.getJSONObject("validUser").getString("password"))
                     .clickOnSignUpBtn();
 
             if (dialogComponent.isDialogTemplateDisplay()) {
@@ -53,9 +58,9 @@ public class TestLab_14 {
             else result_02 = "TC_002_SignUp_App is FAILED";
 
             signUpFormComp
-                    .inputEmailField("tung@email.com")
-                    .inputPasswordField("12345678")
-                    .inputRepeatPwField("1234")
+                    .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
+                    .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
+                    .inputRepeatPwField(loginData.getJSONObject("invalidPassword").getString("password"))
                     .clickOnSignUpBtn();
 
             String errPasswordConfirm = signUpFormComp.errRepeatPwMessageElem().getText();

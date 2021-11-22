@@ -4,7 +4,6 @@
     "password": "12345678"
   },
   "invalidPassword": {
-    "username": "Tunghuynh@gmail.com",
     "password": "321"
   },
   "validUser": {
