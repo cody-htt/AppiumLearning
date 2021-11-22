@@ -7,12 +7,10 @@ import io.appium.java_client.android.AndroidDriver;
 import models.components.TopNotificationComponent;
 import models.components.login_page_component.DialogComponent;
 import models.pages.LoginPage;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
+import utils.ScreenShotUtils;
 import utils.SwipeUtils;
 
-import java.io.File;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +24,7 @@ public class TestLab_17 {
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
         SwipeUtils swipeUtils = new SwipeUtils(androidDriver);
+        ScreenShotUtils csUtils = new ScreenShotUtils(androidDriver);
         /* Set implicitly wait time to 0s */
         androidDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
@@ -94,25 +93,16 @@ public class TestLab_17 {
         dialogComponent.clickDialogBtn();
 
         /* Taking screenshot practise*/
-        try {
-            //Taking whole screenshot
-            File csWholeScreen = androidDriver.getScreenshotAs(OutputType.FILE);
-            String csScreenLocation = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + "FullScreen.png";
-            FileUtils.copyFile(csWholeScreen, new File(csScreenLocation));
 
-            //Taking an element screenshot
-            File scLoginBtn = loginPage.loginFormComponent().loginBtnElem().getScreenshotAs(OutputType.FILE);
-            String csLoginBtnImage = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + "LoginBtn.png";
-            FileUtils.copyFile(scLoginBtn, new File(csLoginBtnImage));
+        //Taking whole screenshot
+        csUtils.takeWholeScreenShot();
 
-            //Taking area screenshot
-            File scNavArea = loginPage.bottomNavBarComponent().bottomNavBar().getScreenshotAs(OutputType.FILE);
-            String scNavAreaImage = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + "scNavArea.png";
-            FileUtils.copyFile(scNavArea, new File(scNavAreaImage));
+        //Taking login button element screenshot
+        csUtils.takeElemScreenShot(loginPage.loginFormComponent().loginBtnElem(), "Login_button");
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        //Taking bottom navbar screenshot
+        csUtils.takeElemScreenShot(loginPage.bottomNavBarComponent().bottomNavBar(), "bot_nav_bar");
+
 
         notificationsMap.keySet().forEach(key -> {
             System.out.println(notificationsMap.get(key));
