@@ -8,29 +8,115 @@ import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SwipeUtils {
 
     private final double SCREEN_SIZE_PERCENTAGE = 1.0D;
     private final int MID_POINT_FACTOR = 2;
 
-    private AppiumDriver<MobileElement> mobileDriver;
+    private AppiumDriver<MobileElement> appiumDriver;
     private Dimension mobileScreenSize;
     private TouchAction touchAction;
 
-    public SwipeUtils(AppiumDriver<MobileElement> mobileDriver) {
-        this.mobileDriver = mobileDriver;
-        this.mobileScreenSize = mobileDriver.manage().window().getSize();
-        this.touchAction = new TouchAction(mobileDriver);
+    public SwipeUtils(AppiumDriver<MobileElement> appiumDriver) {
+        this.appiumDriver = appiumDriver;
+        this.mobileScreenSize = appiumDriver.manage().window().getSize();
+        this.touchAction = new TouchAction(appiumDriver);
+    }
+
+    public void horizontallySwipeToElem(By locator, String direction, int scrollTimes) {
+        for (int scroll = 0 ; scroll < scrollTimes ; scroll++) {
+            if (isDisplayed(locator)) { break; } else {
+                if (direction.equalsIgnoreCase("up")) {
+                    swipeToElem("up");
+                } else {
+                    swipeToElem("down");
+                }
+            }
+        }
+    }
+
+    /* Swipe left basing on swipeTimes */
+    public void verticallySwipeToElem(By locator, String direction, int swipeTimes) {
+        for (int scroll = 0 ; scroll < swipeTimes ; scroll++) {
+            if (isDisplayed(locator)) { break; } else {
+                if (direction.equalsIgnoreCase("left")) {
+                    swipeToElem("left");
+                } else {
+                    swipeToElem("right");
+                }
+            }
+        }
+    }
+
+    /* Swipe left one time */
+    public void verticallySwipeToElem(String direction) {
+        if (direction.equalsIgnoreCase("left")) {
+            swipeToElem("left");
+        } else {
+            swipeToElem("right");
+        }
+    }
+
+
+    private void swipeToElem(String direction) {
+        int xStartPoint = mobileScreenSize.getWidth() / MID_POINT_FACTOR;
+        int xEndpointPoint = mobileScreenSize.getWidth() / MID_POINT_FACTOR;
+        int yStartPoint = mobileScreenSize.getHeight() / MID_POINT_FACTOR;
+        int yEndpoint = mobileScreenSize.getHeight() / MID_POINT_FACTOR;
+
+        switch (direction) {
+            case "up":
+                yStartPoint = ( int ) (mobileScreenSize.getHeight() * 0.8);
+                yEndpoint = ( int ) (mobileScreenSize.getHeight() * 0.2);
+                break;
+            case "down":
+                yStartPoint = ( int ) (mobileScreenSize.getHeight() * 0.2);
+                yEndpoint = ( int ) (mobileScreenSize.getHeight() * 0.8);
+                break;
+            case "left":
+                xStartPoint = ( int ) (mobileScreenSize.getWidth() * 0.8);
+                xEndpointPoint = ( int ) (mobileScreenSize.getWidth() * 0.2);
+                break;
+            case "right":
+                xStartPoint = ( int ) (mobileScreenSize.getWidth() * 0.2);
+                xEndpointPoint = ( int ) (mobileScreenSize.getWidth() * 0.8);
+                break;
+        }
+        PointOption startPoint = PointOption.point(xStartPoint, yStartPoint);
+        PointOption endPoint = PointOption.point(xEndpointPoint, yEndpoint);
+        touchAction.press(startPoint)
+                   .waitAction(new WaitOptions().withDuration(Duration.ofMillis(1000)))
+                   .moveTo(endPoint)
+                   .release().perform();
+    }
+
+    private boolean isDisplayed(final By locator) {
+        appiumDriver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        try {
+            WebDriverWait wait = new WebDriverWait(appiumDriver, 2);
+            return wait.until(new ExpectedCondition<Boolean>() {
+                @Override
+                public Boolean apply(WebDriver appiumDriver) {
+                    return appiumDriver.findElement(locator).isDisplayed();
+                }
+            });
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
     /* The following methods perform swipe from a visible element to another visible element */
     public void swipeToElement(By fromLocator, By toLocator) {
-        ElementOption fromElement = new ElementOption().withElement(mobileDriver.findElement(fromLocator));
-        ElementOption toElement = new ElementOption().withElement(mobileDriver.findElement(toLocator));
+        ElementOption fromElement = new ElementOption().withElement(appiumDriver.findElement(fromLocator));
+        ElementOption toElement = new ElementOption().withElement(appiumDriver.findElement(toLocator));
         performSwipe(toElement, fromElement, 500);
     }
 
@@ -45,6 +131,12 @@ public class SwipeUtils {
         PointOption startPoint = getSwipeUpStartPoint(percentage);
         PointOption endPoint = getSwipeUpEndPoint(percentage);
         swipeUntilElementFound(locator, startPoint, endPoint);
+    }
+
+    public void swipeUp(double percentage) {
+        PointOption startPoint = getSwipeUpStartPoint(percentage);
+        PointOption endPoint = getSwipeUpEndPoint(percentage);
+        performSwipe(startPoint, endPoint, 800);
     }
 
     /* The following methods will return the vertical points for swipe up action */
@@ -73,16 +165,22 @@ public class SwipeUtils {
         swipeUntilElementFound(locator, startPoint, endPoint);
     }
 
+    public void swipeDown(double percentage) {
+        PointOption startPoint = getSwipeDownStartPoint(percentage);
+        PointOption endPoint = getSwipeDownEndPoint(percentage);
+        performSwipe(startPoint, endPoint, 1000);
+    }
+
     /* The following methods will return the vertical points for swipe up action */
     private PointOption getSwipeDownStartPoint(double percentage) {
-        int xStartPoint = mobileScreenSize.width / MID_POINT_FACTOR;
-        int yStartPoint = ( int ) (mobileScreenSize.height * (SCREEN_SIZE_PERCENTAGE - percentage));
+        int xStartPoint = mobileScreenSize.getWidth() / MID_POINT_FACTOR;
+        int yStartPoint = ( int ) (mobileScreenSize.getHeight() * (SCREEN_SIZE_PERCENTAGE - percentage));
         return new PointOption().withCoordinates(xStartPoint, yStartPoint);
     }
 
     private PointOption getSwipeDownEndPoint(double percentage) {
-        int xEndPoint = mobileScreenSize.width / MID_POINT_FACTOR;
-        int yEndPoint = ( int ) (mobileScreenSize.height * percentage);
+        int xEndPoint = mobileScreenSize.getWidth() / MID_POINT_FACTOR;
+        int yEndPoint = ( int ) (mobileScreenSize.getHeight() * percentage);
         return new PointOption().withCoordinates(xEndPoint, yEndPoint);
     }
 
@@ -147,9 +245,10 @@ public class SwipeUtils {
     /* This method will simply perform a swipe action */
     private void performSwipe(PointOption startPoint, PointOption endPoint, int waitTime) {
         touchAction.press(startPoint)
-                .waitAction(new WaitOptions().withDuration(Duration.ofMillis(waitTime)))
-                .moveTo(endPoint)
-                .release().perform();
+                   .waitAction(new WaitOptions().withDuration(Duration.ofMillis(waitTime)))
+                   .moveTo(endPoint)
+                   .release()
+                   .perform();
     }
 
     /* Common method */
@@ -174,7 +273,7 @@ public class SwipeUtils {
     }
 
     private boolean isElementFound(By locator) {
-        List<MobileElement> elements = mobileDriver.findElements(locator);
+        List<MobileElement> elements = appiumDriver.findElements(locator);
         return elements.isEmpty();
     }
 }

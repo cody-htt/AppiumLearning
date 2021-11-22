@@ -11,6 +11,8 @@ import utils.Constant;
 
 public class BottomNavBarComponent {
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Home']/parent::android.view.ViewGroup")
+    private MobileElement bottomNavBar;
     @AndroidFindBy(accessibility = "Home")
     private MobileElement homeLabel;
     @AndroidFindBy(accessibility = "Webview")
@@ -32,6 +34,11 @@ public class BottomNavBarComponent {
     }
 
     /* Context: return element mobile only */
+    public MobileElement bottomNavBar() {
+        waitForVisibility(bottomNavBar);
+        return bottomNavBar;
+    }
+
     public MobileElement homeLabelELem() {
         waitForVisibility(homeLabel);
         return homeLabel;
