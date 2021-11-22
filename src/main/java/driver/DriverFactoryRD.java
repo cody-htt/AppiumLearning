@@ -7,8 +7,10 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import utils.Constant;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class DriverFactoryRD {
 
@@ -46,14 +48,14 @@ public class DriverFactoryRD {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "Android");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "S6 Edge");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "05157df58940201b");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "Z5 Prem");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "CB5A2BZKHF");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
         AndroidDriver<MobileElement> androidDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
-        //        androidDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_LAUNCH_APPIUM_DRIVER, TimeUnit.SECONDS);
+        androidDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_LAUNCH_APPIUM_DRIVER, TimeUnit.SECONDS);
 
         System.out.println("Session ID: " + androidDriver.getSessionId());
 

@@ -1,7 +1,6 @@
 package models.base;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
@@ -27,7 +26,7 @@ public class PageModel {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    protected void waitForVisibility(MobileBy locator) {
+    protected void waitForVisibility(By locator) {
         MobileElement element = appiumDriver.findElement(locator);
         waitForVisibility(element);
     }
