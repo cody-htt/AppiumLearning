@@ -13,6 +13,10 @@ public class LoginFormComponent extends PageModel {
     private MobileElement passwordFieldElem;
     @AndroidFindBy(accessibility = "button-LOGIN")
     private MobileElement loginBtnElem;
+    @AndroidFindBy(xpath = "//*[@content-desc='button-LOGIN']/preceding-sibling::android.widget.TextView[3]")
+    private MobileElement wrongEmailTextElem;
+    @AndroidFindBy(xpath = "//*[@content-desc='button-LOGIN']/preceding-sibling::android.widget.TextView[2]")
+    private MobileElement wrongPasswordTextElem;
 
     public LoginFormComponent(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
@@ -21,6 +25,16 @@ public class LoginFormComponent extends PageModel {
     public MobileElement loginBtnElem() {
         waitForVisibility(loginBtnElem);
         return loginBtnElem;
+    }
+
+    public MobileElement wrongEmailTextElem() {
+        waitForVisibility(wrongEmailTextElem);
+        return wrongEmailTextElem;
+    }
+
+    public MobileElement wrongPasswordTextElem() {
+        waitForVisibility(wrongPasswordTextElem);
+        return wrongPasswordTextElem;
     }
 
     public LoginFormComponent inputEmailField(String email) {

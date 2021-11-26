@@ -9,9 +9,9 @@ import models.components.login_page_component.DialogComponent;
 import models.pages.LoginPage;
 import org.json.JSONObject;
 import org.openqa.selenium.NoSuchElementException;
-import utils.JSONReader;
 import utils.ScreenShotUtils;
 import utils.SwipeUtils;
+import utils.TestUtils;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -26,9 +26,9 @@ public class TestLab_17 {
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
         /* Initialize JSONReader object */
-        JSONReader jsonReader = new JSONReader();
+        TestUtils testUtils = new TestUtils();
         /* Initialize loginData basing loginUser.json file */
-        JSONObject loginData = jsonReader.readJSONFile("data/loginUser.json");
+        JSONObject loginData = testUtils.readJSONFile("data/loginUser.json");
         SwipeUtils swipeUtils = new SwipeUtils(androidDriver);
         ScreenShotUtils screenShotUtils = new ScreenShotUtils(androidDriver);
         /* Set implicitly wait time to 0s */

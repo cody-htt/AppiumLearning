@@ -1,13 +1,10 @@
 {
-  "invalidUser": {
-    "username": "tunghuynh",
+  "validCredentials": {
+    "email": "Tunghuynh@gmail.com",
     "password": "12345678"
   },
-  "invalidPassword": {
-    "password": "ax6271"
-  },
-  "validUser": {
-    "username": "Tunghuynh@gmail.com",
-    "password": "12345678"
+  "invalidCredentials": {
+    "email": "tunghuynh@@",
+    "password": "ax61"
   }
 }
