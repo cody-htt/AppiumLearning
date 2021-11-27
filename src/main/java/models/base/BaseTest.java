@@ -17,7 +17,6 @@ public class BaseTest {
 
     protected static HashMap<String, String> expectedStringMap = new HashMap<>();
     protected AppiumDriver<MobileElement> appiumDriver;
-    InputStream isStringMap;
     protected JSONObject loginData;
     protected SoftAssert softAssert;
     protected TestUtils testUtils;
@@ -34,10 +33,10 @@ public class BaseTest {
         loginData = testUtils.readJSONFile(jsonLoginUserFile);
         /* Initialize HashMap expectedStringMap basing on staticStrings.xml file */
         String xmlFileName = "staticStrings/staticStrings.xml";
-        isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
+        InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
         expectedStringMap = testUtils.xmlStringParser(isStringMap);
         try {
-            isStringMap.close();
+            if (isStringMap != null) { isStringMap.close(); }
         } catch (IOException ex) { ex.printStackTrace(); }
     }
 
