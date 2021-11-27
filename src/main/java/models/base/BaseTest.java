@@ -34,11 +34,11 @@ public class BaseTest {
         loginData = testUtils.readJSONFile(jsonLoginUserFile);
         /* Initialize HashMap expectedStringMap basing on staticStrings.xml file */
         String xmlFileName = "staticStrings/staticStrings.xml";
+        isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
+        expectedStringMap = testUtils.xmlStringParser(isStringMap);
         try {
-            isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
-            expectedStringMap = testUtils.xmlStringParser(isStringMap);
             isStringMap.close();
-        } catch (IOException ignored) { }
+        } catch (IOException ex) { ex.printStackTrace(); }
     }
 
     @AfterTest
