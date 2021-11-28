@@ -1,0 +1,4 @@
+# Created at 2021-11-28T17:08:48.814
+Boot Manifest-JAR contains absolute paths in classpath 'F:\Java-Mobile-Automation\FirstAppiumProject\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

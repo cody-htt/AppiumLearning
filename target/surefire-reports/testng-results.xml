@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="RegressionSuite" duration-ms="122032" started-at="2021-11-28T17:08:50 ICT" finished-at="2021-11-28T17:10:52 ICT">
+    <groups>
+    </groups>
+    <test name="Authentication" duration-ms="56311" started-at="2021-11-28T17:08:50 ICT" finished-at="2021-11-28T17:09:46 ICT">
+      <class name="TestNG.TestLoginPage.LoginTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="beforeTest" is-config="true" duration-ms="15554" started-at="2021-11-28T17:08:50 ICT" finished-at="2021-11-28T17:09:05 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="beforeClass" is-config="true" duration-ms="136" started-at="2021-11-28T17:09:05 ICT" finished-at="2021-11-28T17:09:05 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="beforeMethod" is-config="true" duration-ms="1235" started-at="2021-11-28T17:09:05 ICT" finished-at="2021-11-28T17:09:06 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginWithInvalidEmail()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="loginWithInvalidEmail" duration-ms="7049" started-at="2021-11-28T17:09:06 ICT" finished-at="2021-11-28T17:09:14 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="afterMethod" is-config="true" duration-ms="3725" started-at="2021-11-28T17:09:14 ICT" finished-at="2021-11-28T17:09:17 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="beforeMethod" is-config="true" duration-ms="1496" started-at="2021-11-28T17:09:17 ICT" finished-at="2021-11-28T17:09:19 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginWithInvalidPassword()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="loginWithInvalidPassword" duration-ms="7759" started-at="2021-11-28T17:09:19 ICT" finished-at="2021-11-28T17:09:26 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidPassword -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="afterMethod" is-config="true" duration-ms="3729" started-at="2021-11-28T17:09:26 ICT" finished-at="2021-11-28T17:09:30 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="beforeMethod" is-config="true" duration-ms="1349" started-at="2021-11-28T17:09:30 ICT" finished-at="2021-11-28T17:09:32 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginWithValidCreds()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="loginWithValidCreds" duration-ms="9734" started-at="2021-11-28T17:09:32 ICT" finished-at="2021-11-28T17:09:41 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCreds -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="afterMethod" is-config="true" duration-ms="3651" started-at="2021-11-28T17:09:41 ICT" finished-at="2021-11-28T17:09:45 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="afterClass" is-config="true" duration-ms="0" started-at="2021-11-28T17:09:45 ICT" finished-at="2021-11-28T17:09:45 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestNG.TestLoginPage.LoginTest@371a67ec]" name="afterTest" is-config="true" duration-ms="862" started-at="2021-11-28T17:09:45 ICT" finished-at="2021-11-28T17:09:46 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- TestNG.TestLoginPage.LoginTest -->
+    </test> <!-- Authentication -->
+    <test name="SignUp" duration-ms="65706" started-at="2021-11-28T17:09:46 ICT" finished-at="2021-11-28T17:10:52 ICT">
+      <class name="TestNG.TestLoginPage.SignUpTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="beforeTest" is-config="true" duration-ms="16247" started-at="2021-11-28T17:09:46 ICT" finished-at="2021-11-28T17:10:02 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="beforeClass" is-config="true" duration-ms="2" started-at="2021-11-28T17:10:02 ICT" finished-at="2021-11-28T17:10:02 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="beforeMethod" is-config="true" duration-ms="1335" started-at="2021-11-28T17:10:02 ICT" finished-at="2021-11-28T17:10:03 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="signUpWithInvalidEmail()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="signUpWithInvalidEmail" duration-ms="10161" started-at="2021-11-28T17:10:03 ICT" finished-at="2021-11-28T17:10:14 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithInvalidEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="afterMethod" is-config="true" duration-ms="3683" started-at="2021-11-28T17:10:14 ICT" finished-at="2021-11-28T17:10:17 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="beforeMethod" is-config="true" duration-ms="1388" started-at="2021-11-28T17:10:17 ICT" finished-at="2021-11-28T17:10:19 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="signUpWithInvalidPassword()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="signUpWithInvalidPassword" duration-ms="10985" started-at="2021-11-28T17:10:19 ICT" finished-at="2021-11-28T17:10:30 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithInvalidPassword -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="afterMethod" is-config="true" duration-ms="3717" started-at="2021-11-28T17:10:30 ICT" finished-at="2021-11-28T17:10:33 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="beforeMethod" is-config="true" duration-ms="1524" started-at="2021-11-28T17:10:33 ICT" finished-at="2021-11-28T17:10:35 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="signUpWithValidCreds()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="signUpWithValidCreds" duration-ms="12098" started-at="2021-11-28T17:10:35 ICT" finished-at="2021-11-28T17:10:47 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithValidCreds -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="afterMethod" is-config="true" duration-ms="3709" started-at="2021-11-28T17:10:47 ICT" finished-at="2021-11-28T17:10:51 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="afterClass" is-config="true" duration-ms="1" started-at="2021-11-28T17:10:51 ICT" finished-at="2021-11-28T17:10:51 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@543c6f6d]" name="afterTest" is-config="true" duration-ms="852" started-at="2021-11-28T17:10:51 ICT" finished-at="2021-11-28T17:10:52 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- TestNG.TestLoginPage.SignUpTest -->
+    </test> <!-- SignUp -->
+  </suite> <!-- RegressionSuite -->
+</testng-results>
