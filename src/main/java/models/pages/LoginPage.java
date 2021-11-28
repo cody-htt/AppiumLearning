@@ -1,7 +1,7 @@
 package models.pages;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import models.base.PageModel;
 import models.components.BottomNavBarComponent;
@@ -15,7 +15,7 @@ public class LoginPage extends PageModel {
     @AndroidFindBy(accessibility = "button-sign-up-container")
     private MobileElement signUpFormLabelElem;
 
-    public LoginPage(AndroidDriver<MobileElement> appiumDriver) {
+    public LoginPage(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
     }
 

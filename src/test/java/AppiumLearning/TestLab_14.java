@@ -9,7 +9,7 @@ import models.components.login_page_component.LoginFormComponent;
 import models.components.login_page_component.SignUpFormComponent;
 import models.pages.LoginPage;
 import org.json.JSONObject;
-import utils.JSONReader;
+import utils.TestUtils;
 
 public class TestLab_14 {
 
@@ -24,9 +24,9 @@ public class TestLab_14 {
         DriverFactoryRD.startAppiumServer();
         AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
         /* Initialize JSONReader object */
-        JSONReader jsonReader = new JSONReader();
+        TestUtils testUtils = new TestUtils();
         /* Initialize loginData basing loginUser.json file */
-        JSONObject loginData = jsonReader.readJSONFile("data/loginUser.json");
+        JSONObject loginData = testUtils.readJSONFile("data/loginUser.json");
 
         LoginPage loginPage = new LoginPage(androidDriver);
         BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();

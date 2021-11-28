@@ -15,7 +15,11 @@ public class SignUpFormComponent extends PageModel {
     private MobileElement repeatPasswordFieldElem;
     @AndroidFindBy(accessibility = "button-SIGN UP")
     private MobileElement signUpBtnElem;
-    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[3]")
+    private MobileElement wrongEmailTextElem;
+    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[2]")
+    private MobileElement wrongPasswordTextElem;
+    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[1]")
     private MobileElement errRepeatPwMessageElem;
 
     public SignUpFormComponent(AppiumDriver<MobileElement> appiumDriver) {
@@ -25,6 +29,16 @@ public class SignUpFormComponent extends PageModel {
     public MobileElement signUpBtnElem() {
         waitForVisibility(signUpBtnElem);
         return signUpBtnElem;
+    }
+
+    public MobileElement wrongEmailTextElem() {
+        waitForVisibility(wrongEmailTextElem);
+        return wrongEmailTextElem;
+    }
+
+    public MobileElement wrongPasswordTextElem() {
+        waitForVisibility(wrongPasswordTextElem);
+        return wrongPasswordTextElem;
     }
 
     public MobileElement errRepeatPwMessageElem() {
