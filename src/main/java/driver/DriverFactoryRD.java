@@ -50,6 +50,8 @@ public class DriverFactoryRD {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "Z5 Prem");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "CB5A2BZKHF");
+//        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "S6 Edge");
+//        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "05157df58940201b");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);

@@ -1,0 +1,82 @@
+# Created at 2021-11-28T17:06:54.853
+Exiting self fork JVM. Received SHUTDOWN command from Maven shutdown hook.
+Thread dump before exiting the process (716@TungH-RogStrix):
+"surefire-forkedjvm-command-thread" 
+   java.lang.Thread.State: RUNNABLE
+        at sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:178)
+        at org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:649)
+        at org.apache.maven.surefire.booter.ForkedBooter.access$400(ForkedBooter.java:82)
+        at org.apache.maven.surefire.booter.ForkedBooter$4.update(ForkedBooter.java:340)
+        at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.callListeners(CommandReader.java:423)
+        at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:364)
+        at java.lang.Thread.run(Thread.java:748)
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+        at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+"Reference Handler" 
+   java.lang.Thread.State: WAITING
+        at java.lang.Object.wait(Native Method)
+        at java.lang.Object.wait(Object.java:502)
+        at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+        at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"main" 
+   java.lang.Thread.State: RUNNABLE
+        at sun.security.provider.SeedGenerator.addNetworkAdapterInfo(SeedGenerator.java:233)
+        at sun.security.provider.SeedGenerator.access$000(SeedGenerator.java:80)
+        at sun.security.provider.SeedGenerator$1.run(SeedGenerator.java:183)
+        at sun.security.provider.SeedGenerator$1.run(SeedGenerator.java:168)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at sun.security.provider.SeedGenerator.getSystemEntropy(SeedGenerator.java:168)
+        at sun.security.provider.SecureRandom$SeederHolder.<clinit>(SecureRandom.java:201)
+        at sun.security.provider.SecureRandom.engineNextBytes(SecureRandom.java:221)
+        at java.security.SecureRandom.nextBytes(SecureRandom.java:468)
+        at java.util.UUID.randomUUID(UUID.java:145)
+        at org.testng.xml.XmlTest.init(XmlTest.java:64)
+        at org.testng.xml.XmlTest.<init>(XmlTest.java:51)
+        at org.testng.xml.TestNGContentHandler.xmlTest(TestNGContentHandler.java:322)
+        at org.testng.xml.TestNGContentHandler.startElement(TestNGContentHandler.java:554)
+        at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:509)
+        at com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:745)
+        at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1359)
+        at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+        at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+        at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+        at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+        at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+        at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+        at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+        at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+        at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+        at javax.xml.parsers.SAXParser.parse(SAXParser.java:195)
+        at org.testng.xml.XMLParser.parse(XMLParser.java:39)
+        at org.testng.xml.SuiteXmlParser.parse(SuiteXmlParser.java:16)
+        at org.testng.xml.SuiteXmlParser.parse(SuiteXmlParser.java:9)
+        at org.testng.xml.Parser.parse(Parser.java:164)
+        at org.testng.xml.Parser.parse(Parser.java:250)
+        at org.testng.TestNG.parseSuite(TestNG.java:324)
+        at org.testng.TestNG.initializeSuitesAndJarFile(TestNG.java:376)
+        at org.testng.TestNG.initializeEverything(TestNG.java:1011)
+        at org.testng.TestNG.run(TestNG.java:1023)
+        at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:284)
+        at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+        at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:119)
+        at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+        at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+        at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+        at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+
+
