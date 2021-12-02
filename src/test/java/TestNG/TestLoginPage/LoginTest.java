@@ -7,6 +7,8 @@ import models.components.login_page_component.LoginFormComponent;
 import models.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import test_data.LoginCreds;
+import test_data.authentication.DataObjectBuilder;
 
 public class LoginTest extends BaseTest {
 
@@ -36,12 +38,17 @@ public class LoginTest extends BaseTest {
         appiumDriver.launchApp();
     }
 
-    @Test
-    public void loginWithValidCreds() {
+    @Test(dataProvider = "loginCredsData")
+    public void loginWithValidCreds(LoginCreds loginCreds) {
         softAssert.assertTrue(loginPage.isLoginFormSelect());
 
+/*      Old way to test - read json object and retrieve "key":"value" of that object
         dialogComp = loginFormComp.inputEmailField(loginData.getJSONObject("validCredentials").getString("email"))
                                   .inputPasswordField(loginData.getJSONObject("validCredentials").getString("password"))
+                                  .clickOnLoginBtn();
+*/
+        dialogComp = loginFormComp.inputEmailField(loginCreds.getEmail())
+                                  .inputPasswordField(loginCreds.getPassword())
                                   .clickOnLoginBtn();
 
         Assert.assertTrue(dialogComp.isDialogTemplateDisplay());
@@ -88,4 +95,9 @@ public class LoginTest extends BaseTest {
         softAssert.assertAll();
     }
 
+    @DataProvider
+    public LoginCreds[] loginCredsData() {
+        String jsonLoc = "src/test/resources/data/loginCreds.json";
+        return DataObjectBuilder.buildDataObject(jsonLoc, LoginCreds[].class);
+    }
 }

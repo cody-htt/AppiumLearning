@@ -12,7 +12,7 @@ import utils.Constant;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class DriverFactoryRD {
+public class DriverFactoryOld {
 
     private static final String KILL_NODE_WINDOW_CMD = "taskkill /F /IM node.exe";
     private static final String KILL_NODE_LINUX_CMD = "killall node";
@@ -60,7 +60,7 @@ public class DriverFactoryRD {
         androidDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_LAUNCH_APPIUM_DRIVER, TimeUnit.SECONDS);
 
         System.out.println("Session ID: " + androidDriver.getSessionId());
-
+        androidDriver.quit();
         return androidDriver;
     }
 

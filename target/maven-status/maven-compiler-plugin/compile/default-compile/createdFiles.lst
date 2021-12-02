@@ -12,13 +12,16 @@ models\pages\SwipePage$Card.class
 models\base\BaseTest.class
 driver\DriverFactoryRD.class
 utils\SwipeUtils$1.class
+test_data\LoginCreds.class
 utils\TestUtils.class
 caps\MobileCapabilityTypeEx.class
 models\pages\FormPage.class
+test_data\authentication\DataObjectBuilder.class
 models\components\login_page_component\DialogComponent.class
 environments\Context.class
 driver\DriverFactoryVD.class
 models\components\forms_page_component\DropdownDialogComponent.class
+test_data\TestGson.class
 models\components\forms_page_component\ActiveBtnDialogComponent.class
 models\pages\WebviewPage$MenuItem.class
 models\base\PageModel.class

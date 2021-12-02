@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import driver.DriverFactoryRD;
+import driver.DriverFactoryOld;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -23,8 +23,8 @@ public class TestLab_17 {
     private final static HashMap<String, TopNotificationComponent.notification> notificationsMap = new HashMap<>();
 
     public static void main(String[] args) {
-        DriverFactoryRD.startAppiumServer();
-        AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        DriverFactoryOld.startAppiumServer();
+        AndroidDriver<MobileElement> androidDriver = DriverFactoryOld.getAndroidDriver();
         /* Initialize JSONReader object */
         TestUtils testUtils = new TestUtils();
         /* Initialize loginData basing loginUser.json file */
@@ -115,7 +115,7 @@ public class TestLab_17 {
         screenShotUtils.takeElemScreenShot(loginPage.bottomNavBarComponent().bottomNavBarElem(), "bot_nav_bar");
 
         androidDriver.closeApp();
-        DriverFactoryRD.stopAppiumServer();
+        DriverFactoryOld.stopAppiumServer();
 
         notificationsMap.keySet().forEach(key -> System.out.println(notificationsMap.get(key)));
         System.out.println(messageTurnOffWifi);

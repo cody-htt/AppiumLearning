@@ -21,6 +21,7 @@ public class TestUtils {
     private Document document;
     private InputStream inputStream;
 
+    // Custom way - need improvement to read json file
     public JSONObject readJSONFile(String filePath) {
         try {
             inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
