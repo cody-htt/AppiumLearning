@@ -1,8 +1,8 @@
 # AppiumLearning
 SDET Pro - Mobile Automation Test with Appium - Mentor Tu Huynh
 
-## Repo **_<tunghuynh>_**
+## Repo **_tunghuynh_**
 > The repo `tunghuynh` is used to do the Lab in the course
 
-## Repo **_<refactoring>_**
+## Repo **_refactoring_**
 > The purpose of `refactoring` is to practice multiple solutions differed from the SDET Pro course
