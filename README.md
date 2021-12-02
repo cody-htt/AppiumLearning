@@ -6,3 +6,6 @@ SDET Pro - Mobile Automation Test with Appium - Mentor Tu Huynh
 
 ## Repo **_refactoring_**
 > The purpose of `refactoring` is to practice multiple solutions differed from the SDET Pro course
+
+## Repo **_master_**
+> The purpose of `master` is always updated to `tunghuynh`
