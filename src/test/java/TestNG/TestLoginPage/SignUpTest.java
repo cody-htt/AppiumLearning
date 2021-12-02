@@ -1,6 +1,8 @@
 package TestNG.TestLoginPage;
 
-import models.base.BaseTest;
+import TestNG.BaseTestEx;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import models.components.BottomNavBarComponent;
 import models.components.login_page_component.DialogComponent;
 import models.components.login_page_component.SignUpFormComponent;
@@ -8,15 +10,17 @@ import models.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class SignUpTest extends BaseTest {
+public class SignUpTest extends BaseTestEx {
 
     LoginPage loginPage;
     SignUpFormComponent signUpFormComp;
     DialogComponent dialogComp;
     BottomNavBarComponent bottomNavBarComp;
+    AppiumDriver<MobileElement> appiumDriver;
 
     @BeforeClass
     public void beforeClass() {
+        appiumDriver = getDriver();
         loginPage = new LoginPage(appiumDriver);
         signUpFormComp = loginPage.signUpFormComponent();
     }

@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import driver.DriverFactoryRD;
+import driver.DriverFactoryOld;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import models.components.BottomNavBarComponent;
@@ -21,8 +21,8 @@ public class TestLab_14 {
     public static void main(String[] args) {
 
         /* Start appium server automatically */
-        DriverFactoryRD.startAppiumServer();
-        AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        DriverFactoryOld.startAppiumServer();
+        AndroidDriver<MobileElement> androidDriver = DriverFactoryOld.getAndroidDriver();
         /* Initialize JSONReader object */
         TestUtils testUtils = new TestUtils();
         /* Initialize loginData basing loginUser.json file */
@@ -71,7 +71,7 @@ public class TestLab_14 {
         }
 
         androidDriver.closeApp();
-        DriverFactoryRD.stopAppiumServer();
+        DriverFactoryOld.stopAppiumServer();
         System.out.println(result_01 + "\n" + result_02 + "\n" + result_03);
     }
 }

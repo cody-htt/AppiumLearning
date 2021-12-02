@@ -1,6 +1,6 @@
 package models.base;
 
-import driver.DriverFactoryRD;
+import driver.DriverFactoryOld;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.json.JSONObject;
@@ -24,8 +24,8 @@ public class BaseTest {
     @BeforeTest
     public void beforeTest() {
         /* Start appium server automatically and get android driver*/
-        DriverFactoryRD.startAppiumServer();
-        appiumDriver = DriverFactoryRD.getAndroidDriver();
+        DriverFactoryOld.startAppiumServer();
+        appiumDriver = DriverFactoryOld.getAndroidDriver();
         softAssert = new SoftAssert();
         testUtils = new TestUtils();
         /* Initialize loginData basing on loginUser.json file */
@@ -45,6 +45,6 @@ public class BaseTest {
         /* Close app */
         appiumDriver.closeApp();
         /* Stop Appium Server */
-        DriverFactoryRD.stopAppiumServer();
+        DriverFactoryOld.stopAppiumServer();
     }
 }

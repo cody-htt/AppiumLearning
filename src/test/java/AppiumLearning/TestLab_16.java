@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import driver.DriverFactoryRD;
+import driver.DriverFactoryOld;
 import environments.Context;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -19,8 +19,8 @@ public class TestLab_16 {
     private final static List<WebviewPage.MenuItem> itemList = new ArrayList<>();
 
     public static void main(String[] args) {
-        DriverFactoryRD.startAppiumServer();
-        AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        DriverFactoryOld.startAppiumServer();
+        AndroidDriver<MobileElement> androidDriver = DriverFactoryOld.getAndroidDriver();
         BottomNavBarComponent bottomNavBarComp = new BottomNavBarComponent(androidDriver);
         LeftNavBarComponent leftNavBarComp;
 
@@ -51,7 +51,7 @@ public class TestLab_16 {
         androidDriver.runAppInBackground(Duration.ofSeconds(3));
 
         androidDriver.closeApp();
-        DriverFactoryRD.stopAppiumServer();
+        DriverFactoryOld.stopAppiumServer();
 
         resultList.forEach(System.out :: println);
         itemList.forEach(System.out :: println);

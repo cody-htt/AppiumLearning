@@ -1,6 +1,6 @@
 package AppiumLearning;
 
-import driver.DriverFactoryRD;
+import driver.DriverFactoryOld;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import models.components.forms_page_component.ActiveBtnDialogComponent;
@@ -19,8 +19,8 @@ public class TestLab_15 {
     private final static List<SwipePage.Card> cardListItem = new ArrayList<>();
 
     public static void main(String[] args) {
-        DriverFactoryRD.startAppiumServer();
-        AndroidDriver<MobileElement> androidDriver = DriverFactoryRD.getAndroidDriver();
+        DriverFactoryOld.startAppiumServer();
+        AndroidDriver<MobileElement> androidDriver = DriverFactoryOld.getAndroidDriver();
         /* Reset the implicitly wait time
         * Need to find a solution to get rid of this type of wait*/
         androidDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -88,7 +88,7 @@ public class TestLab_15 {
         resultList.add("Logo Text: " + swipePage.webDriverIOLogoTextElem().getText());
 
         androidDriver.closeApp();
-        DriverFactoryRD.stopAppiumServer();
+        DriverFactoryOld.stopAppiumServer();
 
         resultList.forEach(System.out :: println);
         System.out.println();
