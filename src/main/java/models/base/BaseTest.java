@@ -32,7 +32,7 @@ public class BaseTest {
         String jsonLoginUserFile = "data/loginUser.json";
         loginData = testUtils.readJSONFile(jsonLoginUserFile);
         /* Initialize HashMap expectedStringMap basing on staticStrings.xml file */
-        String xmlFileName = "static-strings/staticStrings.xml";
+        String xmlFileName = "static-string/staticStrings.xml";
         InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
         expectedStringMap = testUtils.xmlStringParser(isStringMap);
         try {

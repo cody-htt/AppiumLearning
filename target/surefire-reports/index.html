@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-RegressionSuite">
-              <span class="suite-name border-passed">RegressionSuite</span>
+              <span class="suite-name border-skipped">RegressionSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,46 +93,51 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">7 methods,  7 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods passed suite-RegressionSuite"> (hide)</a> <!-- hide-methods passed suite-RegressionSuite -->
-                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods passed suite-RegressionSuite"> (show)</a> <!-- show-methods passed suite-RegressionSuite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-RegressionSuite" class="hide-methods skipped suite-RegressionSuite"> (hide)</a> <!-- hide-methods skipped suite-RegressionSuite -->
+                      <a href="#" panel-name="suite-RegressionSuite" class="show-methods skipped suite-RegressionSuite"> (show)</a> <!-- show-methods skipped suite-RegressionSuite -->
                     </span>
-                    <div class="method-list-content passed suite-RegressionSuite">
+                    <div class="method-list-content skipped suite-RegressionSuite">
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.LoginTest" hash-for-method="loginWithInvalidEmail">loginWithInvalidEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.LoginTest" hash-for-method="loginWithInvalidPassword">loginWithInvalidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.LoginTest" hash-for-method="loginWithValidCreds">loginWithValidCreds</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.LoginTest" hash-for-method="loginWithValidCreds(LoginCreds{username=&#039;Tunghuynh&#039;, password=&#039;12345678&#039;})">loginWithValidCreds(LoginCreds{username='Tunghuynh', password='12345678'})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.LoginTest" hash-for-method="loginWithValidCreds(LoginCreds{username=&#039;Tunghuynh@gmail.com&#039;, password=&#039;12345678&#039;})">loginWithValidCreds(LoginCreds{username='Tunghuynh@gmail.com', password='12345678'})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.SignUpTest" hash-for-method="signUpWithInvalidEmail">signUpWithInvalidEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.SignUpTest" hash-for-method="signUpWithInvalidPassword">signUpWithInvalidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RegressionSuite" title="TestNG.TestLoginPage.SignUpTest" hash-for-method="signUpWithValidCreds">signUpWithValidCreds</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-RegressionSuite -->
+                    </div> <!-- method-list-content skipped suite-RegressionSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -144,38 +149,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-RegressionSuite" class="panel RegressionSuite">
-          <div class="suite-RegressionSuite-class-passed">
+          <div class="suite-RegressionSuite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">TestNG.TestLoginPage.LoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginWithInvalidEmail">
-                  </a> <!-- loginWithInvalidEmail -->
-                  <span class="method-name">loginWithInvalidEmail</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginWithInvalidPassword">
-                  </a> <!-- loginWithInvalidPassword -->
-                  <span class="method-name">loginWithInvalidPassword</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginWithValidCreds">
-                  </a> <!-- loginWithValidCreds -->
-                  <span class="method-name">loginWithValidCreds</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RegressionSuite-class-passed -->
-          <div class="suite-RegressionSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">TestNG.TestLoginPage.SignUpTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -184,6 +160,12 @@
                   <a name="signUpWithInvalidEmail">
                   </a> <!-- signUpWithInvalidEmail -->
                   <span class="method-name">signUpWithInvalidEmail</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -191,6 +173,12 @@
                   <a name="signUpWithInvalidPassword">
                   </a> <!-- signUpWithInvalidPassword -->
                   <span class="method-name">signUpWithInvalidPassword</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -198,10 +186,78 @@
                   <a name="signUpWithValidCreds">
                   </a> <!-- signUpWithValidCreds -->
                   <span class="method-name">signUpWithValidCreds</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RegressionSuite-class-passed -->
+          </div> <!-- suite-RegressionSuite-class-skipped -->
+          <div class="suite-RegressionSuite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">TestNG.TestLoginPage.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithInvalidEmail">
+                  </a> <!-- loginWithInvalidEmail -->
+                  <span class="method-name">loginWithInvalidEmail</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithInvalidPassword">
+                  </a> <!-- loginWithInvalidPassword -->
+                  <span class="method-name">loginWithInvalidPassword</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithValidCreds(LoginCreds{username=&#039;Tunghuynh&#039;, password=&#039;12345678&#039;})">
+                  </a> <!-- loginWithValidCreds(LoginCreds{username='Tunghuynh', password='12345678'}) -->
+                  <span class="method-name">loginWithValidCreds</span>
+                  <span class="parameters">(LoginCreds{username='Tunghuynh', password='12345678'})</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginWithValidCreds(LoginCreds{username=&#039;Tunghuynh@gmail.com&#039;, password=&#039;12345678&#039;})">
+                  </a> <!-- loginWithValidCreds(LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}) -->
+                  <span class="method-name">loginWithValidCreds</span>
+                  <span class="parameters">(LoginCreds{username='Tunghuynh@gmail.com', password='12345678'})</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: InputStream cannot be null
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:117)
+	at utils.TestUtils.xmlStringParser(TestUtils.java:48)
+	at models.base.BaseTest.beforeTest(BaseTest.java:37)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-RegressionSuite-class-skipped -->
         </div> <!-- panel RegressionSuite -->
         <div panel-name="test-xml-RegressionSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -262,36 +318,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'signUpWithValidCreds')
-data.setCell(0, 2, 'TestNG.TestLoginPage.SignUpTest')
-data.setCell(0, 3, 12098);
+data.setCell(0, 1, 'loginWithInvalidPassword')
+data.setCell(0, 2, 'TestNG.TestLoginPage.LoginTest')
+data.setCell(0, 3, 0);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'signUpWithInvalidPassword')
-data.setCell(1, 2, 'TestNG.TestLoginPage.SignUpTest')
-data.setCell(1, 3, 10985);
+data.setCell(1, 1, 'loginWithInvalidEmail')
+data.setCell(1, 2, 'TestNG.TestLoginPage.LoginTest')
+data.setCell(1, 3, 0);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'signUpWithInvalidEmail')
-data.setCell(2, 2, 'TestNG.TestLoginPage.SignUpTest')
-data.setCell(2, 3, 10161);
+data.setCell(2, 1, 'loginWithValidCreds')
+data.setCell(2, 2, 'TestNG.TestLoginPage.LoginTest')
+data.setCell(2, 3, 0);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'loginWithValidCreds')
 data.setCell(3, 2, 'TestNG.TestLoginPage.LoginTest')
-data.setCell(3, 3, 9734);
+data.setCell(3, 3, 0);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'loginWithInvalidPassword')
-data.setCell(4, 2, 'TestNG.TestLoginPage.LoginTest')
-data.setCell(4, 3, 7759);
+data.setCell(4, 1, 'signUpWithInvalidPassword')
+data.setCell(4, 2, 'TestNG.TestLoginPage.SignUpTest')
+data.setCell(4, 3, 0);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'loginWithInvalidEmail')
-data.setCell(5, 2, 'TestNG.TestLoginPage.LoginTest')
-data.setCell(5, 3, 7049);
+data.setCell(5, 1, 'signUpWithInvalidEmail')
+data.setCell(5, 2, 'TestNG.TestLoginPage.SignUpTest')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'signUpWithValidCreds')
+data.setCell(6, 2, 'TestNG.TestLoginPage.SignUpTest')
+data.setCell(6, 3, 0);
 window.suiteTableData['RegressionSuite']= { tableData: data, tableDiv: 'times-div-RegressionSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 57 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-RegressionSuite">
               </div> <!-- times-div-RegressionSuite -->
             </div> <!-- times-div -->
@@ -319,111 +379,127 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">TestNG.TestLoginPage.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">15571 ms</span>
+                <span class="method-start">12716 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">15713 ms</span>
+                <span class="method-start">12725 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">loginWithInvalidEmail</span>
-                <span class="method-start">16949 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">23999 ms</span>
+                <span class="method-start">12726 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">loginWithInvalidEmail</span>
+                <span class="method-start">12726 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">27724 ms</span>
+                <span class="method-start">12727 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">loginWithInvalidPassword</span>
-                <span class="method-start">29220 ms</span>
+                <span class="method-start">12727 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">36980 ms</span>
+                <span class="method-start">12727 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">12767 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">40710 ms</span>
+                <span class="method-start">12767 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">loginWithValidCreds</span>
-                <span class="method-start">42059 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">12767 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">51793 ms</span>
+                <span class="method-start">12767 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">loginWithValidCreds(LoginCreds{username='Tunghuynh', password='12345678'})</span>
+                <span class="method-start">12767 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginWithValidCreds(LoginCreds{username='Tunghuynh@gmail.com', password='12345678'})</span>
+                <span class="method-start">12767 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">55444 ms</span>
+                <span class="method-start">12768 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">55446 ms</span>
+                <span class="method-start">12769 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestNG.TestLoginPage.SignUpTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">56323 ms</span>
+                <span class="method-start">12788 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">72570 ms</span>
+                <span class="method-start">23874 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">72573 ms</span>
+                <span class="method-start">23875 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">23875 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">signUpWithInvalidEmail</span>
-                <span class="method-start">73908 ms</span>
+                <span class="method-start">23875 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">84070 ms</span>
+                <span class="method-start">23875 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMethod</span>
-                <span class="method-start">87754 ms</span>
-              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">23875 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">signUpWithInvalidPassword</span>
-                <span class="method-start">89142 ms</span>
+                <span class="method-start">23875 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">100127 ms</span>
+                <span class="method-start">23876 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMethod</span>
-                <span class="method-start">103845 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">signUpWithValidCreds</span>
-                <span class="method-start">105369 ms</span>
+                <span class="method-start">23876 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">afterMethod</span>
-                <span class="method-start">117467 ms</span>
-              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">23876 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">121176 ms</span>
+                <span class="method-start">23876 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">121177 ms</span>
+                <span class="method-start">23876 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
