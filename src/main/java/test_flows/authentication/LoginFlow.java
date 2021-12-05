@@ -7,13 +7,13 @@ import models.components.BottomNavBarComponent;
 import models.components.login_page_component.DialogComponent;
 import models.components.login_page_component.LoginFormComponent;
 import models.pages.LoginPage;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import test_data.LoginCreds;
 import utils.TestUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class LoginFlow {
 
@@ -24,8 +24,9 @@ public class LoginFlow {
 
     public LoginFlow(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
+        this.expectedStringMap = new TestUtils().getExpectedStringMap();
         softAssert = new SoftAssert();
-        getExpectedStringMap();
+
     }
 
     public LoginFlow navigateToLoginPage() {
@@ -66,18 +67,24 @@ public class LoginFlow {
         return this;
     }
 
-    public void verifyLoginWithIncorrectCreds() {
-
+    public void verifyLoginWithIncorrectCreds(LoginCreds loginCreds) {
+        String actualErrorText;
+        String expectedEmailErrMessage = expectedStringMap.get("error_login_invalid_email_msg");
+        String expectedPasswordErrMessage = expectedStringMap.get("error_login_invalid_password_msg");
+        int minPasswordLength = 7;
+        if (checkInvalidEmail(loginCreds.getEmail())) {
+            actualErrorText = loginPage.errInvalidEmailMsgElem().getText();
+            Assert.assertEquals(actualErrorText, expectedEmailErrMessage);
+        }
+        if (loginCreds.getPassword().toCharArray().length < minPasswordLength) {
+            actualErrorText = loginPage.errInvalidPasswordMsgElem().getText();
+            Assert.assertEquals(actualErrorText, expectedPasswordErrMessage);
+        }
     }
 
-    private void getExpectedStringMap() {
-        TestUtils testUtils = new TestUtils();
-        // Initialize HashMap expectedStringMap basing on staticStrings.xml file
-        String xmlFileName = "static-string/authentication/ExpectedText.xml";
-        InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
-        expectedStringMap = testUtils.xmlStringParser(isStringMap);
-        try {
-            if (isStringMap != null) { isStringMap.close(); }
-        } catch (IOException ex) { ex.printStackTrace(); }
+    private boolean checkInvalidEmail(String email) {
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        return !pattern.matcher(email).matches();
     }
 }

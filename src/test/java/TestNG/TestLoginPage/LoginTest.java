@@ -20,18 +20,18 @@ public class LoginTest extends BaseTestEx {
         LoginFlow loginFlow = new LoginFlow(androidDriver);
         loginFlow.navigateToLoginPage()
                  .login(loginCreds)
-                 .verifyLoginWithIncorrectCreds();
+                 .verifyLoginWithIncorrectCreds(loginCreds);
     }
 
     @Description("Verify Login with invalid credentials")
     @Test(description = "Test Login", priority = 2)
     public void loginWithValidCreds() {
-        LoginCreds loginCreds = new LoginCreds(validLoginData.getString("email"), validLoginData.getString("password"));
+        LoginCreds validLoginCreds = new LoginCreds(validLoginData.getString("email"), validLoginData.getString("password"));
         // Init Appium driver
         AppiumDriver<MobileElement> androidDriver = getDriver();
         LoginFlow loginFlow = new LoginFlow(androidDriver);
         loginFlow.navigateToLoginPage()
-                 .login(loginCreds)
+                 .login(validLoginCreds)
                  .verifyLoginWithCorrectCreds();
     }
 
