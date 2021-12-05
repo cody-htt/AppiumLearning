@@ -1,5 +1,6 @@
 # AppiumLearning
-SDET Pro - Mobile Automation Test with Appium - Mentor Tu Huynh
+1. Website [SDET Pro](https://sdetpro.com/) 
+2. Mobile Automation Test with Appium - Mentor [Tu Huynh](https://github.com/sdetpro-blog)
 
 ## Repo **_tunghuynh_**
 > The repo `tunghuynh` is used to do the Lab in the course
