@@ -5,8 +5,8 @@ public class LoginCreds {
     private String email;
     private String password;
 
-    public LoginCreds(String username, String password) {
-        this.email = username;
+    public LoginCreds(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 

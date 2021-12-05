@@ -3,6 +3,7 @@ package TestNG.TestLoginPage;
 import TestNG.BaseTestEx;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.qameta.allure.Description;
 import models.components.BottomNavBarComponent;
 import models.components.login_page_component.DialogComponent;
 import models.components.login_page_component.SignUpFormComponent;
@@ -40,13 +41,14 @@ public class SignUpTest extends BaseTestEx {
         appiumDriver.launchApp();
     }
 
+    @Description("Verify Signup with valid credentials")
     @Test
     public void signUpWithValidCreds() {
         softAssert.assertTrue(loginPage.isSignUpFormSelect());
 
-        dialogComp = signUpFormComp.inputEmailField(loginData.getJSONObject("validCredentials").getString("email"))
-                                   .inputPasswordField(loginData.getJSONObject("validCredentials").getString("password"))
-                                   .inputRepeatPasswordField(loginData.getJSONObject("validCredentials").getString("password"))
+        dialogComp = signUpFormComp.inputEmailField(validLoginData.getJSONObject("validCredentials").getString("email"))
+                                   .inputPasswordField(validLoginData.getJSONObject("validCredentials").getString("password"))
+                                   .inputRepeatPasswordField(validLoginData.getJSONObject("validCredentials").getString("password"))
                                    .clickOnSignUpBtn();
 
         Assert.assertTrue(dialogComp.isDialogTemplateDisplay());
@@ -63,13 +65,14 @@ public class SignUpTest extends BaseTestEx {
         dialogComp.clickDialogBtn();
     }
 
+    @Description("Verify Signup with invalid email")
     @Test
     public void signUpWithInvalidEmail() {
         softAssert.assertTrue(loginPage.isSignUpFormSelect());
 
-        dialogComp = signUpFormComp.inputEmailField(loginData.getJSONObject("invalidCredentials").getString("email"))
-                                   .inputPasswordField(loginData.getJSONObject("validCredentials").getString("password"))
-                                   .inputRepeatPasswordField(loginData.getJSONObject("validCredentials").getString("password"))
+        dialogComp = signUpFormComp.inputEmailField(validLoginData.getJSONObject("invalidCredentials").getString("email"))
+                                   .inputPasswordField(validLoginData.getJSONObject("validCredentials").getString("password"))
+                                   .inputRepeatPasswordField(validLoginData.getJSONObject("validCredentials").getString("password"))
                                    .clickOnSignUpBtn();
 
         String actualWrongEmailMessage = signUpFormComp.wrongEmailTextElem().getText();
@@ -79,13 +82,14 @@ public class SignUpTest extends BaseTestEx {
         softAssert.assertAll();
     }
 
+    @Description("Verify Signup with invalid password")
     @Test
     public void signUpWithInvalidPassword() {
         softAssert.assertTrue(loginPage.isSignUpFormSelect());
 
-        dialogComp = signUpFormComp.inputEmailField(loginData.getJSONObject("validCredentials").getString("email"))
-                                   .inputPasswordField(loginData.getJSONObject("invalidCredentials").getString("password"))
-                                   .inputRepeatPasswordField(loginData.getJSONObject("validCredentials").getString("password"))
+        dialogComp = signUpFormComp.inputEmailField(validLoginData.getJSONObject("validCredentials").getString("email"))
+                                   .inputPasswordField(validLoginData.getJSONObject("invalidCredentials").getString("password"))
+                                   .inputRepeatPasswordField(validLoginData.getJSONObject("validCredentials").getString("password"))
                                    .clickOnSignUpBtn();
 
         String actualWrongPwMessage = signUpFormComp.wrongPasswordTextElem().getText();

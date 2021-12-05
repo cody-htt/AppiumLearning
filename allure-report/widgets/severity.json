@@ -1,0 +1,121 @@
+[ {
+  "uid" : "d9d3df8516001a37",
+  "name" : "loginWithInvalidEmail",
+  "time" : {
+    "start" : 1638659525097,
+    "stop" : 1638659531318,
+    "duration" : 6221
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7dd353364e26450e",
+  "name" : "loginWithValidCreds",
+  "time" : {
+    "start" : 1638659548179,
+    "stop" : 1638659557041,
+    "duration" : 8862
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7d7f1fb5dc499d0",
+  "name" : "Login Test",
+  "time" : {
+    "start" : 1638664858979,
+    "stop" : 1638664881534,
+    "duration" : 22555
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "30e01933b96476ac",
+  "name" : "signUpWithInvalidPassword",
+  "time" : {
+    "start" : 1638649312696,
+    "stop" : 1638649322829,
+    "duration" : 10133
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2b841cb44ef209ee",
+  "name" : "Login Test",
+  "time" : {
+    "start" : 1638664881545,
+    "stop" : 1638664888060,
+    "duration" : 6515
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7bd70fcbe040a904",
+  "name" : "Test Login",
+  "time" : {
+    "start" : 1638664888068,
+    "stop" : 1638664893577,
+    "duration" : 5509
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c12e2e06f0d596a0",
+  "name" : "signUpWithInvalidEmail",
+  "time" : {
+    "start" : 1638649297408,
+    "stop" : 1638649307986,
+    "duration" : 10578
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c153afe1701e466",
+  "name" : "loginWithValidCreds",
+  "time" : {
+    "start" : 1638659561908,
+    "stop" : 1638659598042,
+    "duration" : 36134
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "ce9541d486c63c08",
+  "name" : "beforeMethod",
+  "time" : {
+    "start" : 1638649284541,
+    "stop" : 1638649284542,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "d2f770727429609",
+  "name" : "signUpWithValidCreds",
+  "time" : {
+    "start" : 1638649327613,
+    "stop" : 1638649340318,
+    "duration" : 12705
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6fe4014e04745a2f",
+  "name" : "onTestFailure",
+  "time" : {
+    "start" : 1638664594755,
+    "stop" : 1638664594755,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "ef58773e6f7833c9",
+  "name" : "loginWithInvalidPassword",
+  "time" : {
+    "start" : 1638659536113,
+    "stop" : 1638659543188,
+    "duration" : 7075
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

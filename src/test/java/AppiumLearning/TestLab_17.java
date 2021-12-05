@@ -27,8 +27,8 @@ public class TestLab_17 {
         AndroidDriver<MobileElement> androidDriver = DriverFactoryOld.getAndroidDriver();
         /* Initialize JSONReader object */
         TestUtils testUtils = new TestUtils();
-        /* Initialize loginData basing loginUser.json file */
-        JSONObject loginData = testUtils.readJSONFile("data/loginUser.json");
+        /* Initialize loginData basing invalidLoginCreds.json file */
+        JSONObject loginData = testUtils.readJSONFile("data/authentication/invalidLoginCreds.json");
         SwipeUtils swipeUtils = new SwipeUtils(androidDriver);
         ScreenShotUtils screenShotUtils = new ScreenShotUtils(androidDriver);
         /* Set implicitly wait time to 0s */
