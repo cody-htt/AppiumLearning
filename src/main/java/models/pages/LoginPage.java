@@ -3,6 +3,7 @@ package models.pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 import models.base.PageModel;
 import models.components.BottomNavBarComponent;
 import models.components.login_page_component.LoginFormComponent;
@@ -19,11 +20,13 @@ public class LoginPage extends PageModel {
         super(appiumDriver);
     }
 
+    @Step("Select Login Form")
     public boolean isLoginFormSelect() {
         loginFormLabelElem.click();
         return loginFormComponent().loginBtnElem().isDisplayed();
     }
 
+    @Step("Select Sign Up Form")
     public boolean isSignUpFormSelect() {
         signUpFormLabelElem.click();
         return signUpFormComponent().signUpBtnElem().isDisplayed();

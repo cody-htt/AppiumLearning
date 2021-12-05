@@ -1,0 +1,173 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "TestNG.TestLoginPage",
+    "children" : [ {
+      "name" : "LoginTest",
+      "children" : [ {
+        "name" : "beforeMethod",
+        "uid" : "ce9541d486c63c08",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1638649284541,
+          "stop" : 1638649284542,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "loginWithInvalidEmail",
+        "uid" : "d9d3df8516001a37",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638659525097,
+          "stop" : 1638659531318,
+          "duration" : 6221
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "loginWithInvalidPassword",
+        "uid" : "ef58773e6f7833c9",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638659536113,
+          "stop" : 1638659543188,
+          "duration" : 7075
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "loginWithValidCreds",
+        "uid" : "7dd353364e26450e",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638659548179,
+          "stop" : 1638659557041,
+          "duration" : 8862
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}" ]
+      }, {
+        "name" : "loginWithValidCreds",
+        "uid" : "2c153afe1701e466",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1638659561908,
+          "stop" : 1638659598042,
+          "duration" : 36134
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "LoginCreds{username='Tunghuynh', password='12345678'}" ]
+      }, {
+        "name" : "onTestFailure",
+        "uid" : "6fe4014e04745a2f",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "broken",
+        "time" : {
+          "start" : 1638664594755,
+          "stop" : 1638664594755,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "loginWithInvalidCreds",
+        "uid" : "7d7f1fb5dc499d0",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638664858979,
+          "stop" : 1638664881534,
+          "duration" : 22555
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}" ]
+      }, {
+        "name" : "loginWithInvalidCreds",
+        "uid" : "2b841cb44ef209ee",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638664881545,
+          "stop" : 1638664888060,
+          "duration" : 6515
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "LoginCreds{username='tunghuynh@', password='12345678'}" ]
+      }, {
+        "name" : "loginWithValidCreds",
+        "uid" : "7bd70fcbe040a904",
+        "parentUid" : "7eae31f7ae40d02239ffcf419c7da7e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638664888068,
+          "stop" : 1638664893577,
+          "duration" : 5509
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7eae31f7ae40d02239ffcf419c7da7e9"
+    }, {
+      "name" : "SignUpTest",
+      "children" : [ {
+        "name" : "signUpWithInvalidEmail",
+        "uid" : "c12e2e06f0d596a0",
+        "parentUid" : "1442c152d5eaa24c84c99a3e1be7d471",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638649297408,
+          "stop" : 1638649307986,
+          "duration" : 10578
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "signUpWithInvalidPassword",
+        "uid" : "30e01933b96476ac",
+        "parentUid" : "1442c152d5eaa24c84c99a3e1be7d471",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638649312696,
+          "stop" : 1638649322829,
+          "duration" : 10133
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "signUpWithValidCreds",
+        "uid" : "d2f770727429609",
+        "parentUid" : "1442c152d5eaa24c84c99a3e1be7d471",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638649327613,
+          "stop" : 1638649340318,
+          "duration" : 12705
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1442c152d5eaa24c84c99a3e1be7d471"
+    } ],
+    "uid" : "TestNG.TestLoginPage"
+  } ]
+}

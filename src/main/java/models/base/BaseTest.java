@@ -29,10 +29,10 @@ public class BaseTest {
         softAssert = new SoftAssert();
         testUtils = new TestUtils();
         /* Initialize loginData basing on loginUser.json file */
-        String jsonLoginUserFile = "data/loginUser.json";
+        String jsonLoginUserFile = "data/authentication/loginUser.json";
         loginData = testUtils.readJSONFile(jsonLoginUserFile);
-        /* Initialize HashMap expectedStringMap basing on staticStrings.xml file */
-        String xmlFileName = "static-string/staticStrings.xml";
+        /* Initialize HashMap expectedStringMap basing on ExpectedText.xml file */
+        String xmlFileName = "static-string/authentication/ExpectedText.xml";
         InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
         expectedStringMap = testUtils.xmlStringParser(isStringMap);
         try {

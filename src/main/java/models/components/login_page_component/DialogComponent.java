@@ -3,6 +3,7 @@ package models.components.login_page_component;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.qameta.allure.Step;
 import models.base.PageModel;
 
 public class DialogComponent extends PageModel {
@@ -35,6 +36,7 @@ public class DialogComponent extends PageModel {
         return dialogTemplateElem.isDisplayed();
     }
 
+    @Step("Click on Dialog \"OK\" button")
     public void clickDialogBtn() {
         clickElement(dialogBtnElem);
     }

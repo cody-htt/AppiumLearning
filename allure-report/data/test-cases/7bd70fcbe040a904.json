@@ -1,0 +1,271 @@
+{
+  "uid" : "7bd70fcbe040a904",
+  "name" : "Test Login",
+  "fullName" : "TestNG.TestLoginPage.LoginTest.loginWithValidCreds",
+  "historyId" : "2a4ba87a466752074bb041da2a4bbea1",
+  "time" : {
+    "start" : 1638664888068,
+    "stop" : 1638664893577,
+    "duration" : 5509
+  },
+  "description" : "Verify Login with invalid credentials",
+  "descriptionHtml" : "<p>Verify Login with invalid credentials</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1638664888066,
+      "stop" : 1638664888066,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1638664858655,
+      "stop" : 1638664858661,
+      "duration" : 6
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Verify Login with invalid credentials",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Input email as Tunghuynh@gmail.com and password as 12345678",
+      "time" : {
+        "start" : 1638664889239,
+        "stop" : 1638664893577,
+        "duration" : 4338
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Input email as Tunghuynh@gmail.com",
+        "time" : {
+          "start" : 1638664889239,
+          "stop" : 1638664890366,
+          "duration" : 1127
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "Tunghuynh@gmail.com"
+        } ],
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Input password as 12345678",
+        "time" : {
+          "start" : 1638664890366,
+          "stop" : 1638664892645,
+          "duration" : 2279
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "12345678"
+        } ],
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Click on Login button",
+        "time" : {
+          "start" : 1638664892645,
+          "stop" : 1638664893577,
+          "duration" : 932
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0,
+        "stepsCount" : 0,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "loginCreds",
+        "value" : "LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 3,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "onTestFailure",
+    "time" : {
+      "start" : 1638664893578,
+      "stop" : 1638664893578,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1638664893584,
+      "stop" : 1638664894336,
+      "duration" : 752
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginWithValidCreds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "FirstAppiumProject"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "TungH-RogStrix"
+  }, {
+    "name" : "thread",
+    "value" : "31996@TungH-RogStrix.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a83693a9775b4d72",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1638664594740,
+        "stop" : 1638664594746,
+        "duration" : 6
+      }
+    }, {
+      "uid" : "8929bae1d3ad5164",
+      "status" : "broken",
+      "statusDetails" : "InputStream cannot be null",
+      "time" : {
+        "start" : 1638664459806,
+        "stop" : 1638664459807,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "c8f466c5b91421df",
+      "status" : "broken",
+      "statusDetails" : "\nData Provider public test_data.LoginCreds[] TestNG.TestLoginPage.LoginTest.loginCredsData() returned a null value",
+      "time" : {
+        "start" : 1638658530840,
+        "stop" : 1638658530840,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "35f2fde7df9d66dc",
+      "status" : "skipped",
+      "statusDetails" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
+      "time" : {
+        "start" : 1638649284676,
+        "stop" : 1638649284676,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "d09f3e4f0b8b6c0a",
+      "status" : "skipped",
+      "statusDetails" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
+      "time" : {
+        "start" : 1638649284669,
+        "stop" : 1638649284670,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "cf4b637421c80340",
+      "status" : "skipped",
+      "statusDetails" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
+      "time" : {
+        "start" : 1638534748321,
+        "stop" : 1638534748321,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "2573d18cf1b0eea6",
+      "status" : "skipped",
+      "statusDetails" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
+      "time" : {
+        "start" : 1638534748316,
+        "stop" : 1638534748316,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7bd70fcbe040a904.json",
+  "parameterValues" : [ ]
+}

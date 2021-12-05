@@ -3,15 +3,23 @@ package TestNG;
 import driver.DriverFactoryEx;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.qameta.allure.Allure;
+import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
+import org.openqa.selenium.OutputType;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 import utils.TestUtils;
 
-import java.io.IOException;
+import java.io.File;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,7 +38,7 @@ public class BaseTestEx {
     protected static HashMap<String, String> expectedStringMap = new HashMap<>();
     protected SoftAssert softAssert;
     protected TestUtils testUtils;
-    protected JSONObject loginData;
+    protected JSONObject validLoginData;
 
     @BeforeSuite(alwaysRun = true)
     public static void beforeSuite() {
@@ -47,22 +55,38 @@ public class BaseTestEx {
         driverThreadPool.forEach(DriverFactoryEx :: quitAppiumSession);
     }
 
-    /* Temporary before test method to resolve error */
-    @BeforeTest
-    public void beforeTest() {
-        softAssert = new SoftAssert();
+    @BeforeMethod
+    public void beforeMethod() {
         testUtils = new TestUtils();
-        /* Initialize loginData basing on loginUser.json file */
-        String jsonLoginUserFile = "data/loginUser.json";
-        loginData = testUtils.readJSONFile(jsonLoginUserFile);
-        /* Initialize HashMap expectedStringMap basing on staticStrings.xml file */
-        String xmlFileName = "static-string/staticStrings.xml";
-        InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
-        expectedStringMap = testUtils.xmlStringParser(isStringMap);
-        try {
-            if (isStringMap != null) { isStringMap.close(); }
-        } catch (IOException ex) { ex.printStackTrace(); }
+        /* Initialize loginData basing on invalidLoginCreds.json file */
+        String jsonLoginUserFile = "data/authentication/validLoginCreds.json";
+        validLoginData = testUtils.readJSONFile(jsonLoginUserFile);
     }
+
+    @AfterMethod(alwaysRun = true)
+    public void onTestFailure(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
+            // Get the name of test method
+            String testMethodName = result.getName();
+
+            // Declare file location
+            testUtils = new TestUtils();
+            String dateTaken = testUtils.getDateTime();
+            String fileLocation = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + testMethodName + "_" + dateTaken + ".png";
+
+            // Save screenshot to the system and attach to Allure report
+            File screenShot = driverThread.get().getAppiumDriver().getScreenshotAs(OutputType.FILE);
+
+            try {
+                FileUtils.copyFile(screenShot, new File(fileLocation));
+                Path content = Paths.get(fileLocation);
+                try (InputStream is = Files.newInputStream(content)) {
+                    Allure.addAttachment(testMethodName, is);
+                }
+            } catch (Exception ex) { ex.printStackTrace(); }
+        }
+    }
+
 
     public static AppiumDriver<MobileElement> getDriver() {
         return driverThread.get().getAppiumDriver();

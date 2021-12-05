@@ -1,0 +1,233 @@
+{
+  "2a4ba87a466752074bb041da2a4bbea1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7bd70fcbe040a904",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638664888068,
+        "stop" : 1638664893577,
+        "duration" : 5509
+      }
+    } ]
+  },
+  "4375397c6cfb9876fd3a9b7d37a04c0b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2b841cb44ef209ee",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638664881545,
+        "stop" : 1638664888060,
+        "duration" : 6515
+      }
+    } ]
+  },
+  "7061afcfe1d03dacf02796a803b04941" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "30e01933b96476ac",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638649312696,
+        "stop" : 1638649322829,
+        "duration" : 10133
+      }
+    } ]
+  },
+  "301c38102b376db31f46c857cc289dc5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c12e2e06f0d596a0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638649297408,
+        "stop" : 1638649307986,
+        "duration" : 10578
+      }
+    } ]
+  },
+  "e19509678434390aa15f4f83aadc3805" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7d7f1fb5dc499d0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638664858979,
+        "stop" : 1638664881534,
+        "duration" : 22555
+      }
+    } ]
+  },
+  "5b54d593d988ae9417407401e8f01c7c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2c153afe1701e466",
+      "status" : "broken",
+      "statusDetails" : "Expected condition failed: waiting for visibility of Located by By.chained({By.id: android:id/title_template}) (tried for 10 second(s) with 500 milliseconds interval)",
+      "time" : {
+        "start" : 1638659561908,
+        "stop" : 1638659598042,
+        "duration" : 36134
+      }
+    } ]
+  },
+  "a35871272f2d32f277128b8ed8926047" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7dd353364e26450e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638659548179,
+        "stop" : 1638659557041,
+        "duration" : 8862
+      }
+    } ]
+  },
+  "d5014fa969b01feaa0c240779fb2e892" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6fe4014e04745a2f",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1638664594755,
+        "stop" : 1638664594755,
+        "duration" : 0
+      }
+    } ]
+  },
+  "7d8e78475238d8a60f787f0ce7e4cd38" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d2f770727429609",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638649327613,
+        "stop" : 1638649340318,
+        "duration" : 12705
+      }
+    } ]
+  },
+  "1b6d91aa3390de31f0bd5fd0c024e378" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ce9541d486c63c08",
+      "status" : "broken",
+      "statusDetails" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
+      "time" : {
+        "start" : 1638649284541,
+        "stop" : 1638649284542,
+        "duration" : 1
+      }
+    } ]
+  },
+  "59aa016b2478267f57a9433cd77259e4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ef58773e6f7833c9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638659536113,
+        "stop" : 1638659543188,
+        "duration" : 7075
+      }
+    } ]
+  },
+  "7a98ab55cb7d2135cd5bb9100d4aba73" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d9d3df8516001a37",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638659525097,
+        "stop" : 1638659531318,
+        "duration" : 6221
+      }
+    } ]
+  }
+}

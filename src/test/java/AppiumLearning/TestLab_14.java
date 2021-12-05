@@ -25,8 +25,8 @@ public class TestLab_14 {
         AndroidDriver<MobileElement> androidDriver = DriverFactoryOld.getAndroidDriver();
         /* Initialize JSONReader object */
         TestUtils testUtils = new TestUtils();
-        /* Initialize loginData basing loginUser.json file */
-        JSONObject loginData = testUtils.readJSONFile("data/loginUser.json");
+        /* Initialize loginData basing invalidLoginCreds.json file */
+        JSONObject loginData = testUtils.readJSONFile("data/authentication/invalidLoginCreds.json");
 
         LoginPage loginPage = new LoginPage(androidDriver);
         BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
