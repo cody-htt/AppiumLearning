@@ -1,180 +1,80 @@
 [ {
-  "uid" : "55e3219f6818dbf9",
+  "uid" : "b738579db657339",
   "name" : "Test Sign Up",
   "time" : {
-    "start" : 1638821732819,
-    "stop" : 1638821744211,
-    "duration" : 11392
+    "start" : 1638822812241,
+    "stop" : 1638822822570,
+    "duration" : 10329
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d0658188c23ae216",
-  "name" : "loginWithInvalidPassword",
-  "time" : {
-    "start" : 1638659536113,
-    "stop" : 1638659543188,
-    "duration" : 7075
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "99b997af62af88eb",
-  "name" : "Login Test",
-  "time" : {
-    "start" : 1638821657395,
-    "stop" : 1638821681273,
-    "duration" : 23878
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "2f56fb91794da3b",
-  "name" : "signUpWithInvalidPassword",
-  "time" : {
-    "start" : 1638649312696,
-    "stop" : 1638649322829,
-    "duration" : 10133
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "6ce07594f44ae21a",
-  "name" : "Login Test",
-  "time" : {
-    "start" : 1638821681286,
-    "stop" : 1638821688011,
-    "duration" : 6725
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "db90de1c05555cf8",
-  "name" : "Test Login",
-  "time" : {
-    "start" : 1638821694885,
-    "stop" : 1638821703403,
-    "duration" : 8518
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "af8ce465399565a1",
-  "name" : "signUpWithInvalidEmail",
-  "time" : {
-    "start" : 1638649297408,
-    "stop" : 1638649307986,
-    "duration" : 10578
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "7e0ed9446c55c38f",
-  "name" : "loginWithValidCreds",
-  "time" : {
-    "start" : 1638659561908,
-    "stop" : 1638659598042,
-    "duration" : 36134
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "89aa6832880d155f",
+  "uid" : "7e79ceb428e4997f",
   "name" : "Test Sign Up",
   "time" : {
-    "start" : 1638821703429,
-    "stop" : 1638821714399,
-    "duration" : 10970
+    "start" : 1638822833936,
+    "stop" : 1638822842817,
+    "duration" : 8881
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "8e17e47956f3ed68",
-  "name" : "beforeMethod",
-  "time" : {
-    "start" : 1638649284541,
-    "stop" : 1638649284542,
-    "duration" : 1
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "763dfbbe94f71697",
-  "name" : "Test Sign Up",
-  "time" : {
-    "start" : 1638821714403,
-    "stop" : 1638821723954,
-    "duration" : 9551
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "30aed48bdb170a12",
-  "name" : "onTestFailure",
-  "time" : {
-    "start" : 1638664594755,
-    "stop" : 1638664594755,
-    "duration" : 0
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "fc4deac1269491fa",
-  "name" : "loginWithInvalidEmail",
-  "time" : {
-    "start" : 1638659525097,
-    "stop" : 1638659531318,
-    "duration" : 6221
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "8d2db62ef1b77717",
-  "name" : "onTestFailure",
-  "time" : {
-    "start" : 1638818503366,
-    "stop" : 1638818503367,
-    "duration" : 1
-  },
-  "status" : "broken",
-  "severity" : "normal"
-}, {
-  "uid" : "beec5285dd0b1f4c",
-  "name" : "Test Sign Up",
-  "time" : {
-    "start" : 1638821723958,
-    "stop" : 1638821732810,
-    "duration" : 8852
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "705a67df293685b6",
-  "name" : "loginWithValidCreds",
-  "time" : {
-    "start" : 1638659548179,
-    "stop" : 1638659557041,
-    "duration" : 8862
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b0458d8d5bf91a9b",
+  "uid" : "bf7d26b72382abe1",
   "name" : "Login Test",
   "time" : {
-    "start" : 1638821688018,
-    "stop" : 1638821694876,
-    "duration" : 6858
+    "start" : 1638822796695,
+    "stop" : 1638822804126,
+    "duration" : 7431
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "63144e9effbd09e2",
+  "uid" : "ee69ad9bfceac6cd",
   "name" : "Login Test",
   "time" : {
-    "start" : 1638736462904,
-    "stop" : 1638736469950,
-    "duration" : 7046
+    "start" : 1638822804133,
+    "stop" : 1638822812209,
+    "duration" : 8076
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2ecad426882ad5eb",
+  "name" : "Test Sign Up",
+  "time" : {
+    "start" : 1638822842824,
+    "stop" : 1638822853024,
+    "duration" : 10200
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "59623b807191de56",
+  "name" : "Test Sign Up",
+  "time" : {
+    "start" : 1638822822574,
+    "stop" : 1638822833933,
+    "duration" : 11359
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4d2dd85fc1c8ade4",
+  "name" : "Login Test",
+  "time" : {
+    "start" : 1638822767172,
+    "stop" : 1638822789932,
+    "duration" : 22760
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e5b5bbae985a2be6",
+  "name" : "Login Test",
+  "time" : {
+    "start" : 1638822789947,
+    "stop" : 1638822796690,
+    "duration" : 6743
   },
   "status" : "passed",
   "severity" : "normal"

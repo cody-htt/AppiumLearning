@@ -43,7 +43,7 @@ public class SignUpFlow {
         return this;
     }
 
-    @Step("Input email as {signUpCreds.email} | password as {signUpCreds.password} | password as {signUpCreds.repeatPassword}")
+    @Step("Input email={signUpCreds.email} | password={signUpCreds.password} | confirm-password={signUpCreds.repeatPassword}")
     public SignUpFlow signUp(SignUpCreds signUpCreds) {
         if (loginPage == null) { throw new RuntimeException("Please use navigateToLoginPage() first!!!"); }
         loginPage.selectSignUpForm();

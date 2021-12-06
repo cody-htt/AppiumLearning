@@ -1,196 +1,4 @@
 {
-  "4375397c6cfb9876fd3a9b7d37a04c0b" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "63144e9effbd09e2",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638736462904,
-        "stop" : 1638736469950,
-        "duration" : 7046
-      }
-    } ]
-  },
-  "2a4ba87a466752074bb041da2a4bbea1" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "db90de1c05555cf8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638821694885,
-        "stop" : 1638821703403,
-        "duration" : 8518
-      }
-    } ]
-  },
-  "301c38102b376db31f46c857cc289dc5" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "af8ce465399565a1",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638649297408,
-        "stop" : 1638649307986,
-        "duration" : 10578
-      }
-    } ]
-  },
-  "e19509678434390aa15f4f83aadc3805" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "99b997af62af88eb",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638821657395,
-        "stop" : 1638821681273,
-        "duration" : 23878
-      }
-    } ]
-  },
-  "3aaaa2e8601e7c937533097f83373cea" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "beec5285dd0b1f4c",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638821723958,
-        "stop" : 1638821732810,
-        "duration" : 8852
-      }
-    } ]
-  },
-  "7d8e78475238d8a60f787f0ce7e4cd38" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "55e3219f6818dbf9",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638821732819,
-        "stop" : 1638821744211,
-        "duration" : 11392
-      }
-    } ]
-  },
-  "ac327cda68572ab0408f480e013e3250" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "6ce07594f44ae21a",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638821681286,
-        "stop" : 1638821688011,
-        "duration" : 6725
-      }
-    } ]
-  },
-  "1b6d91aa3390de31f0bd5fd0c024e378" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "8e17e47956f3ed68",
-      "status" : "broken",
-      "statusDetails" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
-      "time" : {
-        "start" : 1638649284541,
-        "stop" : 1638649284542,
-        "duration" : 1
-      }
-    } ]
-  },
-  "59aa016b2478267f57a9433cd77259e4" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "d0658188c23ae216",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638659536113,
-        "stop" : 1638659543188,
-        "duration" : 7075
-      }
-    } ]
-  },
-  "aa76ce084842f9e88e7f4263082fb969" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "8d2db62ef1b77717",
-      "status" : "broken",
-      "statusDetails" : "A session is either terminated or not started\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '10.212.135.117', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities {appActivity: com.wdiodemoapp.MainActivity, appPackage: com.wdiodemoapp, automationName: UiAutomator2, avdLaunchTimeout: 120000, databaseEnabled: false, desired: {appActivity: com.wdiodemoapp.MainActivity, appPackage: com.wdiodemoapp, automationName: UiAutomator2, avdLaunchTimeout: 120000, deviceName: Z5 Prem, newCommandTimeout: 120, platformName: android, udid: CB5A2BZKHF}, deviceApiLevel: 25, deviceManufacturer: Sony, deviceModel: E6883, deviceName: CB5A2BZKHF, deviceScreenDensity: 408, deviceScreenSize: 1080x1920, deviceUDID: CB5A2BZKHF, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2.55, platform: LINUX, platformName: Android, platformVersion: 7.1.1, statBarHeight: 61, takesScreenshot: true, udid: CB5A2BZKHF, viewportRect: {height: 1737, left: 0, top: 61, width: 1080}, warnings: {}, webStorageEnabled: false}\nSession ID: a891a63a-276e-4c38-b49b-3d0a6f43be4d",
-      "time" : {
-        "start" : 1638818503366,
-        "stop" : 1638818503367,
-        "duration" : 1
-      }
-    } ]
-  },
   "9dfc02ddd0d50d3dbbf8e21d0debd62e" : {
     "statistic" : {
       "failed" : 0,
@@ -201,31 +9,12 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "89aa6832880d155f",
+      "uid" : "b738579db657339",
       "status" : "passed",
       "time" : {
-        "start" : 1638821703429,
-        "stop" : 1638821714399,
-        "duration" : 10970
-      }
-    } ]
-  },
-  "f12088e4be97e3f032c87500dc81d4fb" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "b0458d8d5bf91a9b",
-      "status" : "passed",
-      "time" : {
-        "start" : 1638821688018,
-        "stop" : 1638821694876,
-        "duration" : 6858
+        "start" : 1638822812241,
+        "stop" : 1638822822570,
+        "duration" : 10329
       }
     } ]
   },
@@ -239,16 +28,16 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "763dfbbe94f71697",
+      "uid" : "59623b807191de56",
       "status" : "passed",
       "time" : {
-        "start" : 1638821714403,
-        "stop" : 1638821723954,
-        "duration" : 9551
+        "start" : 1638822822574,
+        "stop" : 1638822833933,
+        "duration" : 11359
       }
     } ]
   },
-  "7061afcfe1d03dacf02796a803b04941" : {
+  "2a4ba87a466752074bb041da2a4bbea1" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -258,36 +47,16 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "2f56fb91794da3b",
+      "uid" : "ee69ad9bfceac6cd",
       "status" : "passed",
       "time" : {
-        "start" : 1638649312696,
-        "stop" : 1638649322829,
-        "duration" : 10133
+        "start" : 1638822804133,
+        "stop" : 1638822812209,
+        "duration" : 8076
       }
     } ]
   },
-  "5b54d593d988ae9417407401e8f01c7c" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "7e0ed9446c55c38f",
-      "status" : "broken",
-      "statusDetails" : "Expected condition failed: waiting for visibility of Located by By.chained({By.id: android:id/title_template}) (tried for 10 second(s) with 500 milliseconds interval)",
-      "time" : {
-        "start" : 1638659561908,
-        "stop" : 1638659598042,
-        "duration" : 36134
-      }
-    } ]
-  },
-  "a35871272f2d32f277128b8ed8926047" : {
+  "f12088e4be97e3f032c87500dc81d4fb" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -297,36 +66,16 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "705a67df293685b6",
+      "uid" : "bf7d26b72382abe1",
       "status" : "passed",
       "time" : {
-        "start" : 1638659548179,
-        "stop" : 1638659557041,
-        "duration" : 8862
+        "start" : 1638822796695,
+        "stop" : 1638822804126,
+        "duration" : 7431
       }
     } ]
   },
-  "d5014fa969b01feaa0c240779fb2e892" : {
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 0,
-      "unknown" : 0,
-      "total" : 1
-    },
-    "items" : [ {
-      "uid" : "30aed48bdb170a12",
-      "status" : "broken",
-      "statusDetails" : "java.lang.NullPointerException",
-      "time" : {
-        "start" : 1638664594755,
-        "stop" : 1638664594755,
-        "duration" : 0
-      }
-    } ]
-  },
-  "7a98ab55cb7d2135cd5bb9100d4aba73" : {
+  "e19509678434390aa15f4f83aadc3805" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -336,12 +85,69 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "fc4deac1269491fa",
+      "uid" : "4d2dd85fc1c8ade4",
       "status" : "passed",
       "time" : {
-        "start" : 1638659525097,
-        "stop" : 1638659531318,
-        "duration" : 6221
+        "start" : 1638822767172,
+        "stop" : 1638822789932,
+        "duration" : 22760
+      }
+    } ]
+  },
+  "3aaaa2e8601e7c937533097f83373cea" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7e79ceb428e4997f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638822833936,
+        "stop" : 1638822842817,
+        "duration" : 8881
+      }
+    } ]
+  },
+  "7d8e78475238d8a60f787f0ce7e4cd38" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2ecad426882ad5eb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638822842824,
+        "stop" : 1638822853024,
+        "duration" : 10200
+      }
+    } ]
+  },
+  "ac327cda68572ab0408f480e013e3250" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e5b5bbae985a2be6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638822789947,
+        "stop" : 1638822796690,
+        "duration" : 6743
       }
     } ]
   }

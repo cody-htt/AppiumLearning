@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="RegressionSuite">
+<suite name="Smoke-Suite">
     <test name="[Smoke Test] Log In">
         <classes>
             <class name="TestNG.TestLoginPage.LoginTest">
@@ -12,7 +12,7 @@
     </test>
     <test name="[Smoke Test] Sign Up">
         <classes>
-            <class name="TestNG.TestLoginPage.LoginTest">
+            <class name="TestNG.TestLoginPage.SignUpTest">
                 <methods>
                     <include name="signUpWithValidCreds"/>
                 </methods>
