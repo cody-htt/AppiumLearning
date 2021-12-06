@@ -7,25 +7,27 @@ import models.components.BottomNavBarComponent;
 import models.components.login_page_component.DialogComponent;
 import models.components.login_page_component.LoginFormComponent;
 import models.pages.LoginPage;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-import test_data.LoginCreds;
+import test_data.authentication.LoginCreds;
 import utils.TestUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class LoginFlow {
 
     private AppiumDriver<MobileElement> appiumDriver;
     private LoginPage loginPage;
-    private HashMap<String, String> expectedStringMap;
-    private SoftAssert softAssert;
+    private LoginFormComponent loginFormComp;
+    private DialogComponent dialogComp;
+    private final HashMap<String, String> expectedStringMap;
+    private final SoftAssert softAssert;
 
     public LoginFlow(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
+        this.expectedStringMap = new TestUtils().getExpectedStringMap();
         softAssert = new SoftAssert();
-        getExpectedStringMap();
     }
 
     public LoginFlow navigateToLoginPage() {
@@ -45,16 +47,16 @@ public class LoginFlow {
     public LoginFlow login(LoginCreds loginCreds) {
         if (loginPage == null) { throw new RuntimeException("Please use navigateToLoginPage() first!!!"); }
         // Fill Login form
-        LoginFormComponent loginFormComp = loginPage.loginFormComponent();
-        loginFormComp.inputEmailField(loginCreds.getEmail())
-                     .inputPasswordField(loginCreds.getPassword())
-                     .clickOnLoginBtn();
+        loginFormComp = loginPage.loginFormComponent();
+        dialogComp = loginFormComp.inputEmailField(loginCreds.getEmail())
+                                  .inputPasswordField(loginCreds.getPassword())
+                                  .clickOnLoginBtn();
         return this;
     }
 
+    @Step("Verify successfully login with valid credentials")
     public LoginFlow verifyLoginWithCorrectCreds() {
-        // Init Dialog Component and verification
-        DialogComponent dialogComp = loginPage.loginFormComponent().clickOnLoginBtn();
+        // Verification
         String actualDialogTitle = dialogComp.dialogTitleElem().getText();
         String actualDialogMessage = dialogComp.dialogMessageElem().getText();
         String expectedDialogTitle = expectedStringMap.get("success_login_dialog_title");
@@ -63,21 +65,31 @@ public class LoginFlow {
         softAssert.assertEquals(actualDialogTitle, expectedDialogTitle);
         softAssert.assertEquals(actualDialogMessage, expectedDialogMessage);
         softAssert.assertAll();
+
+        dialogComp.clickDialogBtn();
         return this;
     }
 
-    public void verifyLoginWithIncorrectCreds() {
-
+    @Step("Verify unsuccessfully login with valid credentials")
+    public LoginFlow verifyLoginWithIncorrectCreds(LoginCreds loginCreds) {
+        String actualErrorText;
+        String expectedEmailErrMessage = expectedStringMap.get("error_login_invalid_email_msg");
+        String expectedPasswordErrMessage = expectedStringMap.get("error_login_invalid_password_msg");
+        int minPasswordLength = 7;
+        if (checkInvalidEmail(loginCreds.getEmail())) {
+            actualErrorText = loginFormComp.invalidEmailMessageElem().getText();
+            Assert.assertEquals(actualErrorText, expectedEmailErrMessage);
+        }
+        if (loginCreds.getPassword().toCharArray().length < minPasswordLength) {
+            actualErrorText = loginFormComp.invalidPasswordMessageElem().getText();
+            Assert.assertEquals(actualErrorText, expectedPasswordErrMessage);
+        }
+        return this;
     }
 
-    private void getExpectedStringMap() {
-        TestUtils testUtils = new TestUtils();
-        // Initialize HashMap expectedStringMap basing on staticStrings.xml file
-        String xmlFileName = "static-string/authentication/ExpectedText.xml";
-        InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
-        expectedStringMap = testUtils.xmlStringParser(isStringMap);
-        try {
-            if (isStringMap != null) { isStringMap.close(); }
-        } catch (IOException ex) { ex.printStackTrace(); }
+    private boolean checkInvalidEmail(String email) {
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        return !pattern.matcher(email).matches();
     }
 }

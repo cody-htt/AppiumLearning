@@ -21,13 +21,13 @@ public class LoginPage extends PageModel {
     }
 
     @Step("Select Login Form")
-    public boolean isLoginFormSelect() {
+    public boolean selectLoginForm() {
         loginFormLabelElem.click();
         return loginFormComponent().loginBtnElem().isDisplayed();
     }
 
     @Step("Select Sign Up Form")
-    public boolean isSignUpFormSelect() {
+    public boolean selectSignUpForm() {
         signUpFormLabelElem.click();
         return signUpFormComponent().signUpBtnElem().isDisplayed();
     }

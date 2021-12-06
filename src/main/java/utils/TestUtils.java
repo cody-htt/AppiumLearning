@@ -38,7 +38,15 @@ public class TestUtils {
         return null;
     }
 
-    public HashMap<String, String> xmlStringParser(InputStream file) {
+    public HashMap<String, String> getExpectedStringMap() {
+        // Initialize HashMap expectedStringMap basing on staticStrings.xml file
+        String xmlFileName = "static-string/authentication/ExpectedText.xml";
+        InputStream isStringMap = getClass().getClassLoader().getResourceAsStream(xmlFileName);
+        if (isStringMap == null) { throw new RuntimeException("Expected String Map is empty"); }
+        return xmlStringParser(isStringMap);
+    }
+
+    private HashMap<String, String> xmlStringParser(InputStream file) {
         HashMap<String, String> stringMap = new HashMap<>();
 
         /* Get Document Builder */

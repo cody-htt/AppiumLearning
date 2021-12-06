@@ -38,7 +38,7 @@ public class BaseTestEx {
     protected static HashMap<String, String> expectedStringMap = new HashMap<>();
     protected SoftAssert softAssert;
     protected TestUtils testUtils;
-    protected JSONObject validLoginData;
+    protected JSONObject validCredentials;
 
     @BeforeSuite(alwaysRun = true)
     public static void beforeSuite() {
@@ -60,7 +60,7 @@ public class BaseTestEx {
         testUtils = new TestUtils();
         /* Initialize loginData basing on invalidLoginCreds.json file */
         String jsonLoginUserFile = "data/authentication/validLoginCreds.json";
-        validLoginData = testUtils.readJSONFile(jsonLoginUserFile);
+        validCredentials = testUtils.readJSONFile(jsonLoginUserFile);
     }
 
     @AfterMethod(alwaysRun = true)

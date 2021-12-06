@@ -5,16 +5,15 @@ models\components\login_page_component\LoginFormComponent.class
 utils\SwipeUtils.class
 utils\ScreenShotUtils.class
 flags\AndroidServerFlagEx.class
+test_data\authentication\LoginCreds.class
 test_flows\authentication\SignUpFlow.class
 models\components\login_page_component\SignUpFormComponent.class
 driver\DriverFactoryOld.class
 environments\TestMobilePlatform.class
 models\components\webview_page_component\LeftNavBarComponent.class
 models\pages\SwipePage$Card.class
-models\base\BaseTest.class
 test_flows\authentication\LoginFlow.class
 utils\SwipeUtils$1.class
-test_data\LoginCreds.class
 utils\TestUtils.class
 caps\MobileCapabilityTypeEx.class
 driver\DriverFactoryEx.class
@@ -22,6 +21,7 @@ models\pages\FormPage.class
 test_data\authentication\DataObjectBuilder.class
 models\components\login_page_component\DialogComponent.class
 environments\Context.class
+test_data\authentication\SignUpCreds.class
 models\components\forms_page_component\DropdownDialogComponent.class
 test_data\TestGson.class
 models\components\forms_page_component\ActiveBtnDialogComponent.class

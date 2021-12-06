@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="RegressionSuite" duration-ms="37692" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:47:09 ICT">
+  <suite name="Regression-Suite" duration-ms="86211" started-at="2021-12-07T03:32:46 ICT" finished-at="2021-12-07T03:34:13 ICT">
     <groups>
     </groups>
-    <test name="Login" duration-ms="37692" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:47:09 ICT">
+    <test name="Login Test" duration-ms="45399" started-at="2021-12-07T03:32:46 ICT" finished-at="2021-12-07T03:33:32 ICT">
       <class name="TestNG.TestLoginPage.LoginTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeSuite" is-config="true" duration-ms="19" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:46:31 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="10" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:46:31 ICT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="11" started-at="2021-12-07T03:32:46 ICT" finished-at="2021-12-07T03:32:46 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="22711" started-at="2021-12-05T07:46:31 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-05T07:46:54 ICT">
+        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.authentication.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="22795" started-at="2021-12-07T03:32:47 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-07T03:33:09 ICT">
           <params>
             <param index="0">
               <value>
@@ -26,52 +22,78 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidCreds -->
-        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="2" started-at="2021-12-05T07:46:54 ICT" finished-at="2021-12-05T07:46:54 ICT">
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="2" started-at="2021-12-07T03:33:09 ICT" finished-at="2021-12-07T03:33:09 ICT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
+                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.authentication.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onTestFailure -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-05T07:46:54 ICT" finished-at="2021-12-05T07:46:54 ICT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:09 ICT" finished-at="2021-12-07T03:33:09 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="6785" started-at="2021-12-05T07:46:54 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-05T07:47:01 ICT">
+        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.authentication.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="6745" started-at="2021-12-07T03:33:09 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-07T03:33:16 ICT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[LoginCreds{username='tunghuynh@', password='12345678'}]]>
+                <![CDATA[LoginCreds{username='tunghuynh.gmail.com', password='12345678'}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithInvalidCreds -->
-        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-05T07:47:01 ICT" finished-at="2021-12-05T07:47:01 ICT">
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:16 ICT" finished-at="2021-12-07T03:33:16 ICT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
+                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.authentication.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onTestFailure -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-05T07:47:01 ICT" finished-at="2021-12-05T07:47:01 ICT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:16 ICT" finished-at="2021-12-07T03:33:16 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithValidCreds" duration-ms="7931" started-at="2021-12-05T07:47:01 ICT" description="Test Login" finished-at="2021-12-05T07:47:09 ICT">
+        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.authentication.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="7432" started-at="2021-12-07T03:33:16 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-07T03:33:24 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginCreds{username='tunghuynh@', password='123456'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidCreds -->
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:24 ICT" finished-at="2021-12-07T03:33:24 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.authentication.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onTestFailure -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-07T03:33:24 ICT" finished-at="2021-12-07T03:33:24 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithValidCreds" duration-ms="8077" started-at="2021-12-07T03:33:24 ICT" description="Login Test" finished-at="2021-12-07T03:33:32 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCreds -->
-        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-05T07:47:09 ICT" finished-at="2021-12-05T07:47:09 ICT">
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:32 ICT" finished-at="2021-12-07T03:33:32 ICT">
           <params>
             <param index="0">
               <value>
@@ -82,11 +104,116 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onTestFailure -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="afterSuite" is-config="true" duration-ms="835" started-at="2021-12-05T07:47:09 ICT" finished-at="2021-12-05T07:47:09 ICT">
+      </class> <!-- TestNG.TestLoginPage.LoginTest -->
+    </test> <!-- Login Test -->
+    <test name="Sign Up Test" duration-ms="40797" started-at="2021-12-07T03:33:32 ICT" finished-at="2021-12-07T03:34:13 ICT">
+      <class name="TestNG.TestLoginPage.SignUpTest">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="beforeSuite" is-config="true" duration-ms="25" started-at="2021-12-07T03:32:46 ICT" finished-at="2021-12-07T03:32:46 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:32 ICT" finished-at="2021-12-07T03:33:32 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="signUpWithInvalidCreds(test_data.authentication.SignUpCreds)[pri:1, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="signUpWithInvalidCreds" duration-ms="10331" started-at="2021-12-07T03:33:32 ICT" description="Test Sign Up" data-provider="invalidLoginCreds" finished-at="2021-12-07T03:33:42 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginCreds{username='Tunghuynh@gmail.com', password='1234'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithInvalidCreds -->
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:42 ICT" finished-at="2021-12-07T03:33:42 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signUpWithInvalidCreds status=SUCCESS method=SignUpTest.signUpWithInvalidCreds(test_data.authentication.SignUpCreds)[pri:1, instance:TestNG.TestLoginPage.SignUpTest@1827a871] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onTestFailure -->
+        <test-method status="PASS" signature="signUpWithInvalidCreds(test_data.authentication.SignUpCreds)[pri:1, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="signUpWithInvalidCreds" duration-ms="11359" started-at="2021-12-07T03:33:42 ICT" description="Test Sign Up" data-provider="invalidLoginCreds" finished-at="2021-12-07T03:33:53 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginCreds{username='tunghuynh.gmail.com', password='12345678'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithInvalidCreds -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:42 ICT" finished-at="2021-12-07T03:33:42 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="onTestFailure" is-config="true" duration-ms="1" started-at="2021-12-07T03:33:53 ICT" finished-at="2021-12-07T03:33:53 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signUpWithInvalidCreds status=SUCCESS method=SignUpTest.signUpWithInvalidCreds(test_data.authentication.SignUpCreds)[pri:1, instance:TestNG.TestLoginPage.SignUpTest@1827a871] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onTestFailure -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-07T03:33:53 ICT" finished-at="2021-12-07T03:33:53 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="signUpWithInvalidCreds(test_data.authentication.SignUpCreds)[pri:1, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="signUpWithInvalidCreds" duration-ms="8882" started-at="2021-12-07T03:33:53 ICT" description="Test Sign Up" data-provider="invalidLoginCreds" finished-at="2021-12-07T03:34:02 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[LoginCreds{username='tunghuynh@', password='12345678'}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithInvalidCreds -->
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-07T03:34:02 ICT" finished-at="2021-12-07T03:34:02 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signUpWithInvalidCreds status=SUCCESS method=SignUpTest.signUpWithInvalidCreds(test_data.authentication.SignUpCreds)[pri:1, instance:TestNG.TestLoginPage.SignUpTest@1827a871] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onTestFailure -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-07T03:34:02 ICT" finished-at="2021-12-07T03:34:02 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="signUpWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="signUpWithValidCreds" duration-ms="10201" started-at="2021-12-07T03:34:02 ICT" description="Test Sign Up" finished-at="2021-12-07T03:34:13 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpWithValidCreds -->
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="onTestFailure" is-config="true" duration-ms="1" started-at="2021-12-07T03:34:13 ICT" finished-at="2021-12-07T03:34:13 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=signUpWithValidCreds status=SUCCESS method=SignUpTest.signUpWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.SignUpTest@1827a871] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onTestFailure -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestNG.TestLoginPage.SignUpTest@1827a871]" name="afterSuite" is-config="true" duration-ms="743" started-at="2021-12-07T03:34:13 ICT" finished-at="2021-12-07T03:34:13 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- TestNG.TestLoginPage.LoginTest -->
-    </test> <!-- Login -->
-  </suite> <!-- RegressionSuite -->
+      </class> <!-- TestNG.TestLoginPage.SignUpTest -->
+    </test> <!-- Sign Up Test -->
+  </suite> <!-- Regression-Suite -->
 </testng-results>

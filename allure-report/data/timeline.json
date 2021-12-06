@@ -4,617 +4,113 @@
   "children" : [ {
     "name" : "TungH-RogStrix",
     "children" : [ {
-      "name" : "23800@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "loginWithValidCreds",
-        "uid" : "35f2fde7df9d66dc",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638649284676,
-          "stop" : 1638649284676,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithValidCreds",
-        "uid" : "d2f770727429609",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638649327613,
-          "stop" : 1638649340318,
-          "duration" : 12705
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithInvalidEmail",
-        "uid" : "d50b3d4637ae6598",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638649284565,
-          "stop" : 1638649284568,
-          "duration" : 3
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "d09f3e4f0b8b6c0a",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638649284669,
-          "stop" : 1638649284670,
-          "duration" : 1
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithInvalidPassword",
-        "uid" : "30e01933b96476ac",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638649312696,
-          "stop" : 1638649322829,
-          "duration" : 10133
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithInvalidEmail",
-        "uid" : "c12e2e06f0d596a0",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638649297408,
-          "stop" : 1638649307986,
-          "duration" : 10578
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "beforeMethod",
-        "uid" : "ce9541d486c63c08",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638649284541,
-          "stop" : 1638649284542,
-          "duration" : 1
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithInvalidPassword",
-        "uid" : "9753bccb3e950352",
-        "parentUid" : "776c68a31feb35bb022a668a8a42560c",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638649284576,
-          "stop" : 1638649284577,
-          "duration" : 1
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "776c68a31feb35bb022a668a8a42560c"
-    }, {
-      "name" : "3260@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "loginWithValidCreds",
-        "uid" : "9ca3e6e7923fedcf",
-        "parentUid" : "9b4509756054e6096b1cdaa48211e68f",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638658632813,
-          "stop" : 1638658669205,
-          "duration" : 36392
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh', password='12345678'}" ]
-      }, {
-        "name" : "loginWithInvalidEmail",
-        "uid" : "76b2dae2449c618a",
-        "parentUid" : "9b4509756054e6096b1cdaa48211e68f",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638658594154,
-          "stop" : 1638658601073,
-          "duration" : 6919
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "e8217b39a2f8ecec",
-        "parentUid" : "9b4509756054e6096b1cdaa48211e68f",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638658617785,
-          "stop" : 1638658627822,
-          "duration" : 10037
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}" ]
-      }, {
-        "name" : "loginWithInvalidPassword",
-        "uid" : "8d747c309a3167a7",
-        "parentUid" : "9b4509756054e6096b1cdaa48211e68f",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638658606036,
-          "stop" : 1638658612941,
-          "duration" : 6905
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "9b4509756054e6096b1cdaa48211e68f"
-    }, {
-      "name" : "30888@TungH-RogStrix.main(1)",
+      "name" : "23680@TungH-RogStrix.main(1)",
       "children" : [ {
         "name" : "Login Test",
-        "uid" : "f881b9a7e247206b",
-        "parentUid" : "9a89cc3502e1e68650c341d0968d8604",
-        "status" : "broken",
+        "uid" : "bf7d26b72382abe1",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
+        "status" : "passed",
         "time" : {
-          "start" : 1638664459339,
-          "stop" : 1638664459340,
-          "duration" : 1
+          "start" : 1638822796695,
+          "stop" : 1638822804126,
+          "duration" : 7431
         },
         "flaky" : false,
         "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='tunghuynh@', password='12345678'}" ]
+        "parameters" : [ "LoginCreds{username='tunghuynh@', password='123456'}" ]
       }, {
-        "name" : "Test Login",
-        "uid" : "8929bae1d3ad5164",
-        "parentUid" : "9a89cc3502e1e68650c341d0968d8604",
-        "status" : "broken",
+        "name" : "Login Test",
+        "uid" : "ee69ad9bfceac6cd",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
+        "status" : "passed",
         "time" : {
-          "start" : 1638664459806,
-          "stop" : 1638664459807,
-          "duration" : 1
+          "start" : 1638822804133,
+          "stop" : 1638822812209,
+          "duration" : 8076
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "Login Test",
-        "uid" : "e28e326648cad195",
-        "parentUid" : "9a89cc3502e1e68650c341d0968d8604",
-        "status" : "broken",
+        "name" : "Test Sign Up",
+        "uid" : "2ecad426882ad5eb",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
+        "status" : "passed",
         "time" : {
-          "start" : 1638664442124,
-          "stop" : 1638664458701,
-          "duration" : 16577
+          "start" : 1638822842824,
+          "stop" : 1638822853024,
+          "duration" : 10200
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Test Sign Up",
+        "uid" : "59623b807191de56",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638822822574,
+          "stop" : 1638822833933,
+          "duration" : 11359
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "LoginCreds{username='tunghuynh.gmail.com', password='12345678'}" ]
+      }, {
+        "name" : "Login Test",
+        "uid" : "4d2dd85fc1c8ade4",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1638822767172,
+          "stop" : 1638822789932,
+          "duration" : 22760
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}" ]
-      } ],
-      "uid" : "9a89cc3502e1e68650c341d0968d8604"
-    }, {
-      "name" : "7116@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "loginWithInvalidEmail",
-        "uid" : "d9d3df8516001a37",
-        "parentUid" : "99b8739ecc086a70e26c2f324ca680dd",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638659525097,
-          "stop" : 1638659531318,
-          "duration" : 6221
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "7dd353364e26450e",
-        "parentUid" : "99b8739ecc086a70e26c2f324ca680dd",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638659548179,
-          "stop" : 1638659557041,
-          "duration" : 8862
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}" ]
-      }, {
-        "name" : "loginWithInvalidPassword",
-        "uid" : "ef58773e6f7833c9",
-        "parentUid" : "99b8739ecc086a70e26c2f324ca680dd",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638659536113,
-          "stop" : 1638659543188,
-          "duration" : 7075
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "2c153afe1701e466",
-        "parentUid" : "99b8739ecc086a70e26c2f324ca680dd",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638659561908,
-          "stop" : 1638659598042,
-          "duration" : 36134
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh', password='12345678'}" ]
-      } ],
-      "uid" : "99b8739ecc086a70e26c2f324ca680dd"
-    }, {
-      "name" : "8372@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "signUpWithInvalidEmail",
-        "uid" : "5edb66f0045fe9dd",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638534761213,
-          "stop" : 1638534773726,
-          "duration" : 12513
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithValidCreds",
-        "uid" : "e8b1b885cfa9a17c",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638534795707,
-          "stop" : 1638534807682,
-          "duration" : 11975
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithInvalidPassword",
-        "uid" : "bec8800ab7ffedf8",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638534778788,
-          "stop" : 1638534790851,
-          "duration" : 12063
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "beforeMethod",
-        "uid" : "cff7f848a145abdf",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638534748184,
-          "stop" : 1638534748188,
-          "duration" : 4
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithInvalidPassword",
-        "uid" : "5b84c554f189dacd",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638534748222,
-          "stop" : 1638534748222,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithInvalidEmail",
-        "uid" : "31e8ff71211521c4",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638534748204,
-          "stop" : 1638534748207,
-          "duration" : 3
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "cf4b637421c80340",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638534748321,
-          "stop" : 1638534748321,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "2573d18cf1b0eea6",
-        "parentUid" : "eb9ae49f7681b587f65395f26345c347",
-        "status" : "skipped",
-        "time" : {
-          "start" : 1638534748316,
-          "stop" : 1638534748316,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "eb9ae49f7681b587f65395f26345c347"
-    }, {
-      "name" : "3756@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "loginWithInvalidPassword",
-        "uid" : "6814c7c20349f7cc",
-        "parentUid" : "cc8b5320008c34d6913f82abceaa18b5",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638658519757,
-          "stop" : 1638658527437,
-          "duration" : 7680
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "c8f466c5b91421df",
-        "parentUid" : "cc8b5320008c34d6913f82abceaa18b5",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638658530840,
-          "stop" : 1638658530840,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithInvalidEmail",
-        "uid" : "3b41284a0861bdc",
-        "parentUid" : "cc8b5320008c34d6913f82abceaa18b5",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638658507514,
-          "stop" : 1638658514847,
-          "duration" : 7333
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "cc8b5320008c34d6913f82abceaa18b5"
-    }, {
-      "name" : "13652@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "loginWithValidCreds",
-        "uid" : "3f0c8775ee58de45",
-        "parentUid" : "f53dfb8de756f4122af338ce6b0125a9",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638653970704,
-          "stop" : 1638654006594,
-          "duration" : 35890
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh', password='12345678'}" ]
-      }, {
-        "name" : "loginWithInvalidPassword",
-        "uid" : "9c6adb7ff60509fd",
-        "parentUid" : "f53dfb8de756f4122af338ce6b0125a9",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638653943225,
-          "stop" : 1638653951075,
-          "duration" : 7850
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "loginWithValidCreds",
-        "uid" : "1d543fe11eb7787e",
-        "parentUid" : "f53dfb8de756f4122af338ce6b0125a9",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638653955706,
-          "stop" : 1638653965728,
-          "duration" : 10022
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}" ]
-      }, {
-        "name" : "loginWithInvalidEmail",
-        "uid" : "d7697790fb39d33d",
-        "parentUid" : "f53dfb8de756f4122af338ce6b0125a9",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638653930451,
-          "stop" : 1638653938198,
-          "duration" : 7747
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "f53dfb8de756f4122af338ce6b0125a9"
-    }, {
-      "name" : "29648@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "onTestFailure",
-        "uid" : "6fe4014e04745a2f",
-        "parentUid" : "bd45f4c7354445304a6dfec4719b7344",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638664594755,
-          "stop" : 1638664594755,
-          "duration" : 0
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "Test Login",
-        "uid" : "a83693a9775b4d72",
-        "parentUid" : "bd45f4c7354445304a6dfec4719b7344",
-        "status" : "broken",
-        "time" : {
-          "start" : 1638664594740,
-          "stop" : 1638664594746,
-          "duration" : 6
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
       }, {
         "name" : "Login Test",
-        "uid" : "fcb4334686eb65a1",
-        "parentUid" : "bd45f4c7354445304a6dfec4719b7344",
+        "uid" : "e5b5bbae985a2be6",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
         "status" : "passed",
         "time" : {
-          "start" : 1638664588705,
-          "stop" : 1638664594732,
-          "duration" : 6027
+          "start" : 1638822789947,
+          "stop" : 1638822796690,
+          "duration" : 6743
         },
         "flaky" : false,
         "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='tunghuynh@', password='12345678'}" ]
+        "parameters" : [ "LoginCreds{username='tunghuynh.gmail.com', password='12345678'}" ]
       }, {
-        "name" : "Login Test",
-        "uid" : "59b269da573783e0",
-        "parentUid" : "bd45f4c7354445304a6dfec4719b7344",
+        "name" : "Test Sign Up",
+        "uid" : "b738579db657339",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
         "status" : "passed",
         "time" : {
-          "start" : 1638664567914,
-          "stop" : 1638664588600,
-          "duration" : 20686
+          "start" : 1638822812241,
+          "stop" : 1638822822570,
+          "duration" : 10329
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}" ]
-      } ],
-      "uid" : "bd45f4c7354445304a6dfec4719b7344"
-    }, {
-      "name" : "31996@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "Test Login",
-        "uid" : "7bd70fcbe040a904",
-        "parentUid" : "13fc4a18e06a29a3903dd24ccc2dc4f7",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638664888068,
-          "stop" : 1638664893577,
-          "duration" : 5509
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
       }, {
-        "name" : "Login Test",
-        "uid" : "2b841cb44ef209ee",
-        "parentUid" : "13fc4a18e06a29a3903dd24ccc2dc4f7",
+        "name" : "Test Sign Up",
+        "uid" : "7e79ceb428e4997f",
+        "parentUid" : "7e258e7fe3a6e89305dec6a2abb57aad",
         "status" : "passed",
         "time" : {
-          "start" : 1638664881545,
-          "stop" : 1638664888060,
-          "duration" : 6515
+          "start" : 1638822833936,
+          "stop" : 1638822842817,
+          "duration" : 8881
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "LoginCreds{username='tunghuynh@', password='12345678'}" ]
-      }, {
-        "name" : "Login Test",
-        "uid" : "7d7f1fb5dc499d0",
-        "parentUid" : "13fc4a18e06a29a3903dd24ccc2dc4f7",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638664858979,
-          "stop" : 1638664881534,
-          "duration" : 22555
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}" ]
       } ],
-      "uid" : "13fc4a18e06a29a3903dd24ccc2dc4f7"
-    }, {
-      "name" : "27472@TungH-RogStrix.main(1)",
-      "children" : [ {
-        "name" : "signUpWithValidCreds",
-        "uid" : "b8ae81c4ba92e46b",
-        "parentUid" : "8b8da8d9a6376585467cf988b792e357",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638577947090,
-          "stop" : 1638577958335,
-          "duration" : 11245
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithInvalidPassword",
-        "uid" : "9b503b6de1a4a1ba",
-        "parentUid" : "8b8da8d9a6376585467cf988b792e357",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638577929425,
-          "stop" : 1638577941045,
-          "duration" : 11620
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "signUpWithInvalidEmail",
-        "uid" : "d11ebf7df35230e1",
-        "parentUid" : "8b8da8d9a6376585467cf988b792e357",
-        "status" : "passed",
-        "time" : {
-          "start" : 1638577913865,
-          "stop" : 1638577924223,
-          "duration" : 10358
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "8b8da8d9a6376585467cf988b792e357"
+      "uid" : "7e258e7fe3a6e89305dec6a2abb57aad"
     } ],
     "uid" : "2fbc359e47d4bd5a797e6b92a6a347f3"
   } ]
