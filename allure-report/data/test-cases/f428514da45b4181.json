@@ -1,0 +1,236 @@
+{
+  "uid" : "f428514da45b4181",
+  "name" : "Test Sign Up",
+  "fullName" : "TestNG.TestLoginPage.SignUpTest.signUpWithValidCreds",
+  "historyId" : "7d8e78475238d8a60f787f0ce7e4cd38",
+  "time" : {
+    "start" : 1638815428986,
+    "stop" : 1638815456357,
+    "duration" : 27371
+  },
+  "description" : "Verify Successfully Sign Up With Valid Credentials",
+  "descriptionHtml" : "<p>Verify Successfully Sign Up With Valid Credentials</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1638815428778,
+      "stop" : 1638815428794,
+      "duration" : 16
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1638815428727,
+      "stop" : 1638815428733,
+      "duration" : 6
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Verify Successfully Sign Up With Valid Credentials",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Select Sign Up Form",
+      "time" : {
+        "start" : 1638815444703,
+        "stop" : 1638815447133,
+        "duration" : 2430
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Input email as Tunghuynh@gmail.com",
+      "time" : {
+        "start" : 1638815447136,
+        "stop" : 1638815448628,
+        "duration" : 1492
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "email",
+        "value" : "Tunghuynh@gmail.com"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Input password as 12345678",
+      "time" : {
+        "start" : 1638815448628,
+        "stop" : 1638815450737,
+        "duration" : 2109
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "password",
+        "value" : "12345678"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Input repeat password as 12345678",
+      "time" : {
+        "start" : 1638815450738,
+        "stop" : 1638815452873,
+        "duration" : 2135
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "password",
+        "value" : "12345678"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Verify successfully sign up with valid credentials",
+      "time" : {
+        "start" : 1638815452873,
+        "stop" : 1638815456355,
+        "duration" : 3482
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Click on Sign Up button",
+        "time" : {
+          "start" : 1638815452874,
+          "stop" : 1638815453733,
+          "duration" : 859
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "onTestFailure",
+    "time" : {
+      "start" : 1638815456368,
+      "stop" : 1638815456368,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1638815456377,
+      "stop" : 1638815457120,
+      "duration" : 743
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TestNG.TestLoginPage.SignUpTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TestNG.TestLoginPage.SignUpTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "signUpWithValidCreds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "FirstAppiumProject"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNG.TestLoginPage.SignUpTest"
+  }, {
+    "name" : "host",
+    "value" : "TungH-RogStrix"
+  }, {
+    "name" : "thread",
+    "value" : "7232@TungH-RogStrix.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f428514da45b4181.json",
+  "parameterValues" : [ ]
+}

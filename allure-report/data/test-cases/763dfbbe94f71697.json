@@ -1,0 +1,302 @@
+{
+  "uid" : "763dfbbe94f71697",
+  "name" : "Test Sign Up",
+  "fullName" : "TestNG.TestLoginPage.SignUpTest.signUpWithInvalidCreds",
+  "historyId" : "de1a92f10ec82f5f1beed6e53ec94c68",
+  "time" : {
+    "start" : 1638821714403,
+    "stop" : 1638821723954,
+    "duration" : 9551
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1638821714401,
+      "stop" : 1638821714401,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1638821656999,
+      "stop" : 1638821657007,
+      "duration" : 8
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Select Sign Up Form",
+      "time" : {
+        "start" : 1638821715083,
+        "stop" : 1638821715380,
+        "duration" : 297
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Input email as tunghuynh.gmail.com",
+      "time" : {
+        "start" : 1638821715380,
+        "stop" : 1638821717011,
+        "duration" : 1631
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "email",
+        "value" : "tunghuynh.gmail.com"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Input password as 12345678",
+      "time" : {
+        "start" : 1638821717011,
+        "stop" : 1638821719277,
+        "duration" : 2266
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "password",
+        "value" : "12345678"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Input repeat password as 123478",
+      "time" : {
+        "start" : 1638821719277,
+        "stop" : 1638821721583,
+        "duration" : 2306
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "password",
+        "value" : "123478"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Click on Sign Up button",
+      "time" : {
+        "start" : 1638821721584,
+        "stop" : 1638821722458,
+        "duration" : 874
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Verify unsuccessfully login with valid credentials",
+      "time" : {
+        "start" : 1638821722458,
+        "stop" : 1638821723953,
+        "duration" : 1495
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "signUpCreds",
+        "value" : "LoginCreds{username='tunghuynh.gmail.com', password='12345678'}"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "onTestFailure",
+    "time" : {
+      "start" : 1638821723955,
+      "stop" : 1638821723955,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1638821744217,
+      "stop" : 1638821744978,
+      "duration" : 761
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TestNG.TestLoginPage.SignUpTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TestNG.TestLoginPage.SignUpTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "signUpWithInvalidCreds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "RegressionSuite"
+  }, {
+    "name" : "suite",
+    "value" : "SignUpTest"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNG.TestLoginPage.SignUpTest"
+  }, {
+    "name" : "host",
+    "value" : "TungH-RogStrix"
+  }, {
+    "name" : "thread",
+    "value" : "33496@TungH-RogStrix.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "LoginCreds{username='tunghuynh.gmail.com', password='12345678'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "15be0e8a619df434",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638819868303,
+        "stop" : 1638819877634,
+        "duration" : 9331
+      }
+    }, {
+      "uid" : "91d47fd7c7109edd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638819759873,
+        "stop" : 1638819768862,
+        "duration" : 8989
+      }
+    }, {
+      "uid" : "65a878da9ef1538a",
+      "status" : "failed",
+      "statusDetails" : "expected [Please enter the same password] but found []",
+      "time" : {
+        "start" : 1638819559896,
+        "stop" : 1638819671632,
+        "duration" : 111736
+      }
+    }, {
+      "uid" : "e6438836f3d702ee",
+      "status" : "failed",
+      "statusDetails" : "expected [Please enter the same password] but found []",
+      "time" : {
+        "start" : 1638819110725,
+        "stop" : 1638819119413,
+        "duration" : 8688
+      }
+    }, {
+      "uid" : "aa258c140d7f4b67",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1638818888467,
+        "stop" : 1638818897893,
+        "duration" : 9426
+      }
+    }, {
+      "uid" : "2828bbe6a99ae018",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1638818735516,
+        "stop" : 1638818744725,
+        "duration" : 9209
+      }
+    }, {
+      "uid" : "ff3012f9f1b52147",
+      "status" : "broken",
+      "statusDetails" : "java.lang.NullPointerException",
+      "time" : {
+        "start" : 1638818166831,
+        "stop" : 1638818175677,
+        "duration" : 8846
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "763dfbbe94f71697.json",
+  "parameterValues" : [ "LoginCreds{username='tunghuynh.gmail.com', password='12345678'}" ]
+}

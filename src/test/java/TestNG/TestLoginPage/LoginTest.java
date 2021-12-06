@@ -6,7 +6,7 @@ import io.appium.java_client.MobileElement;
 import io.qameta.allure.Description;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import test_data.LoginCreds;
+import test_data.authentication.LoginCreds;
 import test_data.authentication.DataObjectBuilder;
 import test_flows.authentication.LoginFlow;
 
@@ -24,9 +24,10 @@ public class LoginTest extends BaseTestEx {
     }
 
     @Description("Verify Login with invalid credentials")
-    @Test(description = "Test Login", priority = 2)
+    @Test(description = "Login Test", priority = 2)
     public void loginWithValidCreds() {
-        LoginCreds validLoginCreds = new LoginCreds(validLoginData.getString("email"), validLoginData.getString("password"));
+        LoginCreds validLoginCreds = new LoginCreds(validCredentials.getString("email"), validCredentials.getString("password"));
+
         // Init Appium driver
         AppiumDriver<MobileElement> androidDriver = getDriver();
         LoginFlow loginFlow = new LoginFlow(androidDriver);

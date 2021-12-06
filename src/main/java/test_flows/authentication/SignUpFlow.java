@@ -2,19 +2,104 @@ package test_flows.authentication;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.qameta.allure.Step;
+import models.components.BottomNavBarComponent;
+import models.components.login_page_component.DialogComponent;
+import models.components.login_page_component.SignUpFormComponent;
 import models.pages.LoginPage;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+import test_data.authentication.SignUpCreds;
+import utils.TestUtils;
 
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class SignUpFlow {
+
     private AppiumDriver<MobileElement> appiumDriver;
     private LoginPage loginPage;
-    private HashMap<String, String> expectedStringMap;
-    private SoftAssert softAssert;
+    private SignUpFormComponent signUpFormComp;
+    private DialogComponent dialogComp;
+    private final HashMap<String, String> expectedStringMap;
+    private final SoftAssert softAssert;
 
     public SignUpFlow(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
+        this.expectedStringMap = new TestUtils().getExpectedStringMap();
         softAssert = new SoftAssert();
     }
+
+    public SignUpFlow navigateToLoginPage() {
+        if (loginPage == null) { initLoginPage(); }
+        // Init Bottom Nav Comp and Navigate to Login Page
+        BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
+        bottomNavBarComp.clickOnLoginLabel();
+        return this;
+    }
+
+    public SignUpFlow initLoginPage() {
+        loginPage = new LoginPage(appiumDriver);
+        return this;
+    }
+
+    @Step("Input email as {signUpCreds.email} | password as {signUpCreds.password} | password as {signUpCreds.repeatPassword}")
+    public SignUpFlow signUp(SignUpCreds signUpCreds) {
+        if (loginPage == null) { throw new RuntimeException("Please use navigateToLoginPage() first!!!"); }
+        loginPage.selectSignUpForm();
+        // Fill in signup form
+        signUpFormComp = loginPage.signUpFormComponent();
+        dialogComp = signUpFormComp.inputEmailField(signUpCreds.getEmail())
+                                   .inputPasswordField(signUpCreds.getPassword())
+                                   .inputRepeatPasswordField(signUpCreds.getRepeatPassword())
+                                   .clickOnSignUpBtn();
+
+        return this;
+    }
+
+    @Step("Verify successfully sign up with valid credentials")
+    public SignUpFlow verifyLoginWithCorrectCreds() {
+        // Init Dialog Component and verification
+        String actualDialogTitle = dialogComp.dialogTitleElem().getText();
+        String actualDialogMessage = dialogComp.dialogMessageElem().getText();
+        String expectedDialogTitle = expectedStringMap.get("success_sign_up_dialog_title");
+        String expectedDialogMessage = expectedStringMap.get("success_sign_up_dialog_msg");
+
+        softAssert.assertEquals(actualDialogTitle, expectedDialogTitle);
+        softAssert.assertEquals(actualDialogMessage, expectedDialogMessage);
+        softAssert.assertAll();
+
+        dialogComp.clickDialogBtn();
+        return this;
+    }
+
+    @Step("Verify unsuccessfully login with valid credentials")
+    public SignUpFlow verifyLoginWithIncorrectCreds(SignUpCreds signUpCreds) {
+        String actualErrorText;
+        String expectedEmailErrMessage = expectedStringMap.get("error_sign_up_invalid_email_msg");
+        String expectedPasswordErrMessage = expectedStringMap.get("error_sign_up_invalid_password_msg");
+        String expectedRepeatPasswordErrMessage = expectedStringMap.get("error_sign_up_wrong_repeat_password_msg");
+        int minPasswordLength = 7;
+        if (checkInvalidEmail(signUpCreds.getEmail())) {
+            actualErrorText = signUpFormComp.invalidEmailMessageElem().getText();
+            Assert.assertEquals(actualErrorText, expectedEmailErrMessage);
+        }
+        if (signUpCreds.getPassword().toCharArray().length < minPasswordLength) {
+            actualErrorText = signUpFormComp.invalidPasswordMessageElem().getText();
+            Assert.assertEquals(actualErrorText, expectedPasswordErrMessage);
+        }
+        boolean isConfirmPasswordSame = !signUpCreds.getRepeatPassword().equalsIgnoreCase(signUpCreds.getPassword());
+        if (isConfirmPasswordSame || (signUpCreds.getRepeatPassword().toCharArray().length < minPasswordLength)) {
+            actualErrorText = signUpFormComp.invalidRepeatPwMessageElem().getText();
+            Assert.assertEquals(actualErrorText, expectedRepeatPasswordErrMessage);
+        }
+        return this;
+    }
+
+    private boolean checkInvalidEmail(String email) {
+        String regex = "^(.+)@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        return !pattern.matcher(email).matches();
+    }
+
 }

@@ -36,7 +36,7 @@ public class TestLab_14 {
 
         bottomNavBarComp.clickOnLoginLabel(); // Navigate to Login Page
 
-        if (loginPage.isLoginFormSelect()) {
+        if (loginPage.selectLoginForm()) {
             dialogComponent = loginFormComp
                     .inputEmailField(loginData.getJSONObject("validUser").getString("username"))
                     .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
@@ -48,7 +48,7 @@ public class TestLab_14 {
             } else { result_01 = "TC_001_Login_App is FAILED"; }
         }
 
-        if (loginPage.isSignUpFormSelect()) {
+        if (loginPage.selectSignUpForm()) {
             dialogComponent = signUpFormComp.inputEmailField(loginData.getJSONObject("validUser").getString("username"))
                                             .inputPasswordField(loginData.getJSONObject("validUser").getString("password"))
                                             .inputRepeatPasswordField(loginData.getJSONObject("validUser").getString("password"))
@@ -64,7 +64,7 @@ public class TestLab_14 {
                           .inputRepeatPasswordField(loginData.getJSONObject("invalidPassword").getString("password"))
                           .clickOnSignUpBtn();
 
-            String errPasswordConfirm = signUpFormComp.errRepeatPwMessageElem().getText();
+            String errPasswordConfirm = signUpFormComp.invalidRepeatPwMessageElem().getText();
             if (errPasswordConfirm.equalsIgnoreCase("Please enter the same password")) {
                 result_03 = "TC_003_Fail_SignUp_App is PASSED";
             } else { result_03 = "TC_003_Fail_SignUp_App is FAILED"; }

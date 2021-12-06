@@ -1,92 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RegressionSuite" duration-ms="37692" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:47:09 ICT">
+  <suite name="RegressionSuite" duration-ms="26759" started-at="2021-12-07T03:27:00 ICT" finished-at="2021-12-07T03:27:27 ICT">
     <groups>
     </groups>
-    <test name="Login" duration-ms="37692" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:47:09 ICT">
+    <test name="[Smoke Test] Log In" duration-ms="26740" started-at="2021-12-07T03:27:00 ICT" finished-at="2021-12-07T03:27:27 ICT">
       <class name="TestNG.TestLoginPage.LoginTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeSuite" is-config="true" duration-ms="19" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:46:31 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="10" started-at="2021-12-05T07:46:31 ICT" finished-at="2021-12-05T07:46:31 ICT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@30b34287]" name="beforeMethod" is-config="true" duration-ms="11" started-at="2021-12-07T03:27:00 ICT" finished-at="2021-12-07T03:27:00 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="22711" started-at="2021-12-05T07:46:31 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-05T07:46:54 ICT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[LoginCreds{username='Tunghuynh@gmail.com', password='1234'}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithInvalidCreds -->
-        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="2" started-at="2021-12-05T07:46:54 ICT" finished-at="2021-12-05T07:46:54 ICT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- onTestFailure -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2021-12-05T07:46:54 ICT" finished-at="2021-12-05T07:46:54 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithInvalidCreds" duration-ms="6785" started-at="2021-12-05T07:46:54 ICT" description="Login Test" data-provider="invalidLoginCredsData" finished-at="2021-12-05T07:47:01 ICT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[LoginCreds{username='tunghuynh@', password='12345678'}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithInvalidCreds -->
-        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-05T07:47:01 ICT" finished-at="2021-12-05T07:47:01 ICT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginWithInvalidCreds status=SUCCESS method=LoginTest.loginWithInvalidCreds(test_data.LoginCreds)[pri:1, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- onTestFailure -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2021-12-05T07:47:01 ICT" finished-at="2021-12-05T07:47:01 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="loginWithValidCreds" duration-ms="7931" started-at="2021-12-05T07:47:01 ICT" description="Test Login" finished-at="2021-12-05T07:47:09 ICT">
+        <test-method status="PASS" signature="loginWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.LoginTest@30b34287]" name="loginWithValidCreds" duration-ms="26610" started-at="2021-12-07T03:27:00 ICT" description="Login Test" finished-at="2021-12-07T03:27:27 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithValidCreds -->
-        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="onTestFailure" is-config="true" duration-ms="0" started-at="2021-12-05T07:47:09 ICT" finished-at="2021-12-05T07:47:09 ICT">
+        <test-method status="PASS" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestNG.TestLoginPage.LoginTest@30b34287]" name="onTestFailure" is-config="true" duration-ms="5" started-at="2021-12-07T03:27:27 ICT" finished-at="2021-12-07T03:27:27 ICT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginWithValidCreds status=SUCCESS method=LoginTest.loginWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.LoginTest@51768776] output={null}]]]>
+                <![CDATA[[TestResult name=loginWithValidCreds status=SUCCESS method=LoginTest.loginWithValidCreds()[pri:2, instance:TestNG.TestLoginPage.LoginTest@30b34287] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onTestFailure -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestNG.TestLoginPage.LoginTest@51768776]" name="afterSuite" is-config="true" duration-ms="835" started-at="2021-12-05T07:47:09 ICT" finished-at="2021-12-05T07:47:09 ICT">
+      </class> <!-- TestNG.TestLoginPage.LoginTest -->
+    </test> <!-- [Smoke Test] Log In -->
+    <test name="[Smoke Test] Sign Up" duration-ms="0" started-at="2021-12-07T03:27:27 ICT" finished-at="2021-12-07T03:27:27 ICT">
+      <class name="TestNG.TestLoginPage.LoginTest">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestNG.TestLoginPage.LoginTest@7957dc72]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2021-12-07T03:27:00 ICT" finished-at="2021-12-07T03:27:00 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestNG.TestLoginPage.LoginTest@7957dc72]" name="afterSuite" is-config="true" duration-ms="745" started-at="2021-12-07T03:27:27 ICT" finished-at="2021-12-07T03:27:28 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- TestNG.TestLoginPage.LoginTest -->
-    </test> <!-- Login -->
+    </test> <!-- [Smoke Test] Sign Up -->
   </suite> <!-- RegressionSuite -->
 </testng-results>

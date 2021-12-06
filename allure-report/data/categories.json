@@ -7,7 +7,7 @@
       "name" : "org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '192.168.133.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: driver.version: AndroidDriver",
       "children" : [ {
         "name" : "beforeMethod",
-        "uid" : "ce9541d486c63c08",
+        "uid" : "8e17e47956f3ed68",
         "parentUid" : "603eb3eecabb1047c711157842c8bb58",
         "status" : "broken",
         "time" : {
@@ -24,7 +24,7 @@
       "name" : "Expected condition failed: waiting for visibility of Located by By.chained({By.id: android:id/title_template}) (tried for 10 second(s) with 500 milliseconds interval)",
       "children" : [ {
         "name" : "loginWithValidCreds",
-        "uid" : "2c153afe1701e466",
+        "uid" : "7e0ed9446c55c38f",
         "parentUid" : "f775c21c23f8138cabf5b185ddb6eb8b",
         "status" : "broken",
         "time" : {
@@ -41,7 +41,7 @@
       "name" : "java.lang.NullPointerException",
       "children" : [ {
         "name" : "onTestFailure",
-        "uid" : "6fe4014e04745a2f",
+        "uid" : "30aed48bdb170a12",
         "parentUid" : "5592898b36d684905e31486a23088bda",
         "status" : "broken",
         "time" : {
@@ -54,6 +54,23 @@
         "parameters" : [ ]
       } ],
       "uid" : "5592898b36d684905e31486a23088bda"
+    }, {
+      "name" : "A session is either terminated or not started\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'TUNGH-ROGSTRIX', ip: '10.212.135.117', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'\nDriver info: io.appium.java_client.android.AndroidDriver\nCapabilities {appActivity: com.wdiodemoapp.MainActivity, appPackage: com.wdiodemoapp, automationName: UiAutomator2, avdLaunchTimeout: 120000, databaseEnabled: false, desired: {appActivity: com.wdiodemoapp.MainActivity, appPackage: com.wdiodemoapp, automationName: UiAutomator2, avdLaunchTimeout: 120000, deviceName: Z5 Prem, newCommandTimeout: 120, platformName: android, udid: CB5A2BZKHF}, deviceApiLevel: 25, deviceManufacturer: Sony, deviceModel: E6883, deviceName: CB5A2BZKHF, deviceScreenDensity: 408, deviceScreenSize: 1080x1920, deviceUDID: CB5A2BZKHF, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 120, pixelRatio: 2.55, platform: LINUX, platformName: Android, platformVersion: 7.1.1, statBarHeight: 61, takesScreenshot: true, udid: CB5A2BZKHF, viewportRect: {height: 1737, left: 0, top: 61, width: 1080}, warnings: {}, webStorageEnabled: false}\nSession ID: a891a63a-276e-4c38-b49b-3d0a6f43be4d",
+      "children" : [ {
+        "name" : "onTestFailure",
+        "uid" : "8d2db62ef1b77717",
+        "parentUid" : "6cbe92c8e7a30d1893e1b863d532d119",
+        "status" : "broken",
+        "time" : {
+          "start" : 1638818503366,
+          "stop" : 1638818503367,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6cbe92c8e7a30d1893e1b863d532d119"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]

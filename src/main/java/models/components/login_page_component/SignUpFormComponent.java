@@ -17,11 +17,11 @@ public class SignUpFormComponent extends PageModel {
     @AndroidFindBy(accessibility = "button-SIGN UP")
     private MobileElement signUpBtnElem;
     @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[3]")
-    private MobileElement wrongEmailTextElem;
+    private MobileElement invalidEmailMessageElem;
     @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[2]")
-    private MobileElement wrongPasswordTextElem;
+    private MobileElement invalidPasswordMessageElem;
     @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[1]")
-    private MobileElement errRepeatPwMessageElem;
+    private MobileElement invalidRepeatPwMessageElem;
 
     public SignUpFormComponent(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
@@ -32,19 +32,19 @@ public class SignUpFormComponent extends PageModel {
         return signUpBtnElem;
     }
 
-    public MobileElement wrongEmailTextElem() {
-        waitForVisibility(wrongEmailTextElem);
-        return wrongEmailTextElem;
+    public MobileElement invalidEmailMessageElem() {
+        waitForVisibility(invalidEmailMessageElem);
+        return invalidEmailMessageElem;
     }
 
-    public MobileElement wrongPasswordTextElem() {
-        waitForVisibility(wrongPasswordTextElem);
-        return wrongPasswordTextElem;
+    public MobileElement invalidPasswordMessageElem() {
+        waitForVisibility(invalidPasswordMessageElem);
+        return invalidPasswordMessageElem;
     }
 
-    public MobileElement errRepeatPwMessageElem() {
-        waitForVisibility(errRepeatPwMessageElem);
-        return errRepeatPwMessageElem;
+    public MobileElement invalidRepeatPwMessageElem() {
+        waitForVisibility(invalidRepeatPwMessageElem);
+        return invalidRepeatPwMessageElem;
     }
 
     @Step("Input email as {email}")

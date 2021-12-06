@@ -1,0 +1,236 @@
+{
+  "uid" : "27aa730ec427d018",
+  "name" : "Test Login",
+  "fullName" : "TestNG.TestLoginPage.LoginTest.loginWithValidCreds",
+  "historyId" : "2a4ba87a466752074bb041da2a4bbea1",
+  "time" : {
+    "start" : 1638739630746,
+    "stop" : 1638739638141,
+    "duration" : 7395
+  },
+  "description" : "Verify Login with invalid credentials",
+  "descriptionHtml" : "<p>Verify Login with invalid credentials</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1638739630744,
+      "stop" : 1638739630744,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1638739592376,
+      "stop" : 1638739592381,
+      "duration" : 5
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Verify Login with invalid credentials",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Input email as {loginCreds.email} and password as {loginCreds.password}",
+      "time" : {
+        "start" : 1638739630972,
+        "stop" : 1638739635614,
+        "duration" : 4642
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Input email as Tunghuynh@gmail.com",
+        "time" : {
+          "start" : 1638739630972,
+          "stop" : 1638739632532,
+          "duration" : 1560
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "Tunghuynh@gmail.com"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "Input password as 12345678",
+        "time" : {
+          "start" : 1638739632532,
+          "stop" : 1638739634749,
+          "duration" : 2217
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "12345678"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "Click on Login button",
+        "time" : {
+          "start" : 1638739634749,
+          "stop" : 1638739635614,
+          "duration" : 865
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "credsInformation",
+        "value" : "LoginCreds{username='Tunghuynh@gmail.com', password='12345678'}"
+      } ],
+      "stepsCount" : 3,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Verify successfully login with valid credentials",
+      "time" : {
+        "start" : 1638739635614,
+        "stop" : 1638739638140,
+        "duration" : 2526
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Click on Login button",
+        "time" : {
+          "start" : 1638739635615,
+          "stop" : 1638739636490,
+          "duration" : 875
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "onTestFailure",
+    "time" : {
+      "start" : 1638739638144,
+      "stop" : 1638739638144,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1638739638149,
+      "stop" : 1638739638942,
+      "duration" : 793
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginWithValidCreds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "FirstAppiumProject"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "TungH-RogStrix"
+  }, {
+    "name" : "thread",
+    "value" : "36356@TungH-RogStrix.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "27aa730ec427d018.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,209 @@
+{
+  "uid" : "6d9de95d06e18e91",
+  "name" : "Login Test",
+  "fullName" : "TestNG.TestLoginPage.LoginTest.loginWithInvalidCreds",
+  "historyId" : "e19509678434390aa15f4f83aadc3805",
+  "time" : {
+    "start" : 1638664858979,
+    "stop" : 1638664881534,
+    "duration" : 22555
+  },
+  "description" : "Verify Login with valid credentials",
+  "descriptionHtml" : "<p>Verify Login with valid credentials</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1638664858780,
+      "stop" : 1638664858789,
+      "duration" : 9
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1638664858655,
+      "stop" : 1638664858661,
+      "duration" : 6
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Verify Login with valid credentials",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Input email as Tunghuynh@gmail.com and password as 1234",
+      "time" : {
+        "start" : 1638664874644,
+        "stop" : 1638664881531,
+        "duration" : 6887
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Input email as Tunghuynh@gmail.com",
+        "time" : {
+          "start" : 1638664874652,
+          "stop" : 1638664877391,
+          "duration" : 2739
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "Tunghuynh@gmail.com"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "Input password as 1234",
+        "time" : {
+          "start" : 1638664877391,
+          "stop" : 1638664880174,
+          "duration" : 2783
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "1234"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "Click on Login button",
+        "time" : {
+          "start" : 1638664880174,
+          "stop" : 1638664881531,
+          "duration" : 1357
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "loginCreds",
+        "value" : "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}"
+      } ],
+      "stepsCount" : 3,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "onTestFailure",
+    "time" : {
+      "start" : 1638664881541,
+      "stop" : 1638664881541,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1638664893584,
+      "stop" : 1638664894336,
+      "duration" : 752
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginWithInvalidCreds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "FirstAppiumProject"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "TungH-RogStrix"
+  }, {
+    "name" : "thread",
+    "value" : "31996@TungH-RogStrix.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6d9de95d06e18e91.json",
+  "parameterValues" : [ "LoginCreds{username='Tunghuynh@gmail.com', password='1234'}" ]
+}

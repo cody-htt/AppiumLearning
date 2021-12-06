@@ -1,0 +1,325 @@
+{
+  "uid" : "b0458d8d5bf91a9b",
+  "name" : "Login Test",
+  "fullName" : "TestNG.TestLoginPage.LoginTest.loginWithInvalidCreds",
+  "historyId" : "f12088e4be97e3f032c87500dc81d4fb",
+  "time" : {
+    "start" : 1638821688018,
+    "stop" : 1638821694876,
+    "duration" : 6858
+  },
+  "description" : "Verify Login with valid credentials",
+  "descriptionHtml" : "<p>Verify Login with valid credentials</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1638821688014,
+      "stop" : 1638821688015,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1638821656999,
+      "stop" : 1638821657007,
+      "duration" : 8
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "testStage" : {
+    "description" : "Verify Login with valid credentials",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Input email as tunghuynh@ and password as 123456",
+      "time" : {
+        "start" : 1638821688261,
+        "stop" : 1638821693446,
+        "duration" : 5185
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Input email as tunghuynh@",
+        "time" : {
+          "start" : 1638821688262,
+          "stop" : 1638821690288,
+          "duration" : 2026
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "email",
+          "value" : "tunghuynh@"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "Input password as 123456",
+        "time" : {
+          "start" : 1638821690288,
+          "stop" : 1638821692603,
+          "duration" : 2315
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "password",
+          "value" : "123456"
+        } ],
+        "stepsCount" : 0,
+        "hasContent" : true,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "Click on Login button",
+        "time" : {
+          "start" : 1638821692603,
+          "stop" : 1638821693446,
+          "duration" : 843
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "shouldDisplayMessage" : false,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "loginCreds",
+        "value" : "LoginCreds{username='tunghuynh@', password='123456'}"
+      } ],
+      "stepsCount" : 3,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Verify unsuccessfully login with valid credentials",
+      "time" : {
+        "start" : 1638821693446,
+        "stop" : 1638821694875,
+        "duration" : 1429
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "loginCreds",
+        "value" : "LoginCreds{username='tunghuynh@', password='123456'}"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "onTestFailure",
+    "time" : {
+      "start" : 1638821694878,
+      "stop" : 1638821694878,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1638821744217,
+      "stop" : 1638821744978,
+      "duration" : 761
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginWithInvalidCreds"
+  }, {
+    "name" : "parentSuite",
+    "value" : "RegressionSuite"
+  }, {
+    "name" : "suite",
+    "value" : "LoginTest"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestNG.TestLoginPage.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "TungH-RogStrix"
+  }, {
+    "name" : "thread",
+    "value" : "33496@TungH-RogStrix.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "LoginCreds{username='tunghuynh@', password='123456'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "86e1478f928ff212",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638819838293,
+        "stop" : 1638819846236,
+        "duration" : 7943
+      }
+    }, {
+      "uid" : "91d8f15c6ceae21a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638816999173,
+        "stop" : 1638817006071,
+        "duration" : 6898
+      }
+    }, {
+      "uid" : "418ea2982014908b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638816623643,
+        "stop" : 1638816630797,
+        "duration" : 7154
+      }
+    }, {
+      "uid" : "540f5eae5c1d757a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638816561938,
+        "stop" : 1638816568474,
+        "duration" : 6536
+      }
+    }, {
+      "uid" : "6f744530e69e1d16",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638816225994,
+        "stop" : 1638816232785,
+        "duration" : 6791
+      }
+    }, {
+      "uid" : "b2c949dd71745a9a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638816092785,
+        "stop" : 1638816099785,
+        "duration" : 7000
+      }
+    }, {
+      "uid" : "2a186b82dad12904",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638815940853,
+        "stop" : 1638815948287,
+        "duration" : 7434
+      }
+    }, {
+      "uid" : "b266f72cd08ba3eb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638815808479,
+        "stop" : 1638815815274,
+        "duration" : 6795
+      }
+    }, {
+      "uid" : "6c76d5e7ee6be08f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638809204225,
+        "stop" : 1638809211615,
+        "duration" : 7390
+      }
+    }, {
+      "uid" : "f7ba7c5d97888d1a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638740102418,
+        "stop" : 1638740108966,
+        "duration" : 6548
+      }
+    }, {
+      "uid" : "c2e41f8571a4ac06",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638739623259,
+        "stop" : 1638739630739,
+        "duration" : 7480
+      }
+    }, {
+      "uid" : "e812240e45f9a589",
+      "status" : "passed",
+      "time" : {
+        "start" : 1638738038431,
+        "stop" : 1638738045338,
+        "duration" : 6907
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b0458d8d5bf91a9b.json",
+  "parameterValues" : [ "LoginCreds{username='tunghuynh@', password='123456'}" ]
+}

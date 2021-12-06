@@ -15,33 +15,19 @@ public class LoginPage extends PageModel {
     private MobileElement loginFormLabelElem;
     @AndroidFindBy(accessibility = "button-sign-up-container")
     private MobileElement signUpFormLabelElem;
-    @AndroidFindBy(xpath = "//*[@content-desc='button-sign-up-container']/following-sibling::android.view.ViewGroup/android.widget.TextView[1]")
-    private MobileElement errInvalidEmailMsgElem;
-    @AndroidFindBy(xpath = "//*[@content-desc='button-sign-up-container']/following-sibling::android.view.ViewGroup/android.widget.TextView[2]")
-    private MobileElement errInvalidPasswordMsgElem;
 
     public LoginPage(AppiumDriver<MobileElement> appiumDriver) {
         super(appiumDriver);
     }
 
-    public MobileElement errInvalidEmailMsgElem() {
-        waitForVisibility(errInvalidEmailMsgElem);
-        return errInvalidEmailMsgElem;
-    }
-
-    public MobileElement errInvalidPasswordMsgElem() {
-        waitForVisibility(errInvalidPasswordMsgElem);
-        return errInvalidPasswordMsgElem;
-    }
-
     @Step("Select Login Form")
-    public boolean isLoginFormSelect() {
+    public boolean selectLoginForm() {
         loginFormLabelElem.click();
         return loginFormComponent().loginBtnElem().isDisplayed();
     }
 
     @Step("Select Sign Up Form")
-    public boolean isSignUpFormSelect() {
+    public boolean selectSignUpForm() {
         signUpFormLabelElem.click();
         return signUpFormComponent().signUpBtnElem().isDisplayed();
     }

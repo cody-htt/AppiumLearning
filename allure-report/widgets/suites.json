@@ -5,11 +5,11 @@
     "name" : "Default Suite",
     "statistic" : {
       "failed" : 0,
-      "broken" : 2,
+      "broken" : 3,
       "skipped" : 0,
-      "passed" : 6,
+      "passed" : 4,
       "unknown" : 0,
-      "total" : 8
+      "total" : 7
     }
   }, {
     "uid" : "c1b365eb70bc076d97d473b77b9d8983",
@@ -18,9 +18,9 @@
       "failed" : 0,
       "broken" : 1,
       "skipped" : 0,
-      "passed" : 3,
+      "passed" : 10,
       "unknown" : 0,
-      "total" : 4
+      "total" : 11
     }
   } ]
 }
