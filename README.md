@@ -37,7 +37,7 @@
         - ![img_1.png](picture/extend_path.png)
     - Install Packages for AVD (Android Virtual Device)
 
-> ```json lines
+> ```commandline
 > sdkmanager --list
 > sdkmanager "platforms;android-29"
 > sdkmanager "system-images;android-29;default;x86"
@@ -46,13 +46,13 @@
 
 5. Create AVD
 
-> ```json lines
+> ```commandline
 > avdmanager create avd --name android_29 --package "system-images;android-29;default;x86
 > ```
 
 6. Launch AVD
 
-> ```json lines
+> ```commandline
 > emulator -avd @avd_name
 > or
 > emulator @avd_name
@@ -66,12 +66,12 @@ git pull https://github.com/codyhuynh-htt/AppiumLearning.git
 
 *Run Regression Test Suite*
 
-```json lines
+```commandline
 mvn clean test -Dsurefile.suiteXmlFires="src/test/resources/test-suites/RegressionTest.xml"
 ```
 
 *Run Smoke Test suite*
 
-```json lines
+```commandline
 mvn clean test -Dsurefile.suiteXmlFires="src/test/resources/test-suites/SmokeTest.xml"
 ```
