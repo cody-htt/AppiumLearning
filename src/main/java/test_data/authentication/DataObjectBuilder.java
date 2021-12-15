@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 public class DataObjectBuilder {
 
-    public static <T> T buildDataObject(String filePath, Class<T> dataType) {
+    public <T> T buildDataObject(String filePath, Class<T> dataType) {
         LoginCreds[] credInformations = new LoginCreds[] { };
         String absoluteFilePath = System.getProperty("user.dir") + File.separator + filePath;
         try (

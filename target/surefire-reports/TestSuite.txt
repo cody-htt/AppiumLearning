@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 88.939 s - in TestSuite
+Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 46.166 s <<< FAILURE! - in TestSuite
+TestNG.TestLoginPage.LoginTest.loginWithValidCreds  Time elapsed: 4.797 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Data Provider public test_data.authentication.LoginCreds[] TestNG.TestLoginPage.LoginTest.validLoginCredsData() returned a null value
+
+TestNG.TestLoginPage.LoginTest.loginWithValidCreds  Time elapsed: 8.491 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Data Provider public test_data.authentication.LoginCreds[] TestNG.TestLoginPage.LoginTest.validLoginCredsData() returned a null value
+

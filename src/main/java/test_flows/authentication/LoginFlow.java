@@ -55,7 +55,7 @@ public class LoginFlow {
     }
 
     @Step("Verify successfully login with valid credentials")
-    public LoginFlow verifyLoginWithCorrectCreds() {
+    public LoginFlow verifyLoginSuccess() {
         // Verification
         String actualDialogTitle = dialogComp.dialogTitleElem().getText();
         String actualDialogMessage = dialogComp.dialogMessageElem().getText();

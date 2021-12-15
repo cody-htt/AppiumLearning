@@ -9,4 +9,5 @@ public interface MobileCapabilityTypeEx extends MobileCapabilityType {
     String NEW_COMMAND_TIMEOUT = "newCommandTimeout";
     String AVD = "avd";
     String CHROME_DRIVER_EXECUTABLE = "chromedriverExecutable";
+    String SYSTEM_PORT = "systemPort";
 }

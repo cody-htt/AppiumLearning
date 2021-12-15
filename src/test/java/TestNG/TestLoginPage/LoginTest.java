@@ -6,14 +6,14 @@ import io.appium.java_client.MobileElement;
 import io.qameta.allure.Description;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import test_data.authentication.LoginCreds;
 import test_data.authentication.DataObjectBuilder;
+import test_data.authentication.LoginCreds;
 import test_flows.authentication.LoginFlow;
 
 public class LoginTest extends BaseTestEx {
 
-    @Description("Verify Login with valid credentials")
-    @Test(dataProvider = "invalidLoginCredsData", description = "Login Test", priority = 1)
+    @Description("Verify Login with invalid credentials")
+    @Test(dataProvider = "invalidLoginCredsData", description = "Login Test With Invalid Creds", priority = 1)
     public void loginWithInvalidCreds(LoginCreds loginCreds) {
         // Init Appium driver
         AppiumDriver<MobileElement> androidDriver = getDriver();
@@ -23,23 +23,27 @@ public class LoginTest extends BaseTestEx {
                  .verifyLoginWithIncorrectCreds(loginCreds);
     }
 
-    @Description("Verify Login with invalid credentials")
-    @Test(description = "Login Test", priority = 2)
-    public void loginWithValidCreds() {
-        LoginCreds validLoginCreds = new LoginCreds(validCredentials.getString("email"), validCredentials.getString("password"));
-
+    @Description("Verify Login with valid credentials")
+    @Test(dataProvider = "validLoginCredsData", description = "Login Test With Valid Creds", priority = 2)
+    public void loginWithValidCreds(LoginCreds loginCreds) {
+//        LoginCreds validLoginCreds = new LoginCreds(validCredentials.getString("email"), validCredentials.getString("password"));
         // Init Appium driver
         AppiumDriver<MobileElement> androidDriver = getDriver();
         LoginFlow loginFlow = new LoginFlow(androidDriver);
         loginFlow.navigateToLoginPage()
-                 .login(validLoginCreds)
-                 .verifyLoginWithCorrectCreds();
+                 .login(loginCreds)
+                 .verifyLoginSuccess();
     }
 
     @DataProvider
     public LoginCreds[] invalidLoginCredsData() {
         String jsonLoc = "src/test/resources/data/authentication/invalidLoginCreds.json";
-        return DataObjectBuilder.buildDataObject(jsonLoc, LoginCreds[].class);
+        return new DataObjectBuilder().buildDataObject(jsonLoc, LoginCreds[].class);
     }
 
+    @DataProvider
+    public LoginCreds[] validLoginCredsData() {
+        String jsonLoc = "src/test/resources/data/authentication/validLoginCreds.json";
+        return new DataObjectBuilder().buildDataObject(jsonLoc, LoginCreds[].class);
+    }
 }

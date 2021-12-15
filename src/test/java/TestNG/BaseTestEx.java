@@ -8,11 +8,7 @@ import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.asserts.SoftAssert;
+import org.testng.annotations.*;
 import utils.TestUtils;
 
 import java.io.File;
@@ -22,7 +18,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class BaseTestEx {
@@ -34,15 +29,33 @@ public class BaseTestEx {
 
     private final static List<DriverFactoryEx> driverThreadPool = Collections.synchronizedList(new ArrayList<>());
     private static ThreadLocal<DriverFactoryEx> driverThread;
+    private String udid;
+    private String port;
+    private String systemPort;
+    private String deviceName;
 
-    protected static HashMap<String, String> expectedStringMap = new HashMap<>();
-    protected SoftAssert softAssert;
     protected TestUtils testUtils;
     protected JSONObject validCredentials;
 
-    @BeforeSuite(alwaysRun = true)
-    public static void beforeSuite() {
-        /* () -> {} is an anonymous function */
+    /*
+     @BeforeSuite(alwaysRun = true)
+    public void beforeSuite() {
+        driverThread = ThreadLocal.withInitial(() -> {
+            DriverFactory_Ex driverThread = new DriverFactory_Ex();
+            driverThreadPool.add(driverThread);
+            return driverThread;
+        });
+    }
+    */
+    @BeforeTest(alwaysRun = true)
+    @Parameters({ "udid", "port", "systemPort", "deviceName" })
+    public void beforeTest(String udid, String port, String systemPort, String deviceName) {
+        System.out.println(deviceName + " | " + udid + " | " + port + " | " + systemPort);
+        this.udid = udid;
+        this.port = port;
+        this.systemPort = systemPort;
+        this.deviceName = deviceName;
+        /* () -> {...} is an anonymous function */
         driverThread = ThreadLocal.withInitial(() -> {
             DriverFactoryEx driverThread = new DriverFactoryEx();
             driverThreadPool.add(driverThread);
@@ -50,10 +63,27 @@ public class BaseTestEx {
         });
     }
 
+    @AfterTest(alwaysRun = true)
+    public void afterTest() {
+        driverThread.get().quitAppiumSession();
+    }
+
+    /*
     @AfterSuite(alwaysRun = true)
     public static void afterSuite() {
         driverThreadPool.forEach(DriverFactoryEx :: quitAppiumSession);
     }
+    */
+
+    public AppiumDriver<MobileElement> getDriver() {
+        return driverThread.get().getAppiumDriver(udid, port, systemPort, deviceName);
+    }
+
+    /*
+    public static AppiumDriver<MobileElement> getDriver() {
+        return driverThread.get().getAppiumDriver();
+    }
+    */
 
     @BeforeMethod
     public void beforeMethod() {
@@ -87,8 +117,4 @@ public class BaseTestEx {
         }
     }
 
-
-    public static AppiumDriver<MobileElement> getDriver() {
-        return driverThread.get().getAppiumDriver();
-    }
 }

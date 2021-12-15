@@ -41,7 +41,7 @@ public class SignUpTest extends BaseTestEx {
     @DataProvider
     public SignUpCreds[] invalidLoginCreds() {
         String jsonLoc = "src/test/resources/data/authentication/invalidSignUpCreds.json";
-        return DataObjectBuilder.buildDataObject(jsonLoc, SignUpCreds[].class);
+        return new DataObjectBuilder().buildDataObject(jsonLoc, SignUpCreds[].class);
     }
 
 }

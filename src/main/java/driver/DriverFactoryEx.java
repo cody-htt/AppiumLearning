@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import utils.Constant;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DriverFactoryEx {
@@ -24,7 +25,14 @@ public class DriverFactoryEx {
     private static AppiumDriver<MobileElement> appiumDriver;
 
     public AppiumDriver<MobileElement> getAppiumDriver() {
-        if (appiumDriver == null) appiumDriver = initAppiumDriver();
+        if (appiumDriver == null)
+            appiumDriver = initAppiumDriver();
+        return appiumDriver;
+    }
+
+    public AppiumDriver<MobileElement> getAppiumDriver(String udid, String port, String systemPort, String deviceName) {
+        if (appiumDriver == null)
+            appiumDriver = initAppiumDriver(udid, port, systemPort, deviceName);
         return appiumDriver;
     }
 
@@ -56,13 +64,41 @@ public class DriverFactoryEx {
         return appiumDriver;
     }
 
+    private AppiumDriver<MobileElement> initAppiumDriver(String udid, String port, String systemPort, String deviceName) {
+//        AppiumServiceBuilder appiumServiceBuilder = new AppiumServiceBuilder();
+//        appiumServiceBuilder.withIPAddress("127.0.0.1").usingPort(Integer.parseInt(port));
+//        /* Use AndroidServerFlagEx, extended from AndroidSeverFlag, for automatically discovering compatible Chrome driver */
+//        appiumServiceBuilder.withArgument(AndroidServerFlagEx.ALLOW_INSECURE, "chromedriver_autodownload");
+//        appiumServer = AppiumDriverLocalService.buildService(appiumServiceBuilder);
+//        appiumServer.start();
+
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "Android");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, deviceName);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, udid);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.SYSTEM_PORT, Integer.parseInt(systemPort));
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 60);
+        try {
+            URL appiumServerPath = new URL("http://127.0.0.1:4723/wd/hub");
+            appiumDriver = new AndroidDriver<>(appiumServerPath, desiredCapabilities);
+//            appiumDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
+            appiumDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_LAUNCH_APPIUM_DRIVER, TimeUnit.SECONDS);
+        } catch (Exception ex) { ex.printStackTrace(); }
+        System.out.println("Session ID: " + appiumDriver.getSessionId());
+        return appiumDriver;
+    }
+
     public void quitAppiumSession() {
         if (appiumDriver != null) {
             appiumDriver.quit();
             appiumDriver = null;
 
             /* In case we have completed infrastructure, no need the below code */
-            stopAppiumServer();
+            //stopAppiumServer();
         }
     }
 
