@@ -5,7 +5,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
-import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -16,9 +15,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class BaseTestEx {
 
@@ -32,30 +29,19 @@ public class BaseTestEx {
     private String udid;
     private String port;
     private String systemPort;
-    private String deviceName;
 
+    //    protected ThreadLocal<TestUtils> testUtils;
     protected TestUtils testUtils;
-    protected JSONObject validCredentials;
+//    protected ThreadLocal<JSONObject> validCredentials;
 
-    /*
-     @BeforeSuite(alwaysRun = true)
-    public void beforeSuite() {
-        driverThread = ThreadLocal.withInitial(() -> {
-            DriverFactory_Ex driverThread = new DriverFactory_Ex();
-            driverThreadPool.add(driverThread);
-            return driverThread;
-        });
-    }
-    */
     @BeforeTest(alwaysRun = true)
-    @Parameters({ "udid", "port", "systemPort", "deviceName" })
-    public void beforeTest(String udid, String port, String systemPort, String deviceName) {
-        System.out.println(deviceName + " | " + udid + " | " + port + " | " + systemPort);
+    @Parameters({ "udid", "port", "systemPort" })
+    public void beforeTest(String udid, String port, String systemPort) {
+        System.out.println(udid + "|" + port + "|" + systemPort);
         this.udid = udid;
         this.port = port;
         this.systemPort = systemPort;
-        this.deviceName = deviceName;
-        /* () -> {...} is an anonymous function */
+        /* () -> {} is an anonymous function */
         driverThread = ThreadLocal.withInitial(() -> {
             DriverFactoryEx driverThread = new DriverFactoryEx();
             driverThreadPool.add(driverThread);
@@ -66,31 +52,19 @@ public class BaseTestEx {
     @AfterTest(alwaysRun = true)
     public void afterTest() {
         driverThread.get().quitAppiumSession();
+//        driverThreadPool.forEach(DriverFactoryEx :: quitAppiumSession);
     }
-
-    /*
-    @AfterSuite(alwaysRun = true)
-    public static void afterSuite() {
-        driverThreadPool.forEach(DriverFactoryEx :: quitAppiumSession);
-    }
-    */
 
     public AppiumDriver<MobileElement> getDriver() {
-        return driverThread.get().getAppiumDriver(udid, port, systemPort, deviceName);
+        return driverThread.get().getAppiumDriver(udid, port, systemPort);
     }
-
-    /*
-    public static AppiumDriver<MobileElement> getDriver() {
-        return driverThread.get().getAppiumDriver();
-    }
-    */
 
     @BeforeMethod
     public void beforeMethod() {
         testUtils = new TestUtils();
         /* Initialize loginData basing on invalidLoginCreds.json file */
-        String jsonLoginUserFile = "data/authentication/validLoginCreds.json";
-        validCredentials = testUtils.readJSONFile(jsonLoginUserFile);
+//        String jsonLoginUserFile = "data/authentication/validLoginCreds.json";
+//        setValidCredentials(testUtils.readJSONFile(jsonLoginUserFile));
     }
 
     @AfterMethod(alwaysRun = true)
@@ -98,14 +72,23 @@ public class BaseTestEx {
         if (result.getStatus() == ITestResult.FAILURE) {
             // Get the name of test method
             String testMethodName = result.getName();
+            // 2. Declare the file location
+            Calendar calendar = new GregorianCalendar();
+            int y = calendar.get(Calendar.YEAR);
+            int m = calendar.get(Calendar.MONTH);
+            int d = calendar.get(Calendar.DATE);
+            int hr = calendar.get(Calendar.HOUR_OF_DAY);
+            int min = calendar.get(Calendar.MINUTE);
+            int sec = calendar.get(Calendar.SECOND);
+            String dateTaken = y + "-" + (m + 1) + "-" + d + "-" + hr + "-" + min + "-" + sec;
+            String fileLocation = System.getProperty("user.dir") + "/screenshot/" + testMethodName + "_" + dateTaken + ".png";
 
             // Declare file location
-            testUtils = new TestUtils();
-            String dateTaken = testUtils.getDateTime();
-            String fileLocation = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + testMethodName + "_" + dateTaken + ".png";
+//            String dateTaken = testUtils.getDateTime();
+//            String fileLocation = System.getProperty("user.dir") + File.separator + "ScreenShot" + File.separator + testMethodName + "_" + dateTaken + ".png";
 
             // Save screenshot to the system and attach to Allure report
-            File screenShot = driverThread.get().getAppiumDriver().getScreenshotAs(OutputType.FILE);
+            File screenShot = getDriver().getScreenshotAs(OutputType.FILE);
 
             try {
                 FileUtils.copyFile(screenShot, new File(fileLocation));
@@ -117,4 +100,11 @@ public class BaseTestEx {
         }
     }
 
+//    public TestUtils getTestUtils() {
+//        return testUtils.get();
+//    }
+//
+//    public void setTestUtils(TestUtils testUtils) {
+//        this.testUtils.set(testUtils);
+//    }
 }

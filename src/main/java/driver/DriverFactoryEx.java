@@ -32,7 +32,7 @@ public class DriverFactoryEx {
 
     public AppiumDriver<MobileElement> getAppiumDriver(String udid, String port, String systemPort, String deviceName) {
         if (appiumDriver == null)
-            appiumDriver = initAppiumDriver(udid, port, systemPort, deviceName);
+            appiumDriver = initAppiumDriver(udid, port, systemPort);
         return appiumDriver;
     }
 
@@ -49,24 +49,26 @@ public class DriverFactoryEx {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "Z5 Prem");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "CB5A2BZKHF");
-/*      Setup for S6 Edge
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, "S6 Edge");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, "05157df58940201b");
-*/
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
         appiumDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
-        appiumDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_LAUNCH_APPIUM_DRIVER, TimeUnit.SECONDS);
+        appiumDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_INIT_APPIUM_DRIVER, TimeUnit.SECONDS);
 
         System.out.println("Session ID: " + appiumDriver.getSessionId());
         return appiumDriver;
     }
 
-    private AppiumDriver<MobileElement> initAppiumDriver(String udid, String port, String systemPort, String deviceName) {
+    public AppiumDriver<MobileElement> getAppiumDriver(String udid, String port, String systemPort) {
+        if (appiumDriver == null)
+            appiumDriver = initAppiumDriver(udid, port, systemPort);
+        return appiumDriver;
+    }
+
+    private AppiumDriver<MobileElement> initAppiumDriver(String udid, String port, String systemPort) {
 //        AppiumServiceBuilder appiumServiceBuilder = new AppiumServiceBuilder();
-//        appiumServiceBuilder.withIPAddress("127.0.0.1").usingPort(Integer.parseInt(port));
+//        appiumServiceBuilder.withIPAddress("127.0.0.1").usingAnyFreePort();
 //        /* Use AndroidServerFlagEx, extended from AndroidSeverFlag, for automatically discovering compatible Chrome driver */
 //        appiumServiceBuilder.withArgument(AndroidServerFlagEx.ALLOW_INSECURE, "chromedriver_autodownload");
 //        appiumServer = AppiumDriverLocalService.buildService(appiumServiceBuilder);
@@ -74,20 +76,22 @@ public class DriverFactoryEx {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.PLATFORM_NAME, "Android");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "UiAutomator2");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.DEVICE_NAME, deviceName);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AUTOMATION_NAME, "uiautomator2");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.UDID, udid);
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.SYSTEM_PORT, Integer.parseInt(systemPort));
+        desiredCapabilities.setCapability("systemPort", Integer.parseInt(systemPort));
+//        desiredCapabilities.setCapability("mjpegServerPort", Integer.parseInt(port));
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_PACKAGE, "com.wdiodemoapp");
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
-        desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 60);
+        //desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
+        desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
         try {
-            URL appiumServerPath = new URL("http://127.0.0.1:4723/wd/hub");
+            URL appiumServerPath = new URL("http://0.0.0.0:4723/wd/hub");
             appiumDriver = new AndroidDriver<>(appiumServerPath, desiredCapabilities);
 //            appiumDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
-            appiumDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_LAUNCH_APPIUM_DRIVER, TimeUnit.SECONDS);
-        } catch (Exception ex) { ex.printStackTrace(); }
+            appiumDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_INIT_APPIUM_DRIVER, TimeUnit.SECONDS);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         System.out.println("Session ID: " + appiumDriver.getSessionId());
         return appiumDriver;
     }

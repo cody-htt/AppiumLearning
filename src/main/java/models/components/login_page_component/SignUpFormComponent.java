@@ -71,7 +71,7 @@ public class SignUpFormComponent extends PageModel {
     @Step("Click on Sign Up button")
     public DialogComponent clickOnSignUpBtn() {
         clickElement(signUpBtnElem);
-        return new DialogComponent(appiumDriver);
+        return new DialogComponent(this.appiumDriver);
     }
 
 }

@@ -33,15 +33,15 @@ public class LoginPage extends PageModel {
     }
 
     public LoginFormComponent loginFormComponent() {
-        return new LoginFormComponent(appiumDriver);
+        return new LoginFormComponent(this.appiumDriver);
     }
 
     public SignUpFormComponent signUpFormComponent() {
-        return new SignUpFormComponent(appiumDriver);
+        return new SignUpFormComponent(this.appiumDriver);
     }
 
     public BottomNavBarComponent bottomNavBarComponent() {
-        return new BottomNavBarComponent(appiumDriver);
+        return new BottomNavBarComponent(this.appiumDriver);
     }
 
 }

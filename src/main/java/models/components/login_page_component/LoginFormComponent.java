@@ -14,7 +14,7 @@ public class LoginFormComponent extends PageModel {
     private MobileElement passwordFieldElem;
     @AndroidFindBy(accessibility = "button-LOGIN")
     private MobileElement loginBtnElem;
-    @AndroidFindBy(xpath = "//*[@content-desc='button-LOGIN']/preceding-sibling::android.widget.TextView[3]")
+    @AndroidFindBy(xpath = "//*[@content-desc='button-LOGIN']/preceding-sibling::android.widget.TextView[1]")
     private MobileElement invalidEmailMessageElem;
     @AndroidFindBy(xpath = "//*[@content-desc='button-LOGIN']/preceding-sibling::android.widget.TextView[2]")
     private MobileElement invalidPasswordMessageElem;
@@ -55,7 +55,7 @@ public class LoginFormComponent extends PageModel {
     @Step("Click on Login button")
     public DialogComponent clickOnLoginBtn() {
         clickElement(loginBtnElem);
-        return new DialogComponent(appiumDriver);
+        return new DialogComponent(this.appiumDriver);
     }
 
 }

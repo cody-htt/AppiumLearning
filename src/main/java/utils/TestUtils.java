@@ -29,6 +29,9 @@ public class TestUtils {
         try {
             inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
             JSONTokener jsonTokener = new JSONTokener(inputStream);
+            if (jsonTokener == null) {
+                throw new RuntimeException("JSONObject is null");
+            }
             return new JSONObject(jsonTokener);
         } catch (Exception ignored) { } finally {
             if (inputStream != null) {

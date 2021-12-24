@@ -38,7 +38,7 @@ public class LeftNavBarComponent extends PageModel {
 
     public List<MobileElement> menuItemList() {
         waitForVisibility(menuItemElem);
-        return appiumDriver.findElements(menuItemLoc);
+        return this.appiumDriver.findElements(menuItemLoc);
     }
 
 }

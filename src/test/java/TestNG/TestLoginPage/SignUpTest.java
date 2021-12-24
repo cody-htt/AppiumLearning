@@ -13,15 +13,11 @@ import test_flows.authentication.SignUpFlow;
 public class SignUpTest extends BaseTestEx {
 
     @Description("Verify Successfully Sign Up With Valid Credentials")
-    @Test(description = "Test Sign Up", priority = 2)
-    public void signUpWithValidCreds() {
+    @Test(dataProvider = "validLoginCreds", description = "Test Sign Up", priority = 2)
+    public void signUpWithValidCreds(SignUpCreds signUpCreds) {
+        //Init Appium driver
         AppiumDriver<MobileElement> androidDriver = getDriver();
         SignUpFlow signUpFlow = new SignUpFlow(androidDriver);
-        SignUpCreds signUpCreds = new SignUpCreds(
-                validCredentials.getString("email"),
-                validCredentials.getString("password"),
-                validCredentials.getString("password"));
-
         signUpFlow.navigateToLoginPage()
                   .signUp(signUpCreds)
                   .verifyLoginWithCorrectCreds();
@@ -29,9 +25,9 @@ public class SignUpTest extends BaseTestEx {
 
     @Test(dataProvider = "invalidLoginCreds", description = "Test Sign Up", priority = 1)
     public void signUpWithInvalidCreds(SignUpCreds signUpCreds) {
+        //Init Appium driver
         AppiumDriver<MobileElement> androidDriver = getDriver();
         SignUpFlow signUpFlow = new SignUpFlow(androidDriver);
-
         signUpFlow.navigateToLoginPage()
                   .signUp(signUpCreds)
                   .verifyLoginWithIncorrectCreds(signUpCreds);
@@ -41,6 +37,12 @@ public class SignUpTest extends BaseTestEx {
     @DataProvider
     public SignUpCreds[] invalidLoginCreds() {
         String jsonLoc = "src/test/resources/data/authentication/invalidSignUpCreds.json";
+        return new DataObjectBuilder().buildDataObject(jsonLoc, SignUpCreds[].class);
+    }
+
+    @DataProvider
+    public SignUpCreds[] validLoginCreds() {
+        String jsonLoc = "src/test/resources/data/authentication/validSignUpCreds.json";
         return new DataObjectBuilder().buildDataObject(jsonLoc, SignUpCreds[].class);
     }
 

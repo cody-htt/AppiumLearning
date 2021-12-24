@@ -17,17 +17,17 @@ import java.util.regex.Pattern;
 
 public class LoginFlow {
 
-    private AppiumDriver<MobileElement> appiumDriver;
+    private final AppiumDriver<MobileElement> appiumDriver;
     private LoginPage loginPage;
     private LoginFormComponent loginFormComp;
     private DialogComponent dialogComp;
-    private final HashMap<String, String> expectedStringMap;
-    private final SoftAssert softAssert;
+    private TestUtils testUtils;
+    private SoftAssert softAssert;
 
     public LoginFlow(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
-        this.expectedStringMap = new TestUtils().getExpectedStringMap();
-        softAssert = new SoftAssert();
+        this.testUtils = new TestUtils();
+        this.softAssert = new SoftAssert();
     }
 
     public LoginFlow navigateToLoginPage() {
@@ -55,7 +55,8 @@ public class LoginFlow {
     }
 
     @Step("Verify successfully login with valid credentials")
-    public LoginFlow verifyLoginSuccess() {
+    public LoginFlow verifyLoginWithCorrectCreds() {
+        HashMap<String, String> expectedStringMap = testUtils.getExpectedStringMap();
         // Verification
         String actualDialogTitle = dialogComp.dialogTitleElem().getText();
         String actualDialogMessage = dialogComp.dialogMessageElem().getText();
@@ -72,6 +73,8 @@ public class LoginFlow {
 
     @Step("Verify unsuccessfully login with valid credentials")
     public LoginFlow verifyLoginWithIncorrectCreds(LoginCreds loginCreds) {
+        HashMap<String, String> expectedStringMap = testUtils.getExpectedStringMap();
+        //Verification
         String actualErrorText;
         String expectedEmailErrMessage = expectedStringMap.get("error_login_invalid_email_msg");
         String expectedPasswordErrMessage = expectedStringMap.get("error_login_invalid_password_msg");

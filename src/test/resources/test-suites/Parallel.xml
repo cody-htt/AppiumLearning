@@ -1,20 +1,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Parallel" parallel="tests" thread-count="4">
-    <test name="Login Test | Z5 Premium">
+<suite name="Parallel-Suite" parallel="tests" thread-count="4">
+    <test name="Login Test | CB5A2BZKHF" parallel="tests">
         <parameter name="udid" value="CB5A2BZKHF"/>
         <parameter name="port" value="7000"/>
-        <parameter name="systemPort" value="8300"/>
-        <parameter name="deviceName" value="Z5 Prem"/>
+        <parameter name="systemPort" value="9000"/>
         <classes>
             <class name="TestNG.TestLoginPage.LoginTest"/>
         </classes>
     </test>
-    <test name="Login Test | AVD Pixel 3XL">
+    <test name="Login Test | emulator-5554" parallel="tests">
         <parameter name="udid" value="emulator-5554"/>
         <parameter name="port" value="8000"/>
-        <parameter name="systemPort" value="8400"/>
-        <parameter name="deviceName" value="Pixel_3"/>
+        <parameter name="systemPort" value="8500"/>
         <classes>
             <class name="TestNG.TestLoginPage.LoginTest"/>
         </classes>

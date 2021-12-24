@@ -13,7 +13,8 @@ import java.util.List;
 
 public class PageModel {
 
-    protected AppiumDriver<MobileElement> appiumDriver;
+//    protected ThreadLocal<AppiumDriver<MobileElement>> appiumDriver;
+protected AppiumDriver<MobileElement> appiumDriver;
 
     protected PageModel(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;

@@ -67,17 +67,17 @@ public class FormPage extends PageModel {
 
     public DropdownDialogComponent clickOnDropDownIcon() {
         clickElement(dropDownIconElem);
-        return new DropdownDialogComponent(appiumDriver);
+        return new DropdownDialogComponent(this.appiumDriver);
     }
 
     public ActiveBtnDialogComponent clickOnActiveBtn() {
         swipeUtils.swipeUpUntilElementFound(activeBtnLoc, 0.8);
         clickElement(activeBtnElem);
-        return new ActiveBtnDialogComponent(appiumDriver);
+        return new ActiveBtnDialogComponent(this.appiumDriver);
     }
 
     public BottomNavBarComponent bottomNavBarComponent() {
-        return new BottomNavBarComponent(appiumDriver);
+        return new BottomNavBarComponent(this.appiumDriver);
     }
 
 }

@@ -41,7 +41,7 @@ public class TopNotificationComponent extends PageModel {
     }
 
     public List<MobileElement> notiBannerList() {
-        return appiumDriver.findElements(notiBannerLoc);
+        return this.appiumDriver.findElements(notiBannerLoc);
     }
 
     public static class notification {
