@@ -12,9 +12,9 @@
     <test name="Login Test | emulator-5554" parallel="tests">
         <parameter name="udid" value="emulator-5554"/>
         <parameter name="port" value="8000"/>
-        <parameter name="systemPort" value="8500"/>
+        <parameter name="systemPort" value="9100"/>
         <classes>
-            <class name="TestNG.TestLoginPage.SignUpTest"/>
+            <class name="TestNG.TestLoginPage.LoginTest"/>
         </classes>
     </test>
 </suite>

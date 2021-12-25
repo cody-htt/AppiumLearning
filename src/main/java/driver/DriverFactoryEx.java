@@ -84,8 +84,19 @@ public class DriverFactoryEx {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.APP_ACTIVITY, "com.wdiodemoapp.MainActivity");
         //desiredCapabilities.setCapability(MobileCapabilityTypeEx.AVD_LAUNCH_TIMEOUT, 120_000);
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
+        String localAppium = System.getenv("localAppium");
+        String hub = System.getProperty("hub");
+
+        String targetServer;
+        if (localAppium != null) {
+            targetServer = localAppium + "/wd/hub";
+        } else if (hub != null) {
+            targetServer = hub + ":4444/wd/hub";
+        } else {
+            throw new IllegalArgumentException("Required localAppium or hub");
+        }
         try {
-            URL appiumServerPath = new URL("http://0.0.0.0:4723/wd/hub");
+            URL appiumServerPath = new URL(targetServer);
             appiumDriver = new AndroidDriver<>(appiumServerPath, desiredCapabilities);
 //            appiumDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
             appiumDriver.manage().timeouts().implicitlyWait(Constant.TIME_TO_INIT_APPIUM_DRIVER, TimeUnit.SECONDS);
@@ -100,9 +111,6 @@ public class DriverFactoryEx {
         if (appiumDriver != null) {
             appiumDriver.quit();
             appiumDriver = null;
-
-            /* In case we have completed infrastructure, no need the below code */
-            //stopAppiumServer();
         }
     }
 
