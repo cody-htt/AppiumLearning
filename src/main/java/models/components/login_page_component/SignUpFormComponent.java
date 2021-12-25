@@ -16,11 +16,11 @@ public class SignUpFormComponent extends PageModel {
     private MobileElement repeatPasswordFieldElem;
     @AndroidFindBy(accessibility = "button-SIGN UP")
     private MobileElement signUpBtnElem;
-    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[3]")
+    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[1]")
     private MobileElement invalidEmailMessageElem;
     @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[2]")
     private MobileElement invalidPasswordMessageElem;
-    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[1]")
+    @AndroidFindBy(xpath = "//*[@content-desc='button-SIGN UP']/preceding-sibling::android.widget.TextView[3]")
     private MobileElement invalidRepeatPwMessageElem;
 
     public SignUpFormComponent(AppiumDriver<MobileElement> appiumDriver) {

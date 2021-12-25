@@ -20,9 +20,9 @@ public class DriverFactoryEx {
     private static final String KILL_NODE_LINUX_CMD = "killall node";
     /*private static final String CLOSE_AVD_CMD = "adb -s 05157df58940201b emu kill"; // Use for S6 Edge */
     private static final String CURRENT_OS = System.getProperty("os.name").toLowerCase();
-
     private static AppiumDriverLocalService appiumServer;
-    private static AppiumDriver<MobileElement> appiumDriver;
+
+    private AppiumDriver<MobileElement> appiumDriver;
 
     public AppiumDriver<MobileElement> getAppiumDriver() {
         if (appiumDriver == null)

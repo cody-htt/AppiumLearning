@@ -21,17 +21,20 @@ public class LoginFlow {
     private LoginPage loginPage;
     private LoginFormComponent loginFormComp;
     private DialogComponent dialogComp;
-    private TestUtils testUtils;
-    private SoftAssert softAssert;
+    private final HashMap<String, String> expectedStringMap;
+    private final SoftAssert softAssert;
 
     public LoginFlow(AppiumDriver<MobileElement> appiumDriver) {
         this.appiumDriver = appiumDriver;
-        this.testUtils = new TestUtils();
+        this.expectedStringMap = new TestUtils().getExpectedStringMap();
         this.softAssert = new SoftAssert();
     }
 
     public LoginFlow navigateToLoginPage() {
-        if (loginPage == null) { initLoginPage(); }
+        if (loginPage == null) {
+            initLoginPage();
+            loginFormComp = loginPage.loginFormComponent();
+        }
         // Init Bottom Nav Comp and Navigate to Login Page
         BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
         bottomNavBarComp.clickOnLoginLabel();
@@ -47,7 +50,6 @@ public class LoginFlow {
     public LoginFlow login(LoginCreds loginCreds) {
         if (loginPage == null) { throw new RuntimeException("Please use navigateToLoginPage() first!!!"); }
         // Fill Login form
-        loginFormComp = loginPage.loginFormComponent();
         dialogComp = loginFormComp.inputEmailField(loginCreds.getEmail())
                                   .inputPasswordField(loginCreds.getPassword())
                                   .clickOnLoginBtn();
@@ -56,7 +58,6 @@ public class LoginFlow {
 
     @Step("Verify successfully login with valid credentials")
     public LoginFlow verifyLoginWithCorrectCreds() {
-        HashMap<String, String> expectedStringMap = testUtils.getExpectedStringMap();
         // Verification
         String actualDialogTitle = dialogComp.dialogTitleElem().getText();
         String actualDialogMessage = dialogComp.dialogMessageElem().getText();
@@ -73,24 +74,27 @@ public class LoginFlow {
 
     @Step("Verify unsuccessfully login with valid credentials")
     public LoginFlow verifyLoginWithIncorrectCreds(LoginCreds loginCreds) {
-        HashMap<String, String> expectedStringMap = testUtils.getExpectedStringMap();
         //Verification
         String actualErrorText;
         String expectedEmailErrMessage = expectedStringMap.get("error_login_invalid_email_msg");
         String expectedPasswordErrMessage = expectedStringMap.get("error_login_invalid_password_msg");
-        int minPasswordLength = 7;
-        if (checkInvalidEmail(loginCreds.getEmail())) {
+        if (isInvalidEmail(loginCreds.getEmail())) {
             actualErrorText = loginFormComp.invalidEmailMessageElem().getText();
             Assert.assertEquals(actualErrorText, expectedEmailErrMessage);
         }
-        if (loginCreds.getPassword().toCharArray().length < minPasswordLength) {
+        if (isInvalidPassword(loginCreds.getPassword())) {
             actualErrorText = loginFormComp.invalidPasswordMessageElem().getText();
             Assert.assertEquals(actualErrorText, expectedPasswordErrMessage);
         }
         return this;
     }
 
-    private boolean checkInvalidEmail(String email) {
+    private boolean isInvalidPassword(String password) {
+        int minPasswordLength = 8;
+        return password.length() < minPasswordLength;
+    }
+
+    private boolean isInvalidEmail(String email) {
         String regex = "^(.+)@(.+)$";
         Pattern pattern = Pattern.compile(regex);
         return !pattern.matcher(email).matches();

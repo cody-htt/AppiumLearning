@@ -31,10 +31,14 @@ public class SignUpFlow {
     }
 
     public SignUpFlow navigateToLoginPage() {
-        if (loginPage == null) { initLoginPage(); }
+        if (loginPage == null) {
+            initLoginPage();
+            signUpFormComp = loginPage.signUpFormComponent();
+        }
         // Init Bottom Nav Comp and Navigate to Login Page
         BottomNavBarComponent bottomNavBarComp = loginPage.bottomNavBarComponent();
         bottomNavBarComp.clickOnLoginLabel();
+        loginPage.selectSignUpForm();
         return this;
     }
 
@@ -46,14 +50,11 @@ public class SignUpFlow {
     @Step("Input email={signUpCreds.email} | password={signUpCreds.password} | confirm-password={signUpCreds.repeatPassword}")
     public SignUpFlow signUp(SignUpCreds signUpCreds) {
         if (loginPage == null) { throw new RuntimeException("Please use navigateToLoginPage() first!!!"); }
-        loginPage.selectSignUpForm();
-        // Fill in signup form
-        signUpFormComp = loginPage.signUpFormComponent();
+        // Fill in Sign Up form
         dialogComp = signUpFormComp.inputEmailField(signUpCreds.getEmail())
                                    .inputPasswordField(signUpCreds.getPassword())
                                    .inputRepeatPasswordField(signUpCreds.getRepeatPassword())
                                    .clickOnSignUpBtn();
-
         return this;
     }
 
@@ -79,24 +80,32 @@ public class SignUpFlow {
         String expectedEmailErrMessage = expectedStringMap.get("error_sign_up_invalid_email_msg");
         String expectedPasswordErrMessage = expectedStringMap.get("error_sign_up_invalid_password_msg");
         String expectedRepeatPasswordErrMessage = expectedStringMap.get("error_sign_up_wrong_repeat_password_msg");
-        int minPasswordLength = 7;
-        if (checkInvalidEmail(signUpCreds.getEmail())) {
+
+        if (isInvalidEmail(signUpCreds.getEmail())) {
             actualErrorText = signUpFormComp.invalidEmailMessageElem().getText();
             Assert.assertEquals(actualErrorText, expectedEmailErrMessage);
         }
-        if (signUpCreds.getPassword().toCharArray().length < minPasswordLength) {
+        if (isInvalidPassword(signUpCreds.getPassword())) {
             actualErrorText = signUpFormComp.invalidPasswordMessageElem().getText();
             Assert.assertEquals(actualErrorText, expectedPasswordErrMessage);
         }
-        boolean isConfirmPasswordSame = !signUpCreds.getRepeatPassword().equalsIgnoreCase(signUpCreds.getPassword());
-        if (isConfirmPasswordSame || (signUpCreds.getRepeatPassword().toCharArray().length < minPasswordLength)) {
+        if (isInvalidConfirmPassword(signUpCreds.getRepeatPassword(), signUpCreds.getPassword())) {
             actualErrorText = signUpFormComp.invalidRepeatPwMessageElem().getText();
             Assert.assertEquals(actualErrorText, expectedRepeatPasswordErrMessage);
         }
         return this;
     }
 
-    private boolean checkInvalidEmail(String email) {
+    private boolean isInvalidConfirmPassword(String repeatPassword, String password) {
+        return !repeatPassword.equalsIgnoreCase(password);
+    }
+
+    private boolean isInvalidPassword(String password) {
+        int minPasswordLength = 8;
+        return password.length() < minPasswordLength;
+    }
+
+    private boolean isInvalidEmail(String email) {
         String regex = "^(.+)@(.+)$";
         Pattern pattern = Pattern.compile(regex);
         return !pattern.matcher(email).matches();
